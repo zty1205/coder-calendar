@@ -1,0 +1,68 @@
+<wxs module="util">
+  function getStatusName(status) {
+    if (status === '1') return '休'
+    if (status === '2') return '班'
+    return ''
+  }
+  function formatMoney(money) {
+    return Math.floor(money * 100) / 100
+  }
+  module.exports = {
+    getStatusName: getStatusName,
+    formatMoney: formatMoney
+  }
+</wxs>
+<view class="container">
+  <view class="time-container">
+    <view class="time-today time-today-{{status}}">
+      <view class="time-status">{{ util.getStatusName(status) }}</view>
+      <view class="time-number">{{day}}</view>
+      <view class="time-term">{{term || lunarDay}}</view>
+    </view>
+    <view class="time-desc">
+      <view class="time-desc-item">阳历：{{year}}-{{mouth}}-{{day}}</view>
+      <view class="time-desc-item">阴历：{{lunarMouth}}{{lunarDay}}</view>
+      <view class="time-desc-item">周度：星期{{weekName}}</view>
+    </view>
+  </view>
+  <view class="today-container">
+    <view class="today-money">
+      <view bindtap="handleSetSalary">
+        <view class="today-money-title">今日搬砖工钱</view>
+        <view wx:if="{{salary}}" class="today-money-number">{{ util.formatMoney(currentSalary) }}元</view>
+        <view wx:else class="to-set">去设置</view>
+      </view>
+    </view>
+    <view class="today-life">
+      <view class="today-life-item today-life-meal" bindtap="handleTodayEat">吃点啥</view>
+      <view class="today-life-item today-life-night" bindtap="handleTodayDo">回家做点啥</view>
+    </view>
+  </view>
+
+  <image class="worker-img" src="/static/worker-bg.png" mode="aspectFit" />
+
+  <view class="before-money-container">
+    <view wx:if="{{salaryDay}}">
+      <text wx:if="{{beforeMoneyDay === 0}}">今天发工资，哦耶！！！</text>
+      <text wx:else>距离发工资还有<text class="before-money-number">{{ beforeMoneyDay }}</text>天</text>
+    </view>
+    <view wx:else class="to-set" bindtap="handleSetSalary">去设置工资日</view>
+  </view>
+  <view class="before-week-container">
+    <text wx:if="{{beforeWeek === 0}}">{{ status == 2 ? '一个"可恶"的调休日！！！' : '周末了，开心！！！'}}</text>
+    <text wx:else>距离周末还有<text class="before-week-number">{{ beforeWeek }}</text>天</text>
+  </view>
+  <view class="before-holiday-container">
+    <text wx:if="{{beforeHoilday === -1}}">今日没有节假日了，害！</text>
+    <text wx:elif="{{beforeHoilday === 0}}">过个{{nextHoilday.name}}，万岁！！！</text>
+    <view wx:else>
+      <view>距离下一个节假日还有<text class="before-holiday-number">{{beforeHoilday}}</text>天</view>
+      <view class="before-holiday-info-container">
+        <text class="before-holiday-info">{{nextHoilday.date}}</text>
+        <text class="before-holiday-info">{{nextHoilday.name}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="index-about" bindtap="handleAbout">关于小程序</view>
+</view>

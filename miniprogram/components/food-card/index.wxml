@@ -1,0 +1,27 @@
+<wxs module="util">
+  function getCateName(cate) {
+    var obj = ["谷", "谷", "薯", "炸", "神"]
+    return obj[cate]
+  }
+  module.exports = {
+    getCateName: getCateName
+  }
+</wxs>
+<view class="food-card food-card-{{category}}">
+  <image class="food-card-bg" src="/static/card-0.jpg"></image>
+  <view class="food-card-box">
+    <view class="food-card-header">
+      <view class="food-card-header--name">{{name}}</view>
+      <view class="food-card-header--category">{{ util.getCateName(category) }}</view>
+    </view>
+    <view class="food-card-level">
+      <image wx:for="{{level}}" wx:key="index" src="/static/star.jpeg" class="food-card-level--star"></image>
+    </view>
+    <image class="food-card-img" src="{{img}}" mode="aspectFit" />
+    <view class="food-card-desc">{{desc}}</view>
+    <view class="food-card-price">
+      <view class="food-card-price--high">{{hPrice}}</view>
+      <view class="food-card-price--low">{{lPrice}}</view>
+    </view>
+  </view>
+</view>

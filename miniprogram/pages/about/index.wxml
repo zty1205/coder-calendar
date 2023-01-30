@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="item">1. 秒薪计算公式：月薪 / 当月天数换算成秒数</view>
+  <view class="item">2. 节假日计算：按法定节假日进行计算，如有不准，多多包涵，且以国家标准为准。</view>
+  <view class="item item-author">作者：张飞</view>
+</view>

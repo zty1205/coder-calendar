@@ -1,0 +1,23 @@
+/* pages/user/index.wxss */
+.container {
+  background: #f7f7f7;
+  min-height: 100vh;
+
+  .content {
+    padding-top: 48rpx;
+  }
+
+  .van-cell {
+    .van-cell__title {
+      min-width: 6.2em;
+      max-width: 6.2em;
+      margin-right: 12px;
+      color: var(--field-label-color,#646566);
+    }
+    .van-cell__value {
+      text-align: left;
+      color: var(--field-input-text-color,#323233);
+    }
+  }
+  
+}

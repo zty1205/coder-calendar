@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "挑盒饭",
+  "usingComponents": {
+    "food-card": "../../components/food-card/index"
+  }
+}

@@ -1,0 +1,117 @@
+.food-card {
+  width: 271px;
+  height: 395px;
+  background: #6a6f8d;
+  position: relative;
+
+  .food-card-bg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .food-card-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .food-card-header {
+    height: 30px;
+    width: 243px;
+    display: flex;
+    margin: 16px auto 0 auto;
+    align-items: center;
+
+    .food-card-header--name {
+      flex: 1;
+      text-align: left;
+      font-size: 14px;
+      font-family: Hannotate SC;
+      margin-left: 8px;
+    }
+
+    .food-card-header--category {
+      height: 20px;
+      width: 20px;
+      border-radius: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-right: 8px;
+      font-weight: 500;
+    }
+  }
+
+  .food-card-level {
+    display: flex;
+    height: 20px;
+    width: 230px;
+    margin: 1px auto 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 12px;
+
+    .food-card-level--star {
+      height: 12px;
+      width: 12px;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-left: 2px;
+    }
+  }
+
+  .food-card-img {
+    height: 208px;
+    width: 204px;
+    margin: 5px auto 0 auto;
+    display: block;
+  }
+
+  .food-card-desc {
+    height: 56px;
+    width: 224px;
+    margin: 22px auto 0 auto;
+    font-size: 10px;
+    font-family: STHeiti;
+    font-weight: 500;
+  }
+
+  .food-card-price {
+    height: 10px;
+    width: 224px;
+    margin: 2px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 10px;
+
+    .food-card-price--low {
+      width: 24px;
+      text-align: left;
+    }
+    .food-card-price--high {
+      width: 54px;
+      text-align: left;
+    }
+  }
+}
+
+// 谷
+.food-card-1 {
+  .food-card-header--category {
+    background: #2e2a2d;
+    color: #ebe9ec;
+    font-family: STXinwei;
+  }
+}
+
+.food-card-4 {
+  .food-card-header--category {
+    background: #a57437;
+    color: #fdf7ec;
+    font-family: STXinwei;
+  }
+}

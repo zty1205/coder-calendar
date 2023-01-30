@@ -1,0 +1,12 @@
+.container {
+  width: 100;
+  .item {
+    width: 100;
+    margin: 8px 10px;
+    font-size: 14px;
+  }
+  .item-author {
+    text-align: right;
+    margin-top: 20px;
+  }
+}

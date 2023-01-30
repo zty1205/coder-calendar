@@ -1,0 +1,274 @@
+@keyframes rotateKf {
+  0% {
+    transform: rotate(0);
+  }
+
+  25% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(1440deg);
+  }
+
+  75% {
+    transform: rotate(1980deg);
+  }
+
+  100% {
+    transform: rotate(2160deg);
+  }
+}
+
+@keyframes rotateBackKf {
+  0% {
+    transform: rotate(0);
+  }
+
+  50% {
+    transform: rotate(-360deg);
+  }
+
+  100% {
+    transform: rotate(-720deg);
+  }
+}
+
+// @keyframes scaleKf {
+//   0% {scale: 0; transform: translate(0, -10%) rotateY(0);}
+//   20% {scale: .25; transform: translate(-10%, -20%) rotateY(360deg);}
+//   40% {scale: .5; transform: translate(-20%, -30%) rotateY(1080deg);}
+//   60% {scale: 1; transform: translate(-30%, -40%) rotateY(1440deg);}
+//   80% {scale: .5; transform: translate(-40%, -50%) rotateY(1800deg);}
+//   100% {scale: 1; transform: translate(-50%, -60%) rotateY(2160deg);}
+// }
+
+@keyframes scaleKf {
+  0% {
+    transform: scale(0) translate(0, -10%) rotateY(0);
+  }
+  20% {
+    transform: scale(.25) translate(-10%, -20%) rotateY(360deg);
+  }
+  40% {
+    transform: scale(.5) translate(-20%, -30%) rotateY(1080deg);
+  }
+  60% {
+    transform: scale(1.2) translate(-30%, -40%) rotateY(1440deg);
+  }
+  80% {
+    transform: scale(.5) translate(-40%, -50%) rotateY(1800deg);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -60%) rotateY(2160deg);
+  }
+}
+
+@keyframes jumpKf {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(12px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+$card-ani-time: 3s;
+$card-distance: 90px;
+
+.container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  perspective: 2000px;
+  position: relative;
+  background-color: #ebecee;
+
+  .roll-bg {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-position: top;
+  }
+
+  .lottery-empty {
+    width: 100%;
+    height: 100px;
+  }
+
+  .lottery-circle {
+    margin: 0 auto 40px auto;
+    // background: radial-gradient(#f8fefd 50%, #7187a5 100%);
+    background: radial-gradient(#eef8ff 30%, #343330 100%);
+    height: 280px;
+    width: 280px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.2);
+
+    .lottery-img {
+      width: 128px;
+      height: 128px;
+      opacity: .8;
+      border-radius: 100%;
+    }
+
+    .lottery-img--ani {
+      animation: rotateBackKf $card-ani-time 1 linear both;
+    }
+
+    .lottery-card-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      transform: translate(-50%, -50%);
+    }
+
+    .lottery-card-box--ani {
+      animation: rotateKf $card-ani-time 1 linear both;
+    }
+
+    .lottery-card {
+      width: 60.375px;
+      height: 87px;
+      position: absolute;
+      transform-origin: center center;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+      opacity: .8;
+    }
+
+    .lottery-card-0 {
+      bottom: $card-distance;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .lottery-card-1 {
+      left: $card-distance - 20px;
+      bottom: $card-distance - 30px;
+      transform: rotate(45deg);
+    }
+
+    .lottery-card-2 {
+      top: 50%;
+      left: $card-distance + 10px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .lottery-card-3 {
+      left: $card-distance - 20px;
+      top: $card-distance - 30px;
+      transform: rotate(135deg);
+    }
+
+    .lottery-card-4 {
+      top: $card-distance;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .lottery-card-5 {
+      right: $card-distance - 20px;
+      top: $card-distance - 30px;
+      transform: rotate(225deg);
+    }
+
+    .lottery-card-6 {
+      top: 50%;
+      right: $card-distance + 10px;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .lottery-card-7 {
+      right: $card-distance - 20px;
+      bottom: $card-distance - 30px;
+      transform: rotate(315deg);
+    }
+  }
+
+  .lottery-roll {
+    position: relative;
+    opacity: .7;
+    top: 20px;
+
+    .lottery-roll-card {
+      width: 48.3px; // 12.075px
+      height: 65.6px; // 17.4px
+      position: absolute;
+      right: 32px;
+    }
+
+    .lottery-roll-card-0 {
+      top: 20px;
+    }
+
+    .lottery-roll-card-1 {
+      top: 22px;
+    }
+
+    .lottery-roll-card-2 {
+      top: 24px;
+    }
+
+    .lottery-roll-card-3 {
+      top: 26px;
+    }
+
+    .lottery-roll-card-4 {
+      top: 28px;
+      cursor: pointer;
+      animation: jumpKf 2s infinite linear;
+    }
+  }
+
+}
+
+
+
+.lottery-current {
+  .lottery-current-people {
+    display: block;
+    margin: 10 auto 0 auto;
+  }
+
+  .lottery-current-food {
+    position: absolute;
+    top: 56%;
+    left: 50%;
+    z-index: 199;
+    //  transform: translate(-50%, -60%);
+    animation: scaleKf 2s 1 linear forwards;
+    transform-origin: center center;
+    perspective: 2000px;
+  }
+
+  .lottery-current-op {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    width: 100%;
+    bottom: 120rpx;
+    left: 0;
+
+    .lottery-current-op-btn {
+      display: block;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+      border-radius: 8px;
+      opacity: .7;
+    }
+  }
+}

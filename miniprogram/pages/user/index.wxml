@@ -1,0 +1,13 @@
+<!--pages/user/index.wxml-->
+<view class="container">
+  <view class="content">
+    <van-cell-group inset>
+      <van-field label="工资" type="number" value="{{ salary }}" placeholder="请输入工资" bind:blur="handleSalaryBlur" bind:confirm="handleSalaryConfirm" />
+      <van-cell title="发薪日" value="{{salaryDay}}" bind:click="handleSalaryDayClick" />
+    </van-cell-group>
+  </view>
+
+  <van-popup show="{{ showSalaryDayPopup }}" round position="bottom" bind:close="onClose">
+    <van-picker show-toolbar title="发薪日" columns="{{ salaryDayColumns }}" bind:cancel="handleSalaryDayCancel" bind:confirm="handleSalaryDayConfirm" />
+  </van-popup>
+</view>
