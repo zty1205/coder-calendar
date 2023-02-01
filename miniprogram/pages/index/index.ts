@@ -1,7 +1,7 @@
 import hoildayList from '../../data/holidays'
 import mouthData from '../../data/mouth'
 import { getUserSalaryInfo, comingSoon, getSalaryDay } from '../../utils/common'
-import { DAY_STAMP } from '../../utils/constant'
+import { DAY_SECONDS } from '../../utils/constant'
 import { getCountDays, getCountStamp, stampToDay } from "../../utils/util"
 
 let timer = 0
@@ -27,17 +27,18 @@ Page({
     currentSalary: 0,
     salaryDay: 0
   },
-  onLoad() {
-    this.setToday()
-    this.setBeforeWeek()
-    this.setBeforeHoilday()
-  },
   onShow() {
-    this.setBeforeMoney()
-    this.setSalary()
+   this.init()
   },
   onUnload() {
     this.clearTick()
+  },
+  init() {
+    this.setToday()
+    this.setBeforeWeek()
+    this.setBeforeHoilday()
+    this.setBeforeMoney()
+    this.setSalary()
   },
   setToday() {
     const now = new Date()
@@ -56,19 +57,18 @@ Page({
       year: nowMouthData?.year,
       mouth: nowMouthData?.mouth,
       day: nowMouthData?.day,
+      currentSalary: 0
     })
   },
   setBeforeMoney() {
     const { year, mouth, day } = this.data
     const nowDate = new Date(`${year}/${mouth}/${day}`)
     const salaryDay = getSalaryDay();
-    console.log('salaryDay = ', salaryDay)
-    console.log('nowDate = ', nowDate)
-    if (salaryDay === this.data.salaryDay) return
+
     const afterMoneyMouth = +mouth + (salaryDay < +day ? 1 : 0)
     const afterMoneyYear = +year + (afterMoneyMouth > 12 ? 1 : 0)
     const afterMoneyDate = new Date(`${afterMoneyYear}/${afterMoneyMouth}/${salaryDay}`)
-    console.log('afterMoneyDate = ', afterMoneyDate)
+
     const beforeMoneyDay = stampToDay(afterMoneyDate.getTime() - nowDate.getTime())
     this.setData({
       beforeMoneyDay: beforeMoneyDay
@@ -103,25 +103,26 @@ Page({
   setSalary() {
     // 计算时薪 按24小时计算
     const { salary, salaryDay } = getUserSalaryInfo();
-    if (salary === this.data.salary && salaryDay === this.data.salaryDay) return
     this.setData({
       salary: salary || 0,
       salaryDay: salaryDay || 0
     })
-    this.calcSalary(new Date(), salary)
+    this.calcSalary()
   },
-  calcSalary(date: Date, salary?: number) {
+  calcSalary() {
+    const salary = this.data.salary
     if (!salary) return
+    const date = new Date()
     const dates = getCountDays(date)
+
     // 按月计算 平均日薪
     const avg = salary / dates
     // // 已经过去的天数
-    // const overDays =  date.getDate() - 1
     // 今天已经过去的时间，时间戳
-    const overStamp = getCountStamp(date)
+    const overSeconds = getCountStamp(date) / 1000
     // 豪秒薪
-    const secondsSalary = avg / DAY_STAMP
-    const currentSalary = secondsSalary * overStamp  // + overDays * avg
+    const secondsSalary = avg / DAY_SECONDS
+    const currentSalary = secondsSalary * overSeconds
     this.setData({
       currentSalary: currentSalary
     })

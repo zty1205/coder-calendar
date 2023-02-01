@@ -28,9 +28,8 @@ export function getCountDays(date: Date): number {
 export function getCountStamp(date: Date): number {
   const d0 = new Date(date)
   d0.setMilliseconds(0)
-  const d1 = new Date(date)
+  const d1 = new Date(d0)
   d1.setHours(0)
-  d1.setMonth(0)
   d1.setMinutes(0)
   d1.setSeconds(0)
   d1.setMilliseconds(0)

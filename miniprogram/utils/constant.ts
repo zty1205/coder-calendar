@@ -3,4 +3,4 @@ export const STORAGE_KEY = {
   SALARY: 'ZTY_DGH_SALARY',
 };
 
-export const DAY_STAMP = 1000 * 60 * 60 * 24
+export const DAY_SECONDS = 86400
