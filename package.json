@@ -24,7 +24,7 @@
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "miniprogram-api-typings": "^2.8.3-1",
+    "miniprogram-api-typings": "^3.9.0",
     "prettier": "^2.8.3",
     "standard-version": "^9.5.0"
   },

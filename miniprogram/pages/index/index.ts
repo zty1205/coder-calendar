@@ -4,7 +4,7 @@ import { getUserSalaryInfo, comingSoon, getSalaryDay } from '../../utils/common'
 import { DAY_SECONDS } from '../../utils/constant'
 import { getCountDays, getCountStamp, stampToDay } from "../../utils/util"
 
-let timer = 0
+let timer: NodeJS.Timer;
 
 Page({
   data: {
