@@ -2,11 +2,48 @@
   "name": "miniprogram-ts-less-quickstart",
   "version": "0.0.5",
   "description": "",
-  "scripts": {},
+  "scripts": {
+    "lint": "echo 'lint'",
+    "prettier": "prettier --write './**/*.{js,ts,tsx,scss,css,json,vue}'",
+    "prepare": "husky install",
+    "commit": "cz",
+    "changelog": "conventional-changelog -p angular -u -i CHANGELOG.md -s -r 0",
+    "release": "standard-version",
+    "release-major": "standard-version --release-as major",
+    "release-minor": "standard-version --release-as minor",
+    "beta": "standard-version -p beta"
+  },
   "keywords": [],
-  "author": "",
+  "author": "zty",
   "license": "",
   "devDependencies": {
-    "miniprogram-api-typings": "^2.8.3-1"
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "commitizen": "^4.3.0",
+    "conventional-changelog-cli": "^2.2.2",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "miniprogram-api-typings": "^2.8.3-1",
+    "prettier": "^2.8.3",
+    "standard-version": "^9.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,scss,css,json,vue}": [
+      "npm run lint",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
