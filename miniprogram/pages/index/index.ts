@@ -141,10 +141,9 @@ Page({
     clearInterval(timer)
   },
   handleTodayEat() {
-    comingSoon()
-    // wx.navigateTo({
-    //   url: '/pages/food/index'
-    // })
+    wx.navigateTo({
+      url: '/pages/food/index'
+    })
   },
   handleTodayDo() {
     comingSoon()

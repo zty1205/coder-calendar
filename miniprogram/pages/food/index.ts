@@ -57,9 +57,6 @@ Page({
         content: `点一份${this.data.curFood.name}恰恰`,
         showCancel: false,
         confirmText: '我知道了',
-        success: () => {
-          wx.navigateBack({ delta: 1 })
-        }
       })
     }, 100)
 
