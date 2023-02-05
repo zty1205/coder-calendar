@@ -1,2 +1,19 @@
-# coder-calendar
-WX MP Coder-Calendar
+# 简介
+
+打工人专属小程序
+
+<br/>
+
+## 首页
+
+<br/>
+
+![首页](./md/page.jpg)
+
+<br/>
+
+## 小程序码
+
+<br/>
+
+![首页](./md/wx.jpg)
