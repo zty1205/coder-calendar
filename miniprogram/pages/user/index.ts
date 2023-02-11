@@ -1,5 +1,5 @@
-import { setSalary, setSalaryDay, getUserSalaryInfo } from "../../utils/common"
-import salaryDays from '../../data/salaryDays'
+import { setSalary, setSalaryDay, getUserSalaryInfo } from '../../utils/common';
+import salaryDays from '../../data/salaryDays';
 
 Page({
   data: {
@@ -9,47 +9,47 @@ Page({
     salaryDayColumns: salaryDays
   },
   onLoad() {
-    this.getSalaryInfo()
+    this.getSalaryInfo();
   },
   getSalaryInfo() {
     const { salary, salaryDay } = getUserSalaryInfo();
     this.setData({
       salary: salary || 0,
       salaryDay: salaryDay || 0
-    })
+    });
   },
-  handleSalaryBlur(event: VantWeAppEvent) {
-    this.handleSalaryConfirm(event)
+  handleSalaryBlur(event: VantWeAppEvent<VantEventDetailObject>) {
+    this.handleSalaryConfirm(event);
   },
-  handleSalaryConfirm(event: VantWeAppEvent) {
-    const val = event.detail.value
+  handleSalaryConfirm(event: VantWeAppEvent<VantEventDetailObject>) {
+    const val = event.detail.value;
     if (this.data.salary != val) {
       this.setData({
         salary: Number(val)
-      })
-      setSalary(Number(val))
+      });
+      setSalary(Number(val));
     }
   },
   handleSalaryDayClick() {
     this.setData({
       showSalaryDayPopup: true
-    })
+    });
   },
   handleSalaryDayCancel() {
     this.setData({
       showSalaryDayPopup: false
-    })
+    });
   },
-  handleSalaryDayConfirm(event: VantWeAppEvent) {
-    const val = event.detail.value
+  handleSalaryDayConfirm(event: VantWeAppEvent<VantEventDetailObject>) {
+    const val = event.detail.value;
     if (this.data.salaryDay != val) {
       this.setData({
         salaryDay: Number(val)
-      })
-      setSalaryDay(Number(val))
+      });
+      setSalaryDay(Number(val));
     }
     this.setData({
       showSalaryDayPopup: false
-    })
-  },
-})
+    });
+  }
+});

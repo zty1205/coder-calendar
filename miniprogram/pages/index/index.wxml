@@ -14,7 +14,7 @@
 </wxs>
 <view class="container">
   <view class="time-container">
-    <view class="time-today time-today-{{status}}">
+    <view class="time-today time-today-{{status}}" bindtap="handleClickDay">
       <view class="time-status">{{ util.getStatusName(status) }}</view>
       <view class="time-number">{{day}}</view>
       <view class="time-term">{{term || lunarDay}}</view>
@@ -25,6 +25,9 @@
       <view class="time-desc-item">周度：星期{{weekName}}</view>
     </view>
   </view>
+
+  <van-calendar show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:close="onCalendarClose" bind:confirm="onCalendarConfirm" />
+
   <view class="today-container">
     <view class="today-money">
       <view bindtap="handleSetSalary">

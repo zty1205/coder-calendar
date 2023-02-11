@@ -32,6 +32,14 @@ export function getCountStamp(date: Date): number {
   return d0.getTime() - d1.getTime();
 }
 
+export function getYearRange(date: Date): { minDate: Date, maxDate: Date } {
+  const year = date.getFullYear()
+  return {
+    minDate: new Date(`${year}/1/1 00:00:00`),
+    maxDate: new Date(`${year}/12/31 23:59:59`),
+  }
+}
+
 export function stampToDay(n: number): number {
   return n / 24 / 60 / 60 / 1000;
 }

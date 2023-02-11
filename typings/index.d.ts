@@ -4,12 +4,14 @@ interface IAppOption {
   globalData: {};
 }
 
-interface VantWeAppEvent {
+type VantWeAppEvent<T> = {
   type: string;
-  detail: {
-    value: string | number;
-  };
-}
+  detail: T;
+};
+
+type VantEventDetailObject<T = string | number> = {
+  value: T;
+};
 
 interface Food {
   name: string;
