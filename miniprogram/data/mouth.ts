@@ -756,7 +756,7 @@ export default {
       weekName: "二",
       lunarMouth: "正",
       lunarDay: "廿四",
-      term: "情人节 七九",
+      term: "情人节",
       status: "0",
       day: "14",
       mouth: "2",
