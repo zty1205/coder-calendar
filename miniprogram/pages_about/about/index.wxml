@@ -1,16 +1,22 @@
 <view class="container">
-<view class="block">
-  <view class="title">首页</view>
-  <view class="item">1. 秒薪计算公式：月薪 / 当月天数换算成秒数。</view>
-  <view class="item">2. 点击工资可以重新进入月薪和发薪日设置界面。</view>
-  <view class="item">3. 点击日期的正方形格子可以选择切换到当年内的任一天</view>
-  <view class="item">4. 节假日计算：按法定节假日进行计算，如有不准，且以国家标准为准。</view>
-</view>
-<view class="block">
-  <view class="title">盒饭</view>
-  <view class="item">1. 星级不代表评价</view>
-  <view class="item">2. 随机出现一个事物，内含一张<text class="important">神之卡</text>彩蛋</view>
-</view>
-<view class="block"><view class="item item-author">作者：张飞</view></view>
-  
+  <view class="block">
+    <view class="title">首页</view>
+    <view class="item">1. 秒薪计算公式：月薪 / 当月天数换算成秒数。</view>
+    <view class="item">2. 点击工资可以重新进入月薪和发薪日设置界面。</view>
+    <view class="item">3. 点击日期的正方形格子可以选择切换到当年内的任一天</view>
+    <view class="item">4. 节假日计算：按法定节假日进行计算，如有不准，且以国家标准为准。</view>
+  </view>
+  <view class="block">
+    <view class="title">盒饭</view>
+    <view class="item">1. 星级不代表评价</view>
+    <view class="item">
+      2. 随机出现一个事物，内含一张
+      <text class="important">神之卡</text>
+      彩蛋
+    </view>
+  </view>
+  <view class="block">
+    <view class="item item-right item-btn" bindtap="handleToVersion">版本：0.2.0</view>
+    <view class="item item-right">作者：张飞</view>
+  </view>
 </view>

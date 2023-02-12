@@ -43,7 +43,6 @@ Page({
   setCurDate() {
     const now = new Date();
     const { minDate, maxDate } = getYearRange(now);
-    console.log({ minDate, maxDate });
     this.setData({
       curDate: now,
       minDate: minDate.getTime(),

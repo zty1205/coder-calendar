@@ -19,8 +19,13 @@
     margin: 8px 10px;
     font-size: 14px;
   }
-  .item-author {
+  .item-right {
     text-align: right;
     margin-top: 20px;
+    font-weight: 600;
+  }
+  .item-btn {
+    cursor: pointer;
+    color: rgba(0, 0, 238, 0.5);
   }
 }

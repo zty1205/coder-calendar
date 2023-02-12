@@ -1,0 +1,42 @@
+.container {
+  padding: 8px 16px;
+}
+
+.h1 {
+  font-size: 32px;
+  margin: 22px 0;
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: 24px;
+  margin: 20px 0;
+  font-weight: 700;
+}
+
+.h3 {
+  font-size: 18px;
+  margin: 18px 0;
+  font-weight: 700;
+}
+
+.version {
+  color: rgba(0, 0, 238, 0.7);
+}
+
+.ul .li {
+  text-align: left;
+  position: relative;
+  padding-left: 20px;
+  margin-left: 12px;
+}
+
+.ul .li::before {
+  content: '·';
+  font-size: 24px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-55%);
+  left: 2px;
+}

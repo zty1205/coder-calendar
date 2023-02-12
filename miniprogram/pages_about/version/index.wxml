@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="h1">Changelog</view>
+
+  <view class="h2">
+    <text class="version">0.1.0</text>
+    (2023-02-11)
+  </view>
+  <view class="h3">Features</view>
+  <view class="ul">
+    <view class="li">支持日期切换</view>
+  </view>
+  <view class="h3">
+    <text class="version">0.0.8</text>
+    (2023-02-05)
+  </view>
+  <view class="h3">Features</view>
+  <view class="ul">
+    <view class="li">版本更新提示</view>
+  </view>
+  <view class="h3">
+    <text class="version">0.0.7</text>
+    (2023-02-05)
+  </view>
+  <view class="h3">Features</view>
+  <view class="ul">
+    <view class="li">盒饭页</view>
+  </view>
+  <view class="h3">0.0.6 (2023-02-05)</view>
+  <view class="h3">Features</view>
+  <view class="ul">
+    <view class="li">首次版本</view>
+  </view>
+  <view class="h3">Bug Fixes</view>
+  <view class="ul">
+    <view class="li">工资计算问题</view>
+  </view>
+</view>

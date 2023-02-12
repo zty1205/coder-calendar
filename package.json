@@ -4,14 +4,15 @@
   "description": "",
   "scripts": {
     "lint": "echo 'lint'",
-    "prettier": "prettier --write './**/*.{js,ts,tsx,scss,css,json,vue}'",
+    "prettier": "prettier --write './**/*.{js,ts,tsx,scss,css,json,vue,wxml}'",
     "prepare": "husky install",
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -u -i CHANGELOG.md -s -r 0",
     "release": "standard-version",
     "release-major": "standard-version --release-as major",
     "release-minor": "standard-version --release-as minor",
-    "beta": "standard-version -p beta"
+    "beta": "standard-version -p beta",
+    "md": "node ./scripts/markdown.js"
   },
   "keywords": [],
   "author": "zty",
@@ -19,13 +20,16 @@
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@types/markdown-it": "^12.2.3",
     "commitizen": "^4.3.0",
     "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
+    "markdown-it": "^13.0.1",
     "miniprogram-api-typings": "^3.9.0",
     "prettier": "^2.8.3",
+    "shelljs": "^0.8.5",
     "standard-version": "^9.5.0"
   },
   "husky": {
@@ -36,7 +40,7 @@
   },
   "lint-staged": {
     "*.{js,ts,tsx,scss,css,json,vue}": [
-      "npm run lint",
+      "npm run md",
       "prettier --write",
       "git add"
     ]
