@@ -2,9 +2,25 @@
   "pages": [
     "pages/index/index",
     "pages/food/index",
-    "pages/user/index",
-    "pages/about/index"
+    "pages/user/index"
   ],
+  "subPackages": [
+    {
+      "root": "pages_about/",
+      "pages": [
+        "about/index"
+      ],
+      "name": "pages_about"
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": [
+        "pages_about"
+      ]
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

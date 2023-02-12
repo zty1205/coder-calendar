@@ -190,7 +190,7 @@ Page({
   },
   handleAbout() {
     wx.navigateTo({
-      url: '/pages/about/index'
+      url: '/pages_about/about/index'
     });
   }
 });
