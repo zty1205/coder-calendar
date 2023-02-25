@@ -18,17 +18,11 @@
     bind:error="onError"
   />
 
-  <view
-    wx:if="{{ loading && showLoading }}"
-    class="loading-class van-image__loading"
-  >
+  <view wx:if="{{ loading && showLoading }}" class="loading-class van-image__loading">
     <slot wx:if="{{ useLoadingSlot }}" name="loading" />
     <van-icon wx:else name="photo" custom-class="van-image__loading-icon" />
   </view>
-  <view
-    wx:if="{{ error && showError }}"
-    class="error-class van-image__error"
-  >
+  <view wx:if="{{ error && showError }}" class="error-class van-image__error">
     <slot wx:if="{{ useErrorSlot }}" name="error" />
     <van-icon wx:else name="photo-fail" custom-class="van-image__error-icon" />
   </view>

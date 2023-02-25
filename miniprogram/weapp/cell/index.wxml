@@ -8,19 +8,10 @@
   style="{{ customStyle }}"
   bind:tap="onClick"
 >
-  <van-icon
-    wx:if="{{ icon }}"
-    name="{{ icon }}"
-    class="van-cell__left-icon-wrap"
-    custom-class="van-cell__left-icon"
-  />
+  <van-icon wx:if="{{ icon }}" name="{{ icon }}" class="van-cell__left-icon-wrap" custom-class="van-cell__left-icon" />
   <slot wx:else name="icon" />
 
-  <view
-    style="{{ computed.titleStyle({ titleWidth, titleStyle }) }}"
-    class="van-cell__title title-class"
-  >
-
+  <view style="{{ computed.titleStyle({ titleWidth, titleStyle }) }}" class="van-cell__title title-class">
     <block wx:if="{{ title }}">{{ title }}</block>
     <slot wx:else name="title" />
 

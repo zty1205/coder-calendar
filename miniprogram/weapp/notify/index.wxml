@@ -8,14 +8,8 @@
   custom-style="{{ computed.rootStyle({ zIndex, top }) }}"
   bind:tap="onTap"
 >
-  <view
-    class="van-notify van-notify--{{ type }}"
-    style="{{ computed.notifyStyle({ background, color }) }}"
-  >
-    <view
-      wx:if="{{ safeAreaInsetTop }}"
-      style="height: {{ statusBarHeight }}px"
-    />
+  <view class="van-notify van-notify--{{ type }}" style="{{ computed.notifyStyle({ background, color }) }}">
+    <view wx:if="{{ safeAreaInsetTop }}" style="height: {{ statusBarHeight }}px" />
     <text>{{ message }}</text>
   </view>
 </van-transition>

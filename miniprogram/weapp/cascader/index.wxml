@@ -1,13 +1,11 @@
 <wxs src="./index.wxs" module="utils" />
 
 <view wx:if="{{ showHeader }}" class="van-cascader__header">
-  <text class="van-cascader__title"><slot name="title"></slot>{{ title }}</text>
-  <van-icon
-    wx:if="{{ closeable }}"
-    name="{{ closeIcon }}"
-    class="van-cascader__close-icon"
-    bind:tap="onClose"
-  />
+  <text class="van-cascader__title">
+    <slot name="title"></slot>
+    {{ title }}
+  </text>
+  <van-icon wx:if="{{ closeable }}" name="{{ closeIcon }}" class="van-cascader__close-icon" bind:tap="onClose" />
 </view>
 
 <van-tabs
@@ -26,7 +24,7 @@
     wx:for-index="tabIndex"
     wx:key="tabIndex"
     title="{{ tab.selected ? tab.selected[textKey] : placeholder }}"
-    style="width: 100%;"
+    style="width: 100%"
     title-style="{{ !tab.selected ? 'color: #969799;font-weight:normal;' : '' }}"
   >
     <!-- 暂不支持 -->

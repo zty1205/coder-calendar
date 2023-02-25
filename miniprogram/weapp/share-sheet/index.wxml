@@ -23,9 +23,7 @@
     <view class="van-share-sheet__description">
       <slot name="description" />
     </view>
-    <view wx:if="{{ description }}" class="van-share-sheet__description">
-      {{ description }}
-    </view>
+    <view wx:if="{{ description }}" class="van-share-sheet__description">{{ description }}</view>
   </view>
 
   <block wx:if="{{ computed.isMulti(options) }}">
@@ -40,7 +38,5 @@
 
   <options wx:else options="{{ options }}" bind:select="onSelect" />
 
-  <button type="button" class="van-share-sheet__cancel" bindtap="onCancel">
-    {{ cancelText }}
-  </button>
+  <button type="button" class="van-share-sheet__cancel" bindtap="onCancel">{{ cancelText }}</button>
 </van-popup>

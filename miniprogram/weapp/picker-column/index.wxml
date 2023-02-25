@@ -18,6 +18,8 @@
       style="height: {{ itemHeight }}px"
       class="van-ellipsis {{ utils.bem('picker-column__item', { disabled: option && option.disabled, selected: index === currentIndex }) }} {{ index === currentIndex ? 'active-class' : '' }}"
       bindtap="onClickItem"
-    >{{ computed.optionText(option, valueKey) }}</view>
+    >
+      {{ computed.optionText(option, valueKey) }}
+    </view>
   </view>
 </view>

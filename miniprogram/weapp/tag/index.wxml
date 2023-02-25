@@ -6,10 +6,5 @@
   style="{{ computed.rootStyle({ plain, color, textColor }) }}"
 >
   <slot />
-  <van-icon
-    wx:if="{{ closeable }}"
-    name="cross"
-    custom-class="van-tag__close"
-    bind:click="onClose"
-  />
+  <van-icon wx:if="{{ closeable }}" name="cross" custom-class="van-tag__close" bind:click="onClose" />
 </view>

@@ -1,12 +1,9 @@
-<view
-  class="van-index-anchor-wrapper"
-  style="{{ wrapperStyle }}"
->
+<view class="van-index-anchor-wrapper" style="{{ wrapperStyle }}">
   <view
     class="van-index-anchor {{ active ? 'van-index-anchor--active van-hairline--bottom' : '' }}"
     style="{{ anchorStyle }}"
   >
-    <slot wx:if="{{ useSlot }}"/>
+    <slot wx:if="{{ useSlot }}" />
     <block wx:else>
       <text>{{ index }}</text>
     </block>

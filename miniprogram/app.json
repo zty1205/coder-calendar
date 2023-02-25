@@ -1,26 +1,38 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/food/index",
-    "pages/user/index"
-  ],
+  "pages": ["pages/index/index", "pages/food/index", "pages/user/index"],
   "subPackages": [
     {
       "root": "pages_about/",
-      "pages": [
-        "about/index",
-        "version/index"
-      ],
+      "pages": ["about/index", "version/index"],
       "name": "pages_about"
     }
   ],
   "preloadRule": {
     "pages/index/index": {
       "network": "all",
-      "packages": [
-        "pages_about"
-      ]
+      "packages": ["pages_about"]
     }
+  },
+
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home_h.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/food/index",
+        "iconPath": "static/tabbar/mine.png",
+        "selectedIconPath": "static/tabbar/mine_h.png",
+        "text": "我的"
+      }
+    ]
   },
   "window": {
     "backgroundTextStyle": "light",

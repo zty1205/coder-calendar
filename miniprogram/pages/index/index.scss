@@ -1,84 +1,12 @@
-/**index.wxss**/
 .container {
   padding: 48rpx;
-  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC',
+    'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-}
-
-.time-container {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-
-  .time-today {
-    height: 280rpx;
-    width: 280rpx;
-    box-sizing: border-box;
-    border-radius: 16rpx;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    .time-number {
-      font-size: 48px;
-      transform: translateY(-16rpx);
-    }
-
-    .time-status {
-      position: absolute;
-      left: 32rpx;
-      top: 32rpx;
-    }
-
-    .time-term {
-      position: absolute;
-      bottom: 32rpx;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #333;
-    }
-  }
-
-  // 平常
-  .time-today-0 {
-    background: #f5f5f6;
-    color: black;
-  }
-
-  // 节假日
-  .time-today-1 {
-    background: #FDE3E4;
-    color: #F73131;
-  }
-
-  // 调休
-  .time-today-2 {
-    background: #555;
-    color: white;
-
-    .time-term {
-      color: white;
-    }
-  }
-
-  .time-desc {
-    flex: 1;
-    margin-left: 48rpx;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-between;
-
-    .time-desc-item {
-      display: flex;
-      margin: 16rpx 0;
-    }
-  }
 }
 
 .van-calendar {
@@ -87,135 +15,119 @@
   }
 }
 
+$border-radius-container: 16rpx;
+$height-container: 320rpx;
+$height-left: 240rpx;
+$margin-container-right-left: 36rpx;
 
-.today-container {
-  margin-top: 40rpx;
+$background-color-cell: #f5f5f6;
+$color-cell-number: #ff0000b8;
+
+.date-container {
+  box-sizing: border-box;
+  border: 1px solid rgba(100, 148, 237, 0.712);
+  background: rgba(100, 148, 237);
+  border-radius: $border-radius-container;
   display: flex;
   width: 100%;
-  justify-content: space-between;
+  height: $height-container;
+  color: #fff;
+  align-items: center;
+  overflow: hidden;
 
-  .today-money {
-    height: 280rpx;
-    width: 280rpx;
-    background: rgba(245, 245, 246, .6);
-    // box-sizing: border-box;
-    // border: 1px solid beige;
+  .date-left {
+    height: $height-left;
+    width: $height-left;
+    box-sizing: border-box;
     border-radius: 16rpx;
-    box-shadow: 2px 2px 2px 2px rgba(245, 245, 246, .4);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 12px;
-  }
+    position: relative;
+    margin: ($height-container - $height-left)/ 2 $margin-container-right-left;
+    overflow: hidden;
+    background: $background-color-cell;
 
-  .today-money {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .today-money-title {
-      font-size: 32rpx;
-      margin-bottom: 12rpx;
-      text-align: center;
+    .date-status {
+      position: absolute;
+      left: 32rpx;
+      top: 32rpx;
+      font-size: 16px;
+      color: #fff;
     }
 
-    .today-money-number {
-      font-size: 40rpx;
-      color: rgb(207, 40, 82);
-      text-align: center;
+    .date-number {
+      font-size: 44px;
+      transform: translateY(-10rpx);
+      color: #556;
+    }
+
+    .date-term {
+      position: absolute;
+      bottom: 28rpx;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #555;
+      font-size: 16px;
     }
   }
 
-  .today-life {
+  // 调休
+  .date-left-1 {
+    background: rgba(165, 228, 126, 0.6);
+
+    .date-status {
+      color: #eee;
+    }
+
+    .date-number {
+      color: #fff;
+    }
+
+    .date-term {
+      color: #eee;
+    }
+  }
+
+  // 补班
+  .date-left-2 {
+    background: #333333e0;
+
+    .date-status {
+      color: #fff;
+    }
+
+    .date-number {
+      color: #fff;
+    }
+
+    .date-term {
+      color: #fff;
+    }
+  }
+
+  .date-right {
+    background: rgb(100, 148, 237);
+    height: $height-left;
     flex: 1;
-    margin-left: 48rpx;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: space-evenly;
-
-    .today-life-item {
-      width: 100%;
-      border-radius: 32rpx;
-      background: cornflowerblue;
-      text-align: center;
-      font-size: 14px;
-      color: white;
-      height: 80rpx;
-      line-height: 80rpx;
-    }
+    justify-content: space-around;
+    text-align: right;
+    margin: ($height-container - $height-left)/ 2 $margin-container-right-left ($height-container - $height-left)/ 2 0;
   }
 }
 
 .worker-img {
   width: 640rpx;
-  margin: 0 auto;
+  margin: 24rpx auto;
   height: 300rpx;
 }
 
-
-$beforeNumberFsize: 24px;
-
-.before-money-container {
-  margin: 24rpx;
+.expectation {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
-  background: rgba(245, 245, 246, .6);
-  font-size: 14px;
-  height: 96rpx;
-  line-height: 96rpx;
-  text-align: center;
-
-  .before-money-number {
-    font-size: $beforeNumberFsize;
-    margin: 0 4px;
-    color: red;
-  }
-}
-
-.before-week-container {
-  margin: 24rpx;
-  width: 100%;
-  background: rgba(245, 245, 246, .6);
-  font-size: 14px;
-  height: 96rpx;
-  line-height: 96rpx;
-  text-align: center;
-
-  .before-week-number {
-    font-size: $beforeNumberFsize;
-    margin: 0 4px;
-    color: red;
-  }
-}
-
-.before-holiday-container {
-  margin: 24rpx;
-  width: 100%;
-  background: rgba(245, 245, 246, .6);
-  font-size: 14px;
-  line-height: 96rpx;
-  text-align: center;
-
-  .before-holiday-number {
-    font-size: $beforeNumberFsize;
-    margin: 0 4px;
-    color: red;
-  }
-
-  .before-holiday-info-container {
-    color: #333;
-    font-size: 15px;
-  }
-
-  .before-holiday-info {
-    margin: 0 4px;
-  }
-}
-
-.index-about {
-  font-size: 12px;
-  text-decoration: underline;
-  color: rgb(90, 88, 88);
-  margin: 50px auto 50px auto;
-  cursor: pointer;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
 }

@@ -8,9 +8,7 @@
   >
     {{ cancelButtonText }}
   </view>
-  <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{
-    title
-  }}</view>
+  <view wx:if="{{ title }}" class="van-picker__title van-ellipsis">{{ title }}</view>
   <view
     class="van-picker__confirm"
     hover-class="van-picker__confirm--hover"

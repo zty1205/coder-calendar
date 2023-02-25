@@ -39,16 +39,16 @@
     transform: scale(0) translate(0, -10%) rotateY(0);
   }
   20% {
-    transform: scale(.25) translate(-10%, -20%) rotateY(360deg);
+    transform: scale(0.25) translate(-10%, -20%) rotateY(360deg);
   }
   40% {
-    transform: scale(.5) translate(-20%, -30%) rotateY(1080deg);
+    transform: scale(0.5) translate(-20%, -30%) rotateY(1080deg);
   }
   60% {
     transform: scale(1.2) translate(-30%, -40%) rotateY(1440deg);
   }
   80% {
-    transform: scale(.5) translate(-40%, -50%) rotateY(1800deg);
+    transform: scale(0.5) translate(-40%, -50%) rotateY(1800deg);
   }
   100% {
     transform: scale(1) translate(-50%, -60%) rotateY(2160deg);
@@ -57,19 +57,19 @@
 
 @keyframes foodRotateAni {
   0% {
-    transform: scale(.1) translate(-500%, -700%) rotateY(0);
+    transform: scale(0.1) translate(-500%, -700%) rotateY(0);
   }
   20% {
-    transform: scale(.25) translate(-10%, -20%) rotateY(360deg);
+    transform: scale(0.25) translate(-10%, -20%) rotateY(360deg);
   }
   40% {
-    transform: scale(.5) translate(-20%, -30%) rotateY(1080deg);
+    transform: scale(0.5) translate(-20%, -30%) rotateY(1080deg);
   }
   60% {
     transform: scale(1.2) translate(-30%, -40%) rotateY(1440deg);
   }
   80% {
-    transform: scale(.5) translate(-40%, -50%) rotateY(1800deg);
+    transform: scale(0.5) translate(-40%, -50%) rotateY(1800deg);
   }
   100% {
     transform: scale(1) translate(-50%, -60%) rotateY(2160deg);
@@ -131,7 +131,7 @@ $card-distance: 90px;
     .lottery-img {
       width: 128px;
       height: 128px;
-      opacity: .8;
+      opacity: 0.8;
       border-radius: 100%;
     }
 
@@ -158,7 +158,7 @@ $card-distance: 90px;
       position: absolute;
       transform-origin: center center;
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
-      opacity: .8;
+      opacity: 0.8;
     }
 
     .lottery-card-0 {
@@ -212,7 +212,7 @@ $card-distance: 90px;
 
   .lottery-roll {
     position: relative;
-    opacity: .7;
+    opacity: 0.7;
     top: 20px;
 
     .lottery-roll-card {
@@ -244,10 +244,7 @@ $card-distance: 90px;
       animation: jumpKf 2s infinite linear;
     }
   }
-
 }
-
-
 
 .lottery-current {
   .lottery-current-people {
@@ -281,7 +278,7 @@ $card-distance: 90px;
       height: 50px;
       cursor: pointer;
       border-radius: 8px;
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }

@@ -12,9 +12,7 @@
   <view class="van-empty__description">
     <slot name="description"></slot>
   </view>
-  <view class="van-empty__description">
-    {{ description }}
-  </view>
+  <view class="van-empty__description">{{ description }}</view>
 
   <view class="van-empty__bottom">
     <slot></slot>

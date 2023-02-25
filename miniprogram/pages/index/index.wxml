@@ -1,71 +1,72 @@
 <wxs module="util">
-  function getStatusName(status) {
-    if (status === '1') return '休'
-    if (status === '2') return '班'
-    return ''
-  }
-  function formatMoney(money) {
-    return Math.floor(money * 100) / 100
-  }
-  module.exports = {
-    getStatusName: getStatusName,
-    formatMoney: formatMoney
-  }
+  function getStatusName(status) { if (status === '1') return '休' if (status === '2') return '班' return '' } function
+  formatMoney(money) { return Math.floor(money * 100) / 100 } module.exports = { getStatusName: getStatusName,
+  formatMoney: formatMoney }
 </wxs>
+
 <view class="container">
-  <view class="time-container">
-    <view class="time-today time-today-{{status}}" bindtap="handleClickDay">
-      <view class="time-status">{{ util.getStatusName(status) }}</view>
-      <view class="time-number">{{day}}</view>
-      <view class="time-term">{{term || lunarDay}}</view>
+  <view class="date-container">
+    <view class="date-left date-left-{{curDateInfo.status}}" bindtap="handleClickDay">
+      <view class="date-status">{{ util.getStatusName(curDateInfo.status) }}</view>
+      <view class="date-number">{{curDateInfo.day}}</view>
+      <view class="date-term">{{curDateInfo.term || curDateInfo.lunarDay}}</view>
     </view>
-    <view class="time-desc">
-      <view class="time-desc-item">阳历：{{year}}-{{mouth}}-{{day}}</view>
-      <view class="time-desc-item">阴历：{{lunarMouth}}{{lunarDay}}</view>
-      <view class="time-desc-item">周度：星期{{weekName}}</view>
+    <view class="date-right">
+      <view class="time-desc-item">太阳历：{{curDateInfo.year}}-{{curDateInfo.mouth}}-{{curDateInfo.day}}</view>
+      <view class="time-desc-item">太阴历：{{curDateInfo.lunarMouth}}{{curDateInfo.lunarDay}}</view>
+      <view class="time-desc-item">七曜：星期{{curDateInfo.weekName}}</view>
     </view>
   </view>
 
-  <van-calendar show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:close="onCalendarClose" bind:confirm="onCalendarConfirm" />
+  <van-calendar
+    show="{{ showCalendar }}"
+    min-date="{{ minDate }}"
+    max-date="{{ maxDate }}"
+    bind:close="onCalendarClose"
+    bind:confirm="onCalendarConfirm"
+  />
 
-  <view class="today-container">
-    <view class="today-money">
-      <view bindtap="handleSetSalary">
-        <view class="today-money-title">今日搬砖工钱</view>
-        <view wx:if="{{salary}}" class="today-money-number">{{ util.formatMoney(currentSalary) }}元</view>
-        <view wx:else class="to-set">去设置</view>
-      </view>
-    </view>
-    <view class="today-life">
-      <view class="today-life-item today-life-meal" bindtap="handleTodayEat">吃点啥</view>
-      <view class="today-life-item today-life-night" bindtap="handleTodayDo">回家做点啥</view>
-    </view>
+  <view class="expectation">
+    <date-item
+      did="{{ dayMoney.did }}"
+      show="{{ dayMoney.show }}"
+      content="{{ dayMoney.content }}"
+      title="{{ dayMoney.title }}"
+      term="{{ dayMoney.term }}"
+      link="{{ dayMoney.link }}"
+      index="{{0}}"
+    ></date-item>
+
+    <date-item
+      did="{{ monthMoney.did }}"
+      show="{{ monthMoney.show }}"
+      content="{{ monthMoney.content }}"
+      title="{{ monthMoney.title }}"
+      term="{{ monthMoney.term }}"
+      link="{{ monthMoney.link }}"
+      index="{{1}}"
+    ></date-item>
+
+    <date-item
+      did="{{ salary.did }}"
+      show="{{ salary.show }}"
+      content="{{ salary.content }}"
+      title="{{ salary.title }}"
+      term="{{ salary.term }}"
+      link="{{ salary.link }}"
+      index="{{2}}"
+    ></date-item>
+
+    <date-item
+      did="{{ hoilday.did }}"
+      show="{{ hoilday.show }}"
+      content="{{ hoilday.content }}"
+      title="{{ hoilday.title }}"
+      term="{{ hoilday.term }}"
+      link="{{ hoilday.link }}"
+      index="{{3}}"
+    ></date-item>
   </view>
 
   <image class="worker-img" src="/static/worker-bg.png" mode="aspectFit" />
-
-  <view class="before-money-container">
-    <view wx:if="{{salaryDay}}">
-      <text wx:if="{{beforeMoneyDay === 0}}">今天发工资，哦耶！！！</text>
-      <text wx:else>距离发工资还有<text class="before-money-number">{{ beforeMoneyDay }}</text>天</text>
-    </view>
-    <view wx:else class="to-set" bindtap="handleSetSalary">去设置工资日</view>
-  </view>
-  <view class="before-week-container">
-    <text wx:if="{{beforeWeek === 0}}">{{ status == 2 ? '一个"可恶"的调休日！！！' : '周末了，开心！！！'}}</text>
-    <text wx:else>距离周末还有<text class="before-week-number">{{ beforeWeek }}</text>天</text>
-  </view>
-  <view class="before-holiday-container">
-    <text wx:if="{{beforeHoilday === -1}}">今日没有节假日了，害！</text>
-    <text wx:elif="{{beforeHoilday === 0}}">过个{{nextHoilday.name}}，万岁！！！</text>
-    <view wx:else>
-      <view>距离下一个节假日还有<text class="before-holiday-number">{{beforeHoilday}}</text>天</view>
-      <view class="before-holiday-info-container">
-        <text class="before-holiday-info">{{nextHoilday.date}}</text>
-        <text class="before-holiday-info">{{nextHoilday.name}}</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="index-about" bindtap="handleAbout">关于小程序</view>
 </view>

@@ -1,41 +1,72 @@
 import hoildayList from '../../data/holidays';
-import mouthData from '../../data/mouth';
-import { getUserSalaryInfo, comingSoon, getSalaryDay } from '../../utils/common';
+import monthData from '../../data/month';
+import { comingSoon, getSalaryDay, getSalary } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
-import { getCountDays, getCountStamp, stampToDay, getYearRange } from '../../utils/util';
+import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
 let timer: NodeJS.Timer;
 
 Page({
   data: {
     showCalendar: false,
+    // 当前的日期 默认今天
     curDate: new Date(),
+    // 今年的最大和最小
     minDate: 0,
     maxDate: 0,
-    weekName: '',
-    lunarMouth: '',
-    lunarDay: '',
-    term: '',
-    status: '',
-    year: '',
-    mouth: '',
-    day: '',
-    beforeMoneyDay: 0,
-    beforeWeek: 0,
-    beforeHoilday: 0,
-    nextHoilday: {
-      name: '',
-      date: ''
+    curDateInfo: {
+      // 星期几
+      weekName: '',
+      // 阴历
+      lunarMonth: '',
+      lunarDay: '',
+      // 节日
+      term: '',
+      // 0 正常 1 调休 2 补班
+      status: '0',
+      year: '',
+      month: '',
+      day: ''
     },
-    salary: 0,
-    currentSalary: 0,
-    salaryDay: 0
+    dayMoney: {
+      did: 'day-money',
+      show: false,
+      content: '',
+      title: '今日搬砖工钱',
+      term: '工钱',
+      link: '/pages/user/index'
+    },
+    monthMoney: {
+      did: 'month-money',
+      show: false,
+      content: '',
+      title: '本月打工工资',
+      term: '小钱钱',
+      link: '/pages/user/index'
+    },
+    salary: {
+      did: 'salary',
+      show: false,
+      content: '',
+      title: '',
+      term: '',
+      link: ''
+    },
+    hoilday: {
+      did: 'hoilday',
+      show: false,
+      content: '',
+      title: '',
+      term: '',
+      link: ''
+    }
   },
   onLoad() {
     this.setCurDate();
   },
   onShow() {
     this.init();
+    console.log('dat = ', this.data);
   },
   onUnload() {
     this.clearTick();
@@ -51,98 +82,57 @@ Page({
   },
   init() {
     this.setDay();
-    this.setBeforeWeek();
-    this.setBeforeHoilday();
-    this.setBeforeMoney();
+    this.setMoney();
+    this.setHoilday();
     this.setSalary();
   },
   setDay() {
     const now = this.data.curDate;
-    const nowMouth = now.getMonth() + 1;
+    const nowMonth = now.getMonth() + 1;
     const nowDay = now.getDate();
 
-    if (String(nowMouth) === this.data.mouth && String(nowDay) === this.data.day) return;
-    const nowMouthData = mouthData[String(nowMouth) as '1'].find((x) => x.day === String(nowDay));
+    // 日期没变 页面onshow时
+    if (String(nowMonth) === this.data.curDateInfo.month && String(nowDay) === this.data.curDateInfo.day) return;
 
+    const nowDataInfo = monthData[String(nowMonth) as '1'].find((x) => x.day === String(nowDay));
+
+    console.log('di = ', nowDataInfo);
     this.setData({
-      weekName: nowMouthData?.weekName,
-      lunarMouth: nowMouthData?.lunarMouth,
-      lunarDay: nowMouthData?.lunarDay,
-      term: nowMouthData?.term,
-      status: nowMouthData?.status,
-      year: nowMouthData?.year,
-      mouth: nowMouthData?.mouth,
-      day: nowMouthData?.day,
-      currentSalary: 0
+      curDateInfo: {
+        weekName: nowDataInfo?.weekName as string,
+        lunarMonth: nowDataInfo?.lunarMonth as string,
+        lunarDay: nowDataInfo?.lunarDay as string,
+        term: nowDataInfo?.term as string,
+        status: nowDataInfo?.status as string,
+        year: nowDataInfo?.year as string,
+        month: nowDataInfo?.month as string,
+        day: nowDataInfo?.day as string
+      }
     });
   },
-  setBeforeMoney() {
-    const { year, mouth, day } = this.data;
-    const nowDate = new Date(`${year}/${mouth}/${day}`);
-    const salaryDay = getSalaryDay();
-
-    const afterMoneyMouth = +mouth + (salaryDay < +day ? 1 : 0);
-    const afterMoneyYear = +year + (afterMoneyMouth > 12 ? 1 : 0);
-    const afterMoneyDate = new Date(`${afterMoneyYear}/${afterMoneyMouth}/${salaryDay}`);
-
-    const beforeMoneyDay = stampToDay(afterMoneyDate.getTime() - nowDate.getTime());
-    this.setData({
-      beforeMoneyDay: beforeMoneyDay
-    });
-  },
-  setBeforeWeek() {
-    const nowDate = new Date(`${this.data.year}/${this.data.mouth}/${this.data.day}`);
-    const nDay = nowDate.getDay(); // 0-6
-    const beforeWeek = nDay === 0 || nDay === 6 ? 0 : 6 - nDay;
-    this.setData({
-      beforeWeek: beforeWeek
-    });
-  },
-  setBeforeHoilday() {
-    const nowDate = new Date(`${this.data.year}/${this.data.mouth}/${this.data.day}`);
-
-    const hoilday = hoildayList.find((x) => {
-      return new Date(x.date) >= nowDate;
-    });
-
-    if (hoilday) {
-      const beforeHoilday = stampToDay(new Date(hoilday.date).getTime() - nowDate.getTime());
-      const nextHoilday = {
-        name: hoilday.name,
-        date: hoilday.date
-      };
-      this.setData({ beforeHoilday, nextHoilday });
-    } else {
-      this.setData({ beforeHoilday: -1 });
-    }
-  },
-  setSalary() {
+  setMoney() {
     // 计算时薪 按24小时计算
-    const { salary, salaryDay } = getUserSalaryInfo();
-    this.setData({
-      salary: salary || 0,
-      salaryDay: salaryDay || 0
-    });
-    this.calcSalary();
-  },
-  calcSalary() {
-    const salary = this.data.salary;
+    const salary = getSalary();
     if (!salary) return;
     const date = new Date();
+    // 这个月有几天
     const dates = getCountDays(date);
 
     // 按月计算 平均日薪
     const avg = salary / dates;
-    // // 已经过去的天数
-    // 今天已经过去的时间，时间戳
+    // 已经过去的天数
+    const overDay = date.getDate() - 1;
+    // 今天0点起算 已经过去的时间，时间戳
     const overSeconds = getCountStamp(date) / 1000;
     // 豪秒薪
-    const secondsSalary = avg / DAY_SECONDS;
-    const currentSalary = secondsSalary * overSeconds;
+    const secondsMoney = avg / DAY_SECONDS;
+    const dayMoney = secondsMoney * overSeconds;
+    const monthMoney = overDay * avg + dayMoney;
     this.setData({
-      currentSalary: currentSalary
+      'dayMoney.content': dayMoney,
+      'monthMoney.content': monthMoney
     });
-    this.tick(secondsSalary);
+    // this.tick(secondsMoney);
   },
   tick(secondsSalary: number) {
     this.clearTick();
@@ -154,6 +144,76 @@ Page({
   },
   clearTick() {
     clearInterval(timer);
+  },
+  setSalary() {
+    const { year, month, day } = this.data.curDateInfo;
+    const nowDate = new Date(`${year}/${month}/${day}`);
+    const salaryDay = getSalaryDay();
+
+    const salaryInfo = {
+      did: 'salary',
+      show: false,
+      content: '',
+      title: '',
+      term: '工资日',
+      link: '/pages/user/index'
+    };
+
+    if (salaryDay) {
+      const afterMoneymonth = +month + (salaryDay < +day ? 1 : 0);
+      const afterMoneyYear = +year + (afterMoneymonth > 12 ? 1 : 0);
+      const afterMoneyDate = new Date(`${afterMoneyYear}/${afterMoneymonth}/${salaryDay}`);
+      const leftDay = stampToDay(afterMoneyDate.getTime() - nowDate.getTime());
+
+      salaryInfo.show = true;
+      if (leftDay === 0) {
+        salaryInfo.content = '发钱';
+        salaryInfo.title = `今天是个好日子！！！`;
+      } else {
+        salaryInfo.content = String(leftDay);
+        salaryInfo.title = `距离 ${formatMonthday(afterMoneyDate)} 还有几天`;
+      }
+    }
+
+    this.setData({
+      salary: salaryInfo
+    });
+  },
+  setHoilday() {
+    const nowDate = new Date(
+      `${this.data.curDateInfo.year}/${this.data.curDateInfo.month}/${this.data.curDateInfo.day}`
+    );
+
+    const hoildayInfo = {
+      did: 'hoilday',
+      show: false,
+      content: '',
+      title: '',
+      term: '',
+      link: ''
+    };
+
+    const hoilday = hoildayList.find((x) => {
+      return new Date(x.date) >= nowDate;
+    });
+
+    if (hoilday) {
+      const hoildayDate = new Date(hoilday.date);
+      const leftDay = stampToDay(hoildayDate.getTime() - nowDate.getTime());
+
+      hoildayInfo.show = true;
+      if (leftDay === 0) {
+        hoildayInfo.content = '过节';
+        hoildayInfo.title = `今天是 ${hoilday.name} 节哦！`;
+        hoildayInfo.term = '节假日';
+      } else {
+        hoildayInfo.content = String(leftDay);
+        hoildayInfo.title = `距离 ${formatMonthday(hoildayDate)} 还有几天`;
+        hoildayInfo.term = hoilday.name;
+      }
+    }
+
+    this.setData({ hoilday: hoildayInfo });
   },
   handleClickDay() {
     this.setData({
@@ -185,11 +245,6 @@ Page({
   handleSetSalary() {
     wx.navigateTo({
       url: '/pages/user/index'
-    });
-  },
-  handleAbout() {
-    wx.navigateTo({
-      url: '/pages_about/about/index'
     });
   }
 });

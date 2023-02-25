@@ -9,10 +9,6 @@ Component({
     hPrice: String,
     lPrice: String
   },
-  data: {
-
-  },
-  methods: {
-
-  }
-})
+  data: {},
+  methods: {}
+});

@@ -9,8 +9,6 @@
   </view>
 
   <view class="van-calendar__weekdays">
-    <view wx:for="{{ weekdays }}" wx:key="index" class="van-calendar__weekday">
-      {{ item }}
-    </view>
+    <view wx:for="{{ weekdays }}" wx:key="index" class="van-calendar__weekday">{{ item }}</view>
   </view>
 </view>

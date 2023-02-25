@@ -6,10 +6,7 @@
   style="{{ wrapperStyle }}"
   bind:tap="onClick"
 >
-  <view
-    class="{{ utils.bem('slider__bar') }}"
-    style="{{ barStyle }}; {{ style({ backgroundColor: activeColor }) }}"
-  >
+  <view class="{{ utils.bem('slider__bar') }}" style="{{ barStyle }}; {{ style({ backgroundColor: activeColor }) }}">
     <view
       wx:if="{{ range }}"
       class="{{ utils.bem('slider__button-wrapper-left') }}"
@@ -19,14 +16,8 @@
       bind:touchend="onTouchEnd"
       bind:touchcancel="onTouchEnd"
     >
-      <slot
-        wx:if="{{ useButtonSlot }}"
-        name="left-button"
-      />
-      <view
-        wx:else
-        class="{{ utils.bem('slider__button') }}"
-      />
+      <slot wx:if="{{ useButtonSlot }}" name="left-button" />
+      <view wx:else class="{{ utils.bem('slider__button') }}" />
     </view>
     <view
       wx:if="{{ range }}"
@@ -37,14 +28,8 @@
       bind:touchend="onTouchEnd"
       bind:touchcancel="onTouchEnd"
     >
-      <slot
-        wx:if="{{ useButtonSlot }}"
-        name="right-button"
-      />
-      <view
-        wx:else
-        class="{{ utils.bem('slider__button') }}"
-      />
+      <slot wx:if="{{ useButtonSlot }}" name="right-button" />
+      <view wx:else class="{{ utils.bem('slider__button') }}" />
     </view>
 
     <view
@@ -55,14 +40,8 @@
       bind:touchend="onTouchEnd"
       bind:touchcancel="onTouchEnd"
     >
-      <slot
-        wx:if="{{ useButtonSlot }}"
-        name="button"
-      />
-      <view
-        wx:else
-        class="{{ utils.bem('slider__button') }}"
-      />
+      <slot wx:if="{{ useButtonSlot }}" name="button" />
+      <view wx:else class="{{ utils.bem('slider__button') }}" />
     </view>
   </view>
 </view>

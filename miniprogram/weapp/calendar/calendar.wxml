@@ -10,11 +10,7 @@
     <slot name="title" slot="title"></slot>
   </header>
 
-  <scroll-view
-    class="van-calendar__body"
-    scroll-y
-    scroll-into-view="{{ scrollIntoView }}"
-  >
+  <scroll-view class="van-calendar__body" scroll-y scroll-into-view="{{ scrollIntoView }}">
     <month
       wx:for="{{ computed.getMonths(minDate, maxDate) }}"
       wx:key="index"
@@ -38,15 +34,11 @@
     />
   </scroll-view>
 
-  <view
-    class="{{ utils.bem('calendar__footer', { safeAreaInsetBottom }) }}"
-  >
+  <view class="{{ utils.bem('calendar__footer', { safeAreaInsetBottom }) }}">
     <slot name="footer"></slot>
   </view>
 
-  <view
-    class="{{ utils.bem('calendar__footer', { safeAreaInsetBottom }) }}"
-  >
+  <view class="{{ utils.bem('calendar__footer', { safeAreaInsetBottom }) }}">
     <van-button
       wx:if="{{ showConfirm }}"
       round
@@ -58,11 +50,7 @@
       nativeType="text"
       bind:click="onConfirm"
     >
-      {{
-        computed.getButtonDisabled(type, currentDate)
-          ? confirmDisabledText
-          : confirmText
-      }}
+      {{ computed.getButtonDisabled(type, currentDate) ? confirmDisabledText : confirmText }}
     </van-button>
   </view>
 </view>

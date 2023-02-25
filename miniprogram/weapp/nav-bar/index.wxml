@@ -10,18 +10,15 @@
   <view class="van-nav-bar__content">
     <view class="van-nav-bar__left" bind:tap="onClickLeft">
       <block wx:if="{{ leftArrow || leftText }}">
-        <van-icon
-          wx:if="{{ leftArrow }}"
-          size="16px"
-          name="arrow-left"
-          custom-class="van-nav-bar__arrow"
-        />
+        <van-icon wx:if="{{ leftArrow }}" size="16px" name="arrow-left" custom-class="van-nav-bar__arrow" />
         <view
           wx:if="{{ leftText }}"
           class="van-nav-bar__text"
           hover-class="van-nav-bar__text--hover"
           hover-stay-time="70"
-        >{{ leftText }}</view>
+        >
+          {{ leftText }}
+        </view>
       </block>
       <slot wx:else name="left" />
     </view>
@@ -35,7 +32,9 @@
         class="van-nav-bar__text"
         hover-class="van-nav-bar__text--hover"
         hover-stay-time="70"
-      >{{ rightText }}</view>
+      >
+        {{ rightText }}
+      </view>
       <slot wx:else name="right" />
     </view>
   </view>

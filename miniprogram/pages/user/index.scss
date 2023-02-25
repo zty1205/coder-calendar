@@ -12,12 +12,11 @@
       min-width: 6.2em;
       max-width: 6.2em;
       margin-right: 12px;
-      color: var(--field-label-color,#646566);
+      color: var(--field-label-color, #646566);
     }
     .van-cell__value {
       text-align: left;
-      color: var(--field-input-text-color,#323233);
+      color: var(--field-input-text-color, #323233);
     }
   }
-  
 }

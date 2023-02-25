@@ -20,10 +20,7 @@
   </view>
 
   <slot wx:if="{{ useSlot }}" />
-  <view
-    wx:elif="{{ message }}"
-    class="{{ utils.bem('dialog__message', [theme, messageAlign, { hasTitle: title }]) }}"
-  >
+  <view wx:elif="{{ message }}" class="{{ utils.bem('dialog__message', [theme, messageAlign, { hasTitle: title }]) }}">
     <text class="van-dialog__message-text">{{ message }}</text>
   </view>
 
@@ -46,7 +43,6 @@
       loading="{{ loading.confirm }}"
       custom-class="van-dialog__confirm"
       custom-style="color: {{ confirmButtonColor }}"
-
       open-type="{{ confirmButtonOpenType }}"
       lang="{{ lang }}"
       business-id="{{ businessId }}"
@@ -56,7 +52,6 @@
       send-message-img="{{ sendMessageImg }}"
       show-message-card="{{ showMessageCard }}"
       app-parameter="{{ appParameter }}"
-
       bind:click="onConfirm"
       bindgetuserinfo="onGetUserInfo"
       bindcontact="onContact"
@@ -88,7 +83,6 @@
       loading="{{ loading.confirm }}"
       custom-class="van-dialog__confirm"
       custom-style="color: {{ confirmButtonColor }}"
-
       open-type="{{ confirmButtonOpenType }}"
       lang="{{ lang }}"
       business-id="{{ businessId }}"
@@ -98,7 +92,6 @@
       send-message-img="{{ sendMessageImg }}"
       show-message-card="{{ showMessageCard }}"
       app-parameter="{{ appParameter }}"
-
       bind:click="onConfirm"
       bindgetuserinfo="onGetUserInfo"
       bindcontact="onContact"

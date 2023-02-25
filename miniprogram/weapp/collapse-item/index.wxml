@@ -17,28 +17,13 @@
     hover-class="van-cell--hover"
     bind:click="onClick"
   >
-    <slot
-      name="title"
-      slot="title"
-    />
-    <slot
-      name="icon"
-      slot="icon"
-    />
+    <slot name="title" slot="title" />
+    <slot name="icon" slot="icon" />
     <slot name="value" />
-    <slot
-      name="right-icon"
-      slot="right-icon"
-    />
+    <slot name="right-icon" slot="right-icon" />
   </van-cell>
-  <view
-    class="{{ utils.bem('collapse-item__wrapper') }}"
-    style="height: 0;"
-    animation="{{ animation }}"
-  >
-    <view
-      class="van-collapse-item__content content-class"
-    >
+  <view class="{{ utils.bem('collapse-item__wrapper') }}" style="height: 0" animation="{{ animation }}">
+    <view class="van-collapse-item__content content-class">
       <slot />
     </view>
   </view>

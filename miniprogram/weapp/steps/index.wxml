@@ -33,22 +33,14 @@
       </view>
       <view
         wx:if="{{ index !== steps.length - 1 }}"
-        class="van-step__line" style="{{ 'background-color: ' + (index < active ? activeColor : inactiveColor) }}"
+        class="van-step__line"
+        style="{{ 'background-color: ' + (index < active ? activeColor : inactiveColor) }}"
       />
     </view>
   </view>
 </view>
 
 <wxs module="status">
-function get(index, active) {
-  if (index < active) {
-    return 'finish';
-  } else if (index === active) {
-    return 'process';
-  }
-
-  return 'inactive';
-}
-
-module.exports = get;
+  function get(index, active) { if (index < active) { return 'finish'; } else if (index === active) { return 'process';
+  } return 'inactive'; } module.exports = get;
 </wxs>

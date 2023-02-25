@@ -1,0 +1,67 @@
+$height-description: 120;
+$padding-description: 0 12rpx;
+$background-color-cell: #f5f5f6;
+$color-cell-number: #ff0000b8;
+
+.date-item {
+  width: 320rpx;
+  height: 320rpx;
+  box-sizing: border-box;
+  border-radius: 16rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid $background-color-cell;
+  margin-bottom: 20rpx;
+
+  .item-content {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    background: $background-color-cell;
+    color: $color-cell-number;
+  }
+  .item-content-day-money {
+    font-size: 36px;
+  }
+  .item-content-month-money {
+    font-size: 28px;
+    font-weight: 540;
+  }
+
+  .item-description {
+    height: $height-description * 1rpx;
+    line-height: $height-description * 1rpx;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .item-description-title {
+    padding: $padding-description;
+    height: $height-description / 2 * 1rpx;
+    line-height: $height-description / 2 * 1rpx;
+  }
+
+  .item-description-text {
+    padding: $padding-description;
+    height: ($height-description / 2 - 12) * 1rpx;
+    margin-bottom: 12rpx;
+    display: flex;
+    align-items: center;
+
+    .item-description-text-icon {
+      height: 36rpx;
+      width: 36rpx;
+    }
+
+    .item-description-text-title {
+      font-size: 12px;
+      margin-left: 12rpx;
+    }
+  }
+}

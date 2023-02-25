@@ -1,10 +1,7 @@
 <wxs src="../wxs/utils.wxs" module="utils" />
 <wxs src="../wxs/style.wxs" module="style" />
 
-<view
-  class="{{ utils.bem('rate') }} custom-class"
-  bind:touchmove="onTouchMove"
->
+<view class="{{ utils.bem('rate') }} custom-class" bind:touchmove="onTouchMove">
   <view
     class="{{ utils.bem('rate__item') }}"
     wx:for="{{ innerCountArray }}"

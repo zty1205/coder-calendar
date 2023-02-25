@@ -1,3 +1,5 @@
+import mouth from '../data/month';
+
 function formatNumber(n: number) {
   const s = n.toString();
   return s[1] ? s : '0' + s;
@@ -12,6 +14,13 @@ export function formatTime(date: Date) {
   const second = date.getSeconds();
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':');
+}
+
+export function formatMonthday(date: Date) {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  return `${month}/${day}`;
 }
 
 export function getCountDays(date: Date): number {
@@ -32,12 +41,12 @@ export function getCountStamp(date: Date): number {
   return d0.getTime() - d1.getTime();
 }
 
-export function getYearRange(date: Date): { minDate: Date, maxDate: Date } {
-  const year = date.getFullYear()
+export function getYearRange(date: Date): { minDate: Date; maxDate: Date } {
+  const year = date.getFullYear();
   return {
     minDate: new Date(`${year}/1/1 00:00:00`),
-    maxDate: new Date(`${year}/12/31 23:59:59`),
-  }
+    maxDate: new Date(`${year}/12/31 23:59:59`)
+  };
 }
 
 export function stampToDay(n: number): number {

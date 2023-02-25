@@ -4,11 +4,7 @@
   z-index="{{ zIndex }}"
   custom-style="{{ mask ? '' : 'background-color: transparent;' }}"
 />
-<van-transition
-  show="{{ show }}"
-  custom-style="z-index: {{ zIndex }}"
-  custom-class="van-toast__container"
->
+<van-transition show="{{ show }}" custom-style="z-index: {{ zIndex }}" custom-class="van-toast__container">
   <view
     class="van-toast van-toast--{{ (type === 'text' || type === 'html') ? 'text' : 'icon' }} van-toast--{{ position }}"
     catch:touchmove="noop"

@@ -6,12 +6,7 @@
     class="van-loading__spinner van-loading__spinner--{{ type }}"
     style="{{ computed.spinnerStyle({ color, size }) }}"
   >
-    <view
-      wx:if="{{ type === 'spinner' }}"
-      wx:for="{{ array12 }}"
-      wx:key="index"
-      class="van-loading__dot"
-    />
+    <view wx:if="{{ type === 'spinner' }}" wx:for="{{ array12 }}" wx:key="index" class="van-loading__dot" />
   </view>
   <view class="van-loading__text" style="{{ computed.textStyle({ textSize }) }}">
     <slot />

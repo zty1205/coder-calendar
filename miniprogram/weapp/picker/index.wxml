@@ -4,7 +4,7 @@
   <include wx:if="{{ toolbarPosition === 'top' }}" src="./toolbar.wxml" />
 
   <view wx:if="{{ loading }}" class="van-picker__loading">
-    <loading color="#1989fa"/>
+    <loading color="#1989fa" />
   </view>
 
   <view
@@ -27,10 +27,7 @@
       bind:change="onChange"
     />
     <view class="van-picker__mask" style="{{ computed.maskStyle({ itemHeight, visibleItemCount }) }}" />
-    <view
-      class="van-picker__frame van-hairline--top-bottom"
-      style="{{ computed.frameStyle({ itemHeight }) }}"
-    />
+    <view class="van-picker__frame van-hairline--top-bottom" style="{{ computed.frameStyle({ itemHeight }) }}" />
   </view>
 
   <include wx:if="{{ toolbarPosition === 'bottom' }}" src="./toolbar.wxml" />

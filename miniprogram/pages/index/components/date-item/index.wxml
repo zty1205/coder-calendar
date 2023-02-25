@@ -1,0 +1,15 @@
+<wxs module="util">
+  function formatMoney(money) { return isNaN(money) ? money : Math.floor(money * 100) / 100 } module.exports = {
+  formatMoney: formatMoney }
+</wxs>
+
+<view class="date-item">
+  <view class="item-content item-content-{{did}}">{{ util.formatMoney(content)}}</view>
+  <view class="item-description">
+    <view class="item-description-title">{{ title }}</view>
+    <view class="item-description-text">
+      <image class="item-description-text-icon" mode="aspectFit" src="/static/index/money.png"></image>
+      <view class="item-description-text-title">{{ term }}</view>
+    </view>
+  </view>
+</view>

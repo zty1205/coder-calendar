@@ -1,6 +1,6 @@
 export const STORAGE_KEY = {
   SALARY_DAY: 'ZTY_DGH_SALARY_DAY',
-  SALARY: 'ZTY_DGH_SALARY',
+  SALARY: 'ZTY_DGH_SALARY'
 };
 
-export const DAY_SECONDS = 86400
+export const DAY_SECONDS = 86400;
