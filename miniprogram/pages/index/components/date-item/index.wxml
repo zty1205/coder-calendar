@@ -1,14 +1,20 @@
 <wxs module="util">
-  function formatMoney(money) { return isNaN(money) ? money : Math.floor(money * 100) / 100 } module.exports = {
-  formatMoney: formatMoney }
+  function formatMoney(money) { return isNaN(money) ? money : Math.floor(money * 100) / 100 };
+  module.exports = {
+    formatMoney: formatMoney
+  }
 </wxs>
 
-<view class="date-item">
-  <view class="item-content item-content-{{did}}">{{ util.formatMoney(content)}}</view>
+<view class="date-item {{ show ? 'date-item-shadow' : '' }}" bindtap="handleSet">
+  <view wx:if="{{show}}" class="item-content item-content-{{did}}">{{ util.formatMoney(content)}}</view>
+  <view wx:else class="item-content item-content-set">去设置</view>
   <view class="item-description">
     <view class="item-description-title">{{ title }}</view>
     <view class="item-description-text">
-      <image class="item-description-text-icon" mode="aspectFit" src="/static/index/money.png"></image>
+      <image wx:if="{{ did === 'day-money' }}" class="item-description-text-icon" mode="aspectFit" src="/static/index/day_money.png"></image>
+      <image wx:elif="{{ did === 'month-money' }}" class="item-description-text-icon" mode="aspectFit" src="/static/index/month_money.png"></image>
+      <image wx:elif="{{ did === 'salary' }}" class="item-description-text-icon" mode="aspectFit" src="/static/index/salary.png"></image>
+      <image wx:else class="item-description-text-icon" mode="aspectFit" src="/static/index/hoilday.png"></image>
       <view class="item-description-text-title">{{ term }}</view>
     </view>
   </view>

@@ -15,7 +15,7 @@
   }
 }
 
-$border-radius-container: 16rpx;
+$border-radius-container: 10px;
 $height-container: 320rpx;
 $height-left: 240rpx;
 $margin-container-right-left: 36rpx;
@@ -26,7 +26,7 @@ $color-cell-number: #ff0000b8;
 .date-container {
   box-sizing: border-box;
   border: 1px solid rgba(100, 148, 237, 0.712);
-  background: rgba(100, 148, 237);
+  background: #6494ed;
   border-radius: $border-radius-container;
   display: flex;
   width: 100%;
@@ -59,7 +59,7 @@ $color-cell-number: #ff0000b8;
     .date-number {
       font-size: 44px;
       transform: translateY(-10rpx);
-      color: #556;
+      color: #3d3d46c7;
     }
 
     .date-term {
@@ -120,8 +120,9 @@ $color-cell-number: #ff0000b8;
 
 .worker-img {
   width: 640rpx;
-  margin: 24rpx auto;
+  margin: -10rpx auto 24rpx auto;
   height: 300rpx;
+  position: relative;
 }
 
 .expectation {
@@ -129,5 +130,5 @@ $color-cell-number: #ff0000b8;
   justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
-  margin-top: 20rpx;
+  margin-top: 40rpx;
 }

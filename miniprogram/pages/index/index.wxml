@@ -33,7 +33,7 @@
       content="{{ dayMoney.content }}"
       title="{{ dayMoney.title }}"
       term="{{ dayMoney.term }}"
-      link="{{ dayMoney.link }}"
+      path="{{ dayMoney.path }}"
       index="{{0}}"
     ></date-item>
 
@@ -43,7 +43,7 @@
       content="{{ monthMoney.content }}"
       title="{{ monthMoney.title }}"
       term="{{ monthMoney.term }}"
-      link="{{ monthMoney.link }}"
+      path="{{ monthMoney.path }}"
       index="{{1}}"
     ></date-item>
 
@@ -53,7 +53,7 @@
       content="{{ salary.content }}"
       title="{{ salary.title }}"
       term="{{ salary.term }}"
-      link="{{ salary.link }}"
+      path="{{ salary.path }}"
       index="{{2}}"
     ></date-item>
 
@@ -63,7 +63,7 @@
       content="{{ hoilday.content }}"
       title="{{ hoilday.title }}"
       term="{{ hoilday.term }}"
-      link="{{ hoilday.link }}"
+      path="{{ hoilday.path }}"
       index="{{3}}"
     ></date-item>
   </view>

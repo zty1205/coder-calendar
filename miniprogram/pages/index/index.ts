@@ -34,7 +34,7 @@ Page({
       content: '',
       title: '今日搬砖工钱',
       term: '工钱',
-      link: '/pages/user/index'
+      path: '/pages/user/index'
     },
     monthMoney: {
       did: 'month-money',
@@ -42,7 +42,7 @@ Page({
       content: '',
       title: '本月打工工资',
       term: '小钱钱',
-      link: '/pages/user/index'
+      path: '/pages/user/index'
     },
     salary: {
       did: 'salary',
@@ -50,15 +50,15 @@ Page({
       content: '',
       title: '',
       term: '',
-      link: ''
+      path: ''
     },
     hoilday: {
       did: 'hoilday',
-      show: false,
+      show: true,
       content: '',
       title: '',
       term: '',
-      link: ''
+      path: ''
     }
   },
   onLoad() {
@@ -66,7 +66,6 @@ Page({
   },
   onShow() {
     this.init();
-    console.log('dat = ', this.data);
   },
   onUnload() {
     this.clearTick();
@@ -96,7 +95,6 @@ Page({
 
     const nowDataInfo = monthData[String(nowMonth) as '1'].find((x) => x.day === String(nowDay));
 
-    console.log('di = ', nowDataInfo);
     this.setData({
       curDateInfo: {
         weekName: nowDataInfo?.weekName as string,
@@ -113,7 +111,13 @@ Page({
   setMoney() {
     // 计算时薪 按24小时计算
     const salary = getSalary();
-    if (!salary) return;
+    if (!salary){ 
+      this.setData({
+        'dayMoney.show': false,
+        'monthMoney.show': false
+      });
+      return 
+    };
     const date = new Date();
     // 这个月有几天
     const dates = getCountDays(date);
@@ -130,15 +134,18 @@ Page({
     const monthMoney = overDay * avg + dayMoney;
     this.setData({
       'dayMoney.content': dayMoney,
-      'monthMoney.content': monthMoney
+      'dayMoney.show': true,
+      'monthMoney.content': monthMoney,
+      'monthMoney.show': true
     });
-    // this.tick(secondsMoney);
+    this.tick(secondsMoney);
   },
   tick(secondsSalary: number) {
     this.clearTick();
     timer = setInterval(() => {
       this.setData({
-        currentSalary: this.data.currentSalary + secondsSalary
+        'dayMoney.content': this.data.dayMoney.content + secondsSalary,
+        'monthMoney.content':  this.data.monthMoney.content + secondsSalary,
       });
     }, 1000);
   },
@@ -156,7 +163,7 @@ Page({
       content: '',
       title: '',
       term: '工资日',
-      link: '/pages/user/index'
+      path: '/pages/user/index'
     };
 
     if (salaryDay) {
@@ -186,11 +193,11 @@ Page({
 
     const hoildayInfo = {
       did: 'hoilday',
-      show: false,
+      show: true,
       content: '',
       title: '',
       term: '',
-      link: ''
+      path: ''
     };
 
     const hoilday = hoildayList.find((x) => {
@@ -241,10 +248,5 @@ Page({
   },
   handleTodayDo() {
     comingSoon();
-  },
-  handleSetSalary() {
-    wx.navigateTo({
-      url: '/pages/user/index'
-    });
   }
 });

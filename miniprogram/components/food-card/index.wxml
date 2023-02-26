@@ -1,6 +1,7 @@
 <wxs module="util">
-  function getCateName(cate) { var obj = ["谷", "谷", "薯", "炸", "神"] return obj[cate] } module.exports = {
-  getCateName: getCateName }
+  function getCateName(cate) { var obj = ["谷", "谷", "薯", "炸", "神"]; return obj[cate] } module.exports = {
+    getCateName: getCateName
+  }
 </wxs>
 <view class="food-card food-card-{{category}}">
   <image class="food-card-bg" src="/static/card-0.jpg"></image>

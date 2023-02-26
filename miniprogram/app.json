@@ -16,9 +16,9 @@
 
   "tabBar": {
     "color": "black",
-    "selectedColor": "#1296db",
+    "selectedColor": "#6494ed",
     "borderStyle": "black",
-    "backgroundColor": "#ffffff",
+    "backgroundColor": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
