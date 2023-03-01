@@ -8,7 +8,10 @@
   "compileType": "miniprogram",
   "projectname": "打工魂",
   "setting": {
-    "useCompilerPlugins": ["typescript", "sass"],
+    "useCompilerPlugins": [
+      "typescript",
+      "sass"
+    ],
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],

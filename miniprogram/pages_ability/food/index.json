@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "干饭人",
   "usingComponents": {
-    "food-card": "../../components/food-card/index"
+    "food-card": "../components/food-card/index"
   }
 }

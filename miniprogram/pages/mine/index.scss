@@ -1,0 +1,90 @@
+.page {
+  background: #f5f5f5;
+  width: 100%;
+  min-height: 100vh;
+}
+.user-container {
+  margin-bottom: 12px;
+  background: #fff;
+  display: flex;
+  padding: 12px 20px;
+  .user-avatar {
+    width: 160rpx;
+    .avatar {
+      width: 120rpx;
+      height: 120rpx;
+      border-radius: 100%;
+    }
+  }
+  .user-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+
+    .user-name {
+      font-size: 16px;
+    }
+    .user-desc {
+      font-size: 14px;
+      color: #ccc;
+    }
+  }
+}
+
+.ability-container {
+  height: 100px;
+  background: #fff;
+  margin-bottom: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 25%;
+
+    .item-icon {
+      width: 80rpx;
+      height: 80rpx;
+    }
+    .item-text {
+      font-size: 12px;
+      margin-top: 4px;
+    }
+  }
+}
+
+.block {
+  height: 100rpx;
+  padding: 0 12px;
+  background: #fff;
+
+  .cell {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  
+    .cell-icon {
+      width: 36rpx;
+      height: 36rpx;
+    }
+    .cell-title {
+      flex: 1;
+      text-align: left;
+      margin: 12px;
+    }
+    .cell-right {
+      width: 36rpx;
+      height: 36rpx;
+    }
+  }
+  .cell-border {
+    box-sizing: border-box;
+    border-bottom: 1px solid #e6e6e6;
+  }
+}

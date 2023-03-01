@@ -4,14 +4,14 @@
   }
 </wxs>
 <view class="food-card food-card-{{category}}">
-  <image class="food-card-bg" src="/static/card-0.jpg"></image>
+  <image class="food-card-bg" src="/static/food/card-0.jpg"></image>
   <view class="food-card-box">
     <view class="food-card-header">
       <view class="food-card-header--name">{{name}}</view>
       <view class="food-card-header--category">{{ util.getCateName(category) }}</view>
     </view>
     <view class="food-card-level">
-      <image wx:for="{{level}}" wx:key="index" src="/static/star.jpeg" class="food-card-level--star"></image>
+      <image wx:for="{{level}}" wx:key="index" src="/static/food/star.jpeg" class="food-card-level--star"></image>
     </view>
     <image class="food-card-img" src="{{img}}" mode="aspectFit" />
     <view class="food-card-desc">{{desc}}</view>

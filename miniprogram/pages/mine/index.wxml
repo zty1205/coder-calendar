@@ -1,0 +1,39 @@
+<view class="page">
+  <view class="user-container">
+    <view class="user-avatar">
+      <image class="avatar" src="/static/avatar.jpeg" mode="aspectFit"></image>
+    </view>
+    <view class="user-info">
+      <view class="user-name">
+        张飞
+      </view>
+      <view class="user-desc">打工仔闪亮登场</view>
+    </view>
+  </view>
+
+  <view class="ability-container">
+    <view class="item" bindtap="handleEat">
+      <image class="item-icon" src="/static/mine/play.png" mode="aspectFit"></image>
+      <view class="item-text">吃点东西</view>
+    </view>
+    <view class="item" bindtap="handleDo">
+      <image class="item-icon" src="/static/mine/do.png" mode="aspectFit"></image>
+      <view class="item-text">做点什么</view>
+    </view>
+  </view>
+
+  <view class="block" bindtap="handleDiary">
+    <view class="cell cell-border">
+      <image class="cell-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
+      <view class="cell-title">打工日记</view>
+      <image class="cell-right" src="/static/right.png" mode="aspectFit"></image>
+    </view>
+  </view>
+  <view class="block" bindtap="handleAbout">
+    <view class="cell">
+      <image class="cell-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
+      <view class="cell-title">关于小程序</view>
+      <image class="cell-right" src="/static/right.png" mode="aspectFit"></image>
+    </view>
+  </view>
+</view>
