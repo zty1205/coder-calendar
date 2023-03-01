@@ -175,7 +175,7 @@ Page({
       salaryInfo.show = true;
       if (leftDay === 0) {
         salaryInfo.content = '发钱';
-        salaryInfo.title = `今天是个好日子！！！`;
+        salaryInfo.title = `今天是个好日子！`;
       } else {
         salaryInfo.content = String(leftDay);
         salaryInfo.title = `距离 ${formatMonthday(afterMoneyDate)} 还有几天`;
@@ -241,12 +241,7 @@ Page({
       this.init();
     });
   },
-  handleTodayEat() {
-    wx.navigateTo({
-      url: '/pages/food/index'
-    });
-  },
-  handleTodayDo() {
-    comingSoon();
+  onShareAppMessage() {
+
   }
 });
