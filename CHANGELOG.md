@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/zty1205/coder-calendar/compare/v0.3.0...v0.4.0) (2023-03-01)
+
+
+### Features
+
+* 新增我的页面 ([49576c0](https://github.com/zty1205/coder-calendar/commit/49576c03f4b0294e0bda36a30ec2d68a27dbdf74))
+
+
+### Bug Fixes
+
+* 首页卡片样式问题 ([49a80c3](https://github.com/zty1205/coder-calendar/commit/49a80c372bb150225d26043fb3cdf653fb466489))
+
 ## [0.3.0](https://github.com/zty1205/coder-calendar/compare/v0.2.0...v0.3.0) (2023-02-28)
 
 
