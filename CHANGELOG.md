@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.4.1](https://github.com/zty1205/coder-calendar/compare/v0.4.0...v0.4.1) (2023-03-04)
+
+
+### Features
+
+* 时间数据更新 ([352e2c0](https://github.com/zty1205/coder-calendar/commit/352e2c0c2ff808612c7575fd272cd4b3a21ce0c4))
+* 首页添加假期，补班余额卡片 ([864634a](https://github.com/zty1205/coder-calendar/commit/864634aafc904c031cbcdf946a4efe9fb9856c59))
+
 ## [0.4.0](https://github.com/zty1205/coder-calendar/compare/v0.3.0...v0.4.0) (2023-03-01)
 
 
