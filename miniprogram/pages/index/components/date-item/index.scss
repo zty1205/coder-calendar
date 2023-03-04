@@ -35,14 +35,14 @@ $color-cell-number: #ff0000b8;
     cursor: pointer;
   }
 
-  .item-content-day-money {
+  .item-content-day-money, .item-content-hoilday-balance {
     font-size: 32px;
     background: radial-gradient(at left top, #6494ed6b, #f5f5f6, #fff);
     // background: radial-gradient(at right bottom, #6494ed6b, #f5f5f6, #fff);
     // background: repeating-radial-gradient(circle at 50% 50%, #f5f5f6 , #f5f5f6 20px,#fff 20px, #fff 40px, #6494ed6b 40px, #6494ed6b 60px);
   }
 
-  .item-content-month-money {
+  .item-content-month-money, .item-content-lieu-balance {
     font-size: 28px;
     font-weight: 540;
     background: radial-gradient(at right top, #6494ed6b, #f5f5f6, #fff);

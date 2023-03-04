@@ -1,72 +1,27 @@
-<wxs module="util">
-  function getStatusName(status) { if (status === '1') return '休' if (status === '2') return '班' return '' } function
-  formatMoney(money) { return Math.floor(money * 100) / 100 } module.exports = { getStatusName: getStatusName,
-  formatMoney: formatMoney }
-</wxs>
-
+<wxs src="./index.wxs" module="util"></wxs>
 <view class="container">
   <view class="date-container">
-    <view class="date-left date-left-{{curDateInfo.status}}" bindtap="handleClickDay">
-      <view class="date-status">{{ util.getStatusName(curDateInfo.status) }}</view>
-      <view class="date-number">{{curDateInfo.day}}</view>
-      <view class="date-term">{{curDateInfo.term || curDateInfo.lunarDay}}</view>
+    <view class="date-left date-left-{{curDateInfo.s}}" bindtap="handleClickDay">
+      <view class="date-status">{{ util.getStatusName(curDateInfo.s) }}</view>
+      <view class="date-number">{{curDateInfo.d}}</view>
+      <view class="date-term">{{curDateInfo.t || curDateInfo.ld}}</view>
     </view>
     <view class="date-right">
-      <view class="time-desc-item">太阳历：{{curDateInfo.year}}-{{curDateInfo.mouth}}-{{curDateInfo.day}}</view>
-      <view class="time-desc-item">太阴历：{{curDateInfo.lunarMouth}}{{curDateInfo.lunarDay}}</view>
-      <view class="time-desc-item">七曜：星期{{curDateInfo.weekName}}</view>
+      <view class="time-desc-item">
+        太阳历：{{curDateInfo.y}}-{{curDateInfo.m}}-{{curDateInfo.d}}
+      </view>
+      <view class="time-desc-item">太阴历：{{curDateInfo.lm}}{{curDateInfo.ld}}</view>
+      <view class="time-desc-item">七曜：星期{{curDateInfo.cd}}</view>
     </view>
   </view>
-
-  <van-calendar
-    show="{{ showCalendar }}"
-    min-date="{{ minDate }}"
-    max-date="{{ maxDate }}"
-    bind:close="onCalendarClose"
-    bind:confirm="onCalendarConfirm"
-  />
-
+  <van-calendar show="{{ showCalendar }}" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:close="onCalendarClose" bind:confirm="onCalendarConfirm" />
   <view class="expectation">
-    <date-item
-      did="{{ dayMoney.did }}"
-      show="{{ dayMoney.show }}"
-      content="{{ dayMoney.content }}"
-      title="{{ dayMoney.title }}"
-      term="{{ dayMoney.term }}"
-      path="{{ dayMoney.path }}"
-      index="{{0}}"
-    ></date-item>
-
-    <date-item
-      did="{{ monthMoney.did }}"
-      show="{{ monthMoney.show }}"
-      content="{{ monthMoney.content }}"
-      title="{{ monthMoney.title }}"
-      term="{{ monthMoney.term }}"
-      path="{{ monthMoney.path }}"
-      index="{{1}}"
-    ></date-item>
-
-    <date-item
-      did="{{ salary.did }}"
-      show="{{ salary.show }}"
-      content="{{ salary.content }}"
-      title="{{ salary.title }}"
-      term="{{ salary.term }}"
-      path="{{ salary.path }}"
-      index="{{2}}"
-    ></date-item>
-
-    <date-item
-      did="{{ hoilday.did }}"
-      show="{{ hoilday.show }}"
-      content="{{ hoilday.content }}"
-      title="{{ hoilday.title }}"
-      term="{{ hoilday.term }}"
-      path="{{ hoilday.path }}"
-      index="{{3}}"
-    ></date-item>
+    <date-item did="{{ dayMoney.did }}" show="{{ dayMoney.show }}" content="{{ dayMoney.content }}" title="{{ dayMoney.title }}" term="{{ dayMoney.term }}" path="{{ dayMoney.path }}" index="{{0}}"></date-item>
+    <date-item did="{{ monthMoney.did }}" show="{{ monthMoney.show }}" content="{{ monthMoney.content }}" title="{{ monthMoney.title }}" term="{{ monthMoney.term }}" path="{{ monthMoney.path }}" index="{{1}}"></date-item>
+    <date-item did="{{ salary.did }}" show="{{ salary.show }}" content="{{ salary.content }}" title="{{ salary.title }}" term="{{ salary.term }}" path="{{ salary.path }}" index="{{2}}"></date-item>
+    <date-item did="{{ hoilday.did }}" show="{{ hoilday.show }}" content="{{ hoilday.content }}" title="{{ hoilday.title }}" term="{{ hoilday.term }}" path="{{ hoilday.path }}" index="{{3}}"></date-item>
+    <date-item did="{{ hoildayBalance.did }}" show="{{ hoildayBalance.show }}" content="{{ hoildayBalance.content }}" title="{{ hoildayBalance.title }}" term="{{ hoildayBalance.term }}" path="{{ hoildayBalance.path }}" index="{{4}}"></date-item>
+    <date-item did="{{ lieuBalance.did }}" show="{{ lieuBalance.show }}" content="{{ lieuBalance.content }}" title="{{ lieuBalance.title }}" term="{{ lieuBalance.term }}" path="{{ lieuBalance.path }}" index="{{5}}"></date-item>
   </view>
-
   <image class="worker-img" src="/static/worker-bg.png" mode="aspectFit" />
 </view>

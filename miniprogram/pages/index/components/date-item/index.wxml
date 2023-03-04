@@ -1,12 +1,7 @@
-<wxs module="util">
-  function formatMoney(money) { return isNaN(money) ? money : Math.floor(money * 100) / 100 };
-  module.exports = {
-    formatMoney: formatMoney
-  }
-</wxs>
+<wxs src="./index.wxs" module="util"></wxs>
 
 <view class="date-item {{ show ? 'date-item-shadow' : '' }}" bindtap="handleSet">
-  <view wx:if="{{show}}" class="item-content item-content-{{did}}">{{ util.formatMoney(content)}}</view>
+  <view wx:if="{{show}}" class="item-content item-content-{{did}}">{{ util.formatMoney(content, did)}}</view>
   <view wx:else class="item-content item-content-set">去设置</view>
   <view class="item-description">
     <view class="item-description-title">{{ title }}</view>

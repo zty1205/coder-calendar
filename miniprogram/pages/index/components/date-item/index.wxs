@@ -1,0 +1,8 @@
+function formatMoney(text, did) {
+  var reg = getRegExp('money')
+  if (reg.test(did)) return Number(text).toFixed(2)
+  return text
+}
+module.exports = {
+  formatMoney: formatMoney
+};

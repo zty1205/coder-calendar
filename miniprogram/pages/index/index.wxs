@@ -1,0 +1,12 @@
+function getStatusName(status) {
+  if (status === '1') return '休';
+  if (status === '2') return '班';
+  return '';
+}
+function formatMoney(money) {
+  return Math.floor(money * 100) / 100;
+}
+module.exports = {
+  getStatusName: getStatusName,
+  formatMoney: formatMoney
+};

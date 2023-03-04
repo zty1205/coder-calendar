@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "lint": "echo 'lint'",
-    "prettier": "prettier --write ./**/*.{js,ts,tsx,scss,css,json,vue,wxml}",
+    "prettier": "prettier --write ./**/*.{js,ts,tsx,scss,css,json,vue,wxs,wxml}",
     "prepare": "husky install",
     "commit": "cz",
     "changelog": "conventional-changelog -p angular -u -i CHANGELOG.md -s -r 0",

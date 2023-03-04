@@ -18,19 +18,19 @@ interface TimeItem {
   m: string;
   d: string;
   // 农历月日
-  lm: string;
-  ld: string;
+  lm?: string;
+  ld?: string;
   // 天干地支年月日
-  gy: string;
-  gm: string;
-  gd: string;
+  gy?: string;
+  gm?: string;
+  gd?: string;
   // 十二生肖年
-  an: string;
+  an?: string;
   // 星期
   cd: string;
   // 忌 宜
-  av: string;
-  st: string;
+  av?: string;
+  st?: string;
   // 放假1 补班2
   s: string;
   // 节假日

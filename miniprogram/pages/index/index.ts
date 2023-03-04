@@ -1,6 +1,8 @@
-import hoildayList from '../../data/holidays';
-import monthData from '../../data/month';
-import { comingSoon, getSalaryDay, getSalary } from '../../utils/common';
+import hoildayList from '../../data/hoildayList';
+import lieuList from '../../data/lieuList';
+import timeList from '../../data/timeList';
+
+import { getSalaryDay, getSalary } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
@@ -15,18 +17,21 @@ Page({
     minDate: 0,
     maxDate: 0,
     curDateInfo: {
-      // 星期几
-      weekName: '',
-      // 阴历
-      lunarMonth: '',
-      lunarDay: '',
-      // 节日
-      term: '',
-      // 0 正常 1 调休 2 补班
-      status: '0',
-      year: '',
-      month: '',
-      day: ''
+      y: '',
+      m: '',
+      d: '',
+      lm: '',
+      ld: '',
+      gy: '',
+      gm: '',
+      gd: '',
+      an: '',
+      cd: '',
+      av: '',
+      st: '',
+      s: '',
+      t: '',
+      hd: ''
     },
     dayMoney: {
       did: 'day-money',
@@ -59,6 +64,22 @@ Page({
       title: '',
       term: '',
       path: ''
+    },
+    hoildayBalance: {
+      did: 'hoilday-balance',
+      show: true,
+      content: '零蛋',
+      title: '今年还有多少节假日',
+      term: '假期余额',
+      path: ''
+    },
+    lieuBalance: {
+      did: 'lieu-balance',
+      show: true,
+      content: '零蛋',
+      title: '今年还要补多少班',
+      term: '补班余额',
+      path: ''
     }
   },
   onLoad() {
@@ -84,40 +105,32 @@ Page({
     this.setMoney();
     this.setHoilday();
     this.setSalary();
+    this.setLieu();
   },
   setDay() {
     const now = this.data.curDate;
-    const nowMonth = now.getMonth() + 1;
-    const nowDay = now.getDate();
+    const nowMonth = String(now.getMonth() + 1);
+    const nowDay = String(now.getDate());
 
     // 日期没变 页面onshow时
-    if (String(nowMonth) === this.data.curDateInfo.month && String(nowDay) === this.data.curDateInfo.day) return;
+    if (nowMonth === this.data.curDateInfo.m && nowDay === this.data.curDateInfo.d) return;
 
-    const nowDataInfo = monthData[String(nowMonth) as '1'].find((x) => x.day === String(nowDay));
+    const nowDataInfo = timeList.find((t) => t.m === nowMonth && t.d === nowDay);
 
     this.setData({
-      curDateInfo: {
-        weekName: nowDataInfo?.weekName as string,
-        lunarMonth: nowDataInfo?.lunarMonth as string,
-        lunarDay: nowDataInfo?.lunarDay as string,
-        term: nowDataInfo?.term as string,
-        status: nowDataInfo?.status as string,
-        year: nowDataInfo?.year as string,
-        month: nowDataInfo?.month as string,
-        day: nowDataInfo?.day as string
-      }
+      curDateInfo: nowDataInfo
     });
   },
   setMoney() {
     // 计算时薪 按24小时计算
     const salary = getSalary();
-    if (!salary){ 
+    if (!salary) {
       this.setData({
         'dayMoney.show': false,
         'monthMoney.show': false
       });
-      return 
-    };
+      return;
+    }
     const date = new Date();
     // 这个月有几天
     const dates = getCountDays(date);
@@ -145,7 +158,7 @@ Page({
     timer = setInterval(() => {
       this.setData({
         'dayMoney.content': this.data.dayMoney.content + secondsSalary,
-        'monthMoney.content':  this.data.monthMoney.content + secondsSalary,
+        'monthMoney.content': this.data.monthMoney.content + secondsSalary
       });
     }, 1000);
   },
@@ -153,8 +166,8 @@ Page({
     clearInterval(timer);
   },
   setSalary() {
-    const { year, month, day } = this.data.curDateInfo;
-    const nowDate = new Date(`${year}/${month}/${day}`);
+    const { y, m, d } = this.data.curDateInfo;
+    const nowDate = new Date(`${y}/${m}/${d}`);
     const salaryDay = getSalaryDay();
 
     const salaryInfo = {
@@ -162,13 +175,13 @@ Page({
       show: false,
       content: '',
       title: '',
-      term: '工资日',
-      path: '/pages/user/index'
+      path: '/pages/user/index',
+      term: ''
     };
 
     if (salaryDay) {
-      const afterMoneymonth = +month + (salaryDay < +day ? 1 : 0);
-      const afterMoneyYear = +year + (afterMoneymonth > 12 ? 1 : 0);
+      const afterMoneymonth = +m + (salaryDay < +d ? 1 : 0);
+      const afterMoneyYear = +y + (afterMoneymonth > 12 ? 1 : 0);
       const afterMoneyDate = new Date(`${afterMoneyYear}/${afterMoneymonth}/${salaryDay}`);
       const leftDay = stampToDay(afterMoneyDate.getTime() - nowDate.getTime());
 
@@ -178,8 +191,9 @@ Page({
         salaryInfo.title = `今天是个好日子！`;
       } else {
         salaryInfo.content = String(leftDay);
-        salaryInfo.title = `距离 ${formatMonthday(afterMoneyDate)} 还有几天`;
+        salaryInfo.title = `距离发工资还有几天`;
       }
+      salaryInfo.term = `工资日 ${formatMonthday(afterMoneyDate)}`
     }
 
     this.setData({
@@ -187,9 +201,7 @@ Page({
     });
   },
   setHoilday() {
-    const nowDate = new Date(
-      `${this.data.curDateInfo.year}/${this.data.curDateInfo.month}/${this.data.curDateInfo.day}`
-    );
+    const nowDate = new Date(`${this.data.curDateInfo.y}/${this.data.curDateInfo.m}/${this.data.curDateInfo.d}`);
 
     const hoildayInfo = {
       did: 'hoilday',
@@ -200,27 +212,39 @@ Page({
       path: ''
     };
 
-    const hoilday = hoildayList.find((x) => {
-      return new Date(x.date) >= nowDate;
+    const hoildayIndex = hoildayList.findIndex((x) => {
+      return new Date(`${x.y}/${x.m}/${x.d}`) >= nowDate;
     });
 
-    if (hoilday) {
-      const hoildayDate = new Date(hoilday.date);
+    const balance = hoildayIndex !== -1 ? String(hoildayList.length - hoildayIndex) : '零蛋'
+
+    if (hoildayIndex !== -1) {
+      const hoilday = hoildayList[hoildayIndex]
+      const hoildayDate = new Date(`${hoilday.y}/${hoilday.m}/${hoilday.d}`);
       const leftDay = stampToDay(hoildayDate.getTime() - nowDate.getTime());
 
-      hoildayInfo.show = true;
       if (leftDay === 0) {
         hoildayInfo.content = '过节';
-        hoildayInfo.title = `今天是 ${hoilday.name} 节哦！`;
+        hoildayInfo.title = `今天是 ${hoilday.t || hoilday.hd} 节哦！`;
         hoildayInfo.term = '节假日';
       } else {
         hoildayInfo.content = String(leftDay);
-        hoildayInfo.title = `距离 ${formatMonthday(hoildayDate)} 还有几天`;
-        hoildayInfo.term = hoilday.name;
+        hoildayInfo.title = `距离节假日还有几天`;
+        hoildayInfo.term = `${hoilday.t} ${formatMonthday(hoildayDate)}`;
       }
     }
 
-    this.setData({ hoilday: hoildayInfo });
+    this.setData({ hoilday: hoildayInfo, 'hoildayBalance.content': balance });
+  },
+  setLieu() {
+    const nowDate = new Date(`${this.data.curDateInfo.y}/${this.data.curDateInfo.m}/${this.data.curDateInfo.d}`);
+    const lieuIndex = lieuList.findIndex((x) => {
+      return new Date(`${x.y}/${x.m}/${x.d}`) >= nowDate;
+    });
+    const balance = lieuIndex !== -1 ? String(lieuList.length - lieuIndex) : '零蛋'
+    this.setData({
+      'lieuBalance.content': balance
+    })
   },
   handleClickDay() {
     this.setData({
@@ -241,7 +265,5 @@ Page({
       this.init();
     });
   },
-  onShareAppMessage() {
-
-  }
+  onShareAppMessage() {}
 });
