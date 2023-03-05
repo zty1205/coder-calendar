@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/zty1205/coder-calendar/compare/v0.4.1...v0.5.0) (2023-03-05)
+
+
+### Features
+
+* 添加全年假休页面 ([12bd6c5](https://github.com/zty1205/coder-calendar/commit/12bd6c530c1bf06e0f4dd4b4d8e72c1b0472041f))
+
 ### [0.4.1](https://github.com/zty1205/coder-calendar/compare/v0.4.0...v0.4.1) (2023-03-04)
 
 
