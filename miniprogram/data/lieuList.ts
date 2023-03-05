@@ -8,4 +8,15 @@ const lieuList: TimeItem[] = [
   { y: '2023', m: '10', d: '8', cd: '日', s: '2', t: '寒露', hd: '' }
 ];
 
+const lieuMap = new Map<string, TimeItem>()
+
+export function getLieuMap(): Map<string, TimeItem> {
+  if (lieuMap.size > 0) return lieuMap
+  return lieuList.reduce((map, h) => {
+    map.set(`${h.m}/${h.d}`, h);
+    return map;
+  }, lieuMap);
+}
+
+
 export default lieuList;

@@ -1,21 +1,40 @@
 {
-  "pages": ["pages/index/index", "pages/user/index", "pages/mine/index"],
+  "pages": [
+    "pages/index/index",
+    "pages/user/index",
+    "pages/mine/index"
+  ],
   "subPackages": [
     {
       "root": "pages_about/",
-      "pages": ["about/index", "version/index"],
+      "pages": [
+        "about/index",
+        "version/index"
+      ],
       "name": "pages_about"
     },
     {
       "root": "pages_ability/",
-      "pages": ["food/index"],
+      "pages": [
+        "food/index"
+      ],
       "name": "pages_ability"
+    },
+    {
+      "root": "pages_time/",
+      "pages": [
+        "calendar/index"
+      ],
+      "name": "pages_time"
     }
   ],
   "preloadRule": {
     "pages/index/index": {
       "network": "all",
-      "packages": ["pages_about"]
+      "packages": [
+        "pages_ability",
+        "pages_time"
+      ]
     }
   },
   "tabBar": {
@@ -45,7 +64,6 @@
     "navigationBarTextStyle": "black"
   },
   "lazyCodeLoading": "requiredComponents",
-  "style": "v2",
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "van-field": "./weapp/field/index",

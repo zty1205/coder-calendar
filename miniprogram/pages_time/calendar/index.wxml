@@ -1,0 +1,3 @@
+<view>
+  <van-calendar poppable="{{ false }}" show-confirm="{{ false }}" min-date="{{minDate}}" max-date="{{maxDate}}" show-title="{{false}}" formatter="{{ formatter }}" readonly="{{true}}"></van-calendar>
+</view>

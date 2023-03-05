@@ -1,0 +1,12 @@
+@import '../../var.scss';
+
+.calendar--lieu {
+  background: $color-lieu-red;
+  color: #fff;
+}
+
+.van-calendar__day--selected {
+  .van-calendar__selected-day {
+    background-color: $color-main-blue;
+  }
+}

@@ -4,7 +4,7 @@
   "setting": {
     "compileHotReLoad": true
   },
-  "libVersion": "2.29.1",
+  "libVersion": "2.30.2",
   "condition": {
     "miniprogram": {
       "list": [
@@ -25,6 +25,13 @@
         {
           "name": "我的",
           "pathName": "pages/mine/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages_time/calendar/index",
           "query": "",
           "launchMode": "default",
           "scene": null

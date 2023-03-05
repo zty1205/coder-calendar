@@ -71,7 +71,7 @@ Page({
       content: '零蛋',
       title: '今年还有多少节假日',
       term: '假期余额',
-      path: ''
+      path: '/pages_time/calendar/index'
     },
     lieuBalance: {
       did: 'lieu-balance',
@@ -79,7 +79,7 @@ Page({
       content: '零蛋',
       title: '今年还要补多少班',
       term: '补班余额',
-      path: ''
+      path: '/pages_time/calendar/index'
     }
   },
   onLoad() {
@@ -118,6 +118,7 @@ Page({
     const nowDataInfo = timeList.find((t) => t.m === nowMonth && t.d === nowDay);
 
     this.setData({
+      // @ts-ignore
       curDateInfo: nowDataInfo
     });
   },
@@ -209,7 +210,7 @@ Page({
       content: '',
       title: '',
       term: '',
-      path: ''
+      path: '/pages_time/calendar/index'
     };
 
     const hoildayIndex = hoildayList.findIndex((x) => {

@@ -27,4 +27,14 @@ const hoildayList: TimeItem[] = [
   { y: '2023', m: '10', d: '6', cd: '五', s: '1', t: '', hd: '国庆节' }
 ];
 
+const hoildayMap = new Map<string, TimeItem>()
+
+export function getHoildayMap(): Map<string, TimeItem> {
+  if (hoildayMap.size > 0) return hoildayMap
+  return hoildayList.reduce((map, h) => {
+    map.set(`${h.m}/${h.d}`, h);
+    return map;
+  }, hoildayMap);
+}
+
 export default hoildayList;
