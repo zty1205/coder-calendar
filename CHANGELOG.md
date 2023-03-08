@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.6.0](https://github.com/zty1205/coder-calendar/compare/v0.5.0...v0.6.0) (2023-03-08)
+
+
+### Features
+
+* 首页卡片缺省显示和性能优化 ([5e4c0fb](https://github.com/zty1205/coder-calendar/commit/5e4c0fb092e4b5f4a0bb0938efed709764c81682))
+* 新版用户信息界面 ([850ad20](https://github.com/zty1205/coder-calendar/commit/850ad2036f831272342c4490927ab134ea25862a))
+
 ## [0.5.0](https://github.com/zty1205/coder-calendar/compare/v0.4.1...v0.5.0) (2023-03-05)
 
 
