@@ -1,0 +1,6 @@
+function formatSalaryDay(num) {
+  return '每月' + (+num + 1) + '日'
+}
+module.exports = {
+  formatSalaryDay: formatSalaryDay
+}

@@ -1,55 +1,105 @@
-import { setSalary, setSalaryDay, getUserSalaryInfo } from '../../utils/common';
-import salaryDays from '../../data/salaryDays';
+import { getUserSync, saveUserSync } from '../../data/user';
 
 Page({
   data: {
-    salary: 0,
-    salaryDay: 0,
-    showSalaryDayPopup: false,
-    salaryDayColumns: salaryDays
+    avatarShow: 'width:200rpx;height:200rpx;margin:0 40rpx;',
+    avatarHidden: 'width:0;height:0;margin:0;',
+    user: {
+      name: '', // 昵称
+      desc: '', // desc 描述
+      sex: '', // 性别 0女1男
+      salary: '', // salary 工资
+      salaryDay: '' // 发薪日
+    },
+    salaryDayList: [
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+      '11',
+      '12',
+      '13',
+      '14',
+      '15',
+      '16',
+      '17',
+      '18',
+      '19',
+      '20',
+      '21',
+      '22',
+      '23',
+      '24',
+      '25',
+      '26',
+      '27'
+    ]
   },
   onLoad() {
-    this.getSalaryInfo();
+    this.getUser();
   },
-  getSalaryInfo() {
-    const { salary, salaryDay } = getUserSalaryInfo();
+  onReady() {
     this.setData({
-      salary: salary || 0,
-      salaryDay: salaryDay || 0
+      avatarShow: this.data.avatarShow + 'transition: all .8s;',
+      avatarHidden: this.data.avatarHidden + 'transition: all .8s;'
+    });
+    const res = wx.getStorageInfoSync();
+    console.log('res = ', res);
+  },
+  onNameInput(data: WxDomEvent<{ value: string }>) {
+    this.setData({
+      'user.name': data.detail.value
     });
   },
-  handleSalaryBlur(event: VantWeAppEvent<VantEventDetailObject>) {
-    this.handleSalaryConfirm(event);
-  },
-  handleSalaryConfirm(event: VantWeAppEvent<VantEventDetailObject>) {
-    const val = event.detail.value;
-    if (this.data.salary != val) {
-      this.setData({
-        salary: Number(val)
-      });
-      setSalary(Number(val));
-    }
-  },
-  handleSalaryDayClick() {
+  onDescInput(data: WxDomEvent<{ value: string }>) {
     this.setData({
-      showSalaryDayPopup: true
+      'user.desc': data.detail.value
     });
   },
-  handleSalaryDayCancel() {
+  onSexChange(data: WxDomEvent<{ value: string }>) {
     this.setData({
-      showSalaryDayPopup: false
+      'user.sex': data.detail.value
     });
   },
-  handleSalaryDayConfirm(event: VantWeAppEvent<VantEventDetailObject>) {
-    const val = event.detail.value;
-    if (this.data.salaryDay != val) {
-      this.setData({
-        salaryDay: Number(val)
-      });
-      setSalaryDay(Number(val));
-    }
+  onSalaryInput(data: WxDomEvent<{ value: string }>) {
+    const num = data.detail.value.replace(/[^\d]/g, '');
     this.setData({
-      showSalaryDayPopup: false
+      'user.salary': num
+    });
+    return num;
+  },
+  onSalaryDayChange(data: WxDomEvent<{ value: string }>) {
+    this.setData({
+      'user.salaryDay': data.detail.value
+    });
+  },
+  handleSave() {
+    const user = this.data.user;
+
+    saveUserSync({
+      name: user.name,
+      desc: user.desc,
+      sex: user.sex,
+      salary: user.salary ? Number(user.salary) : 0,
+      salaryDay: user.salaryDay ? Number(user.salaryDay) + 1 : 0
+    });
+  },
+  getUser() {
+    const user = getUserSync();
+    this.setData({
+      user: {
+        name: user.name,
+        desc: user.desc,
+        sex: user.sex,
+        salary: user.salary ? String(user.salary) : '',
+        salaryDay: user.salaryDay ? String(Number(user.salaryDay) - 1) : ''
+      }
     });
   }
 });

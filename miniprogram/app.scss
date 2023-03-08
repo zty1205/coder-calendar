@@ -1,4 +1,5 @@
-/**app.wxss**/
+@import './var.scss';
+
 .to-set {
   color: rgb(136, 136, 221);
   cursor: pointer;
@@ -13,4 +14,89 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.block {
+  width: 100%;
+  background-color: #fff;
+  margin-top: $margin-top-block;
+
+  .cell {
+    height: $height-cell;
+    display: flex;
+    margin: 0 $margin-cell;
+    box-sizing: border-box;
+    border-bottom: $border-cell;
+    align-items: center;
+    font-size: $font-size-cell;
+    font-family: $font-family-main;
+    background: #fff;
+    .cell-label {
+      margin-left: 16rpx;
+      width: $width-cell-label;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      color: $color-cell-label;
+    }
+    .cell-left-icon {
+      width: $height-cell-icon;
+      height: $height-cell-icon;
+    }
+    .cell-content {
+      color: $color-cell-content;
+      flex: 1;
+      margin-left: 10rpx;
+      margin-right: 20rpx;
+      height: 100%;
+      line-height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .cell-right-icon {
+      margin-right: 8rpx;
+      width: $height-cell-icon;
+      height: $height-cell-icon;
+    }
+
+    .cell-placeholder {
+      color: $color-cell-placeholder;
+    }
+
+    .cell-picker-inner {
+      display: flex;
+      align-items: center;
+      height: calc($height-cell - 1px);
+      min-width: 400rpx;
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+  .cell--large {
+    height: $height-cell--large;
+
+    .cell-picker-inner {
+      height: calc($height-cell--large - 1px);
+    }
+  }
+}
+
+.block-button {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0;
+  van-button {
+    width: 100%;
+    text-align: center;
+  }
+  button {
+    width: 80%;
+    border-radius: $border-radius-8;
+    overflow: hidden;
+    font-size: 16px;
+  }
 }

@@ -1,3 +1,30 @@
-$color-main-blue: blue;
+$color-main-blue: #6494ed;
 $color-lieu-red: #ee0a24;
 $color-hoilday-red: #ee0a241a;
+$color-border-main-blue: rgba(100, 148, 237, 0.7);
+$color-border-main: #f5f5f5;
+
+$font-family-main: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
+  'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+
+$height-avatar-large: 200rpx;
+$height-avatar: 160rpx;
+
+$background-color-main-gray: #f5f5f5;
+
+$margin-top-block: 16rpx;
+
+$border-radius-8: 16rpx;
+
+// cell
+$height-cell--large: 160rpx;
+$height-cell: 120rpx;
+$height-cell-icon--large: 48rpx;
+$height-cell-icon: 40rpx;
+$width-cell-label: 160rpx;
+$font-size-cell: 16px;
+$margin-cell: 20rpx;
+$border-cell: 1px solid $color-border-main;
+$color-cell-label: #777;
+$color-cell-content: #333;
+$color-cell-placeholder: #999;

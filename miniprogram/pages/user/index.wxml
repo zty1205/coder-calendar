@@ -1,26 +1,53 @@
-<!--pages/user/index.wxml-->
-<view class="container">
-  <view class="content">
-    <van-cell-group inset>
-      <van-field
-        label="工资"
-        type="number"
-        value="{{ salary }}"
-        placeholder="请输入工资"
-        bind:blur="handleSalaryBlur"
-        bind:confirm="handleSalaryConfirm"
-      />
-      <van-cell title="发薪日" value="{{salaryDay}}" bind:click="handleSalaryDayClick" />
-    </van-cell-group>
+<wxs src="./index.wxs" module="util" />
+<view class="page">
+  <view class="user-avatar" bindtap="handleSave">
+    <image style="{{ !user.sex || user.sex === '1' ? avatarShow : avatarHidden }}" class="avatar" src="/static/avatar-1.jpeg" mode="aspectFit">男</image>
+    <image style="{{ !user.sex || user.sex === '0' ? avatarShow : avatarHidden }}" class="avatar" src="/static/avatar-0.jpeg" mode="aspectFit">女</image>
   </view>
 
-  <van-popup show="{{ showSalaryDayPopup }}" round position="bottom" bind:close="onClose">
-    <van-picker
-      show-toolbar
-      title="发薪日"
-      columns="{{ salaryDayColumns }}"
-      bind:cancel="handleSalaryDayCancel"
-      bind:confirm="handleSalaryDayConfirm"
-    />
-  </van-popup>
+  <view class="user-info block">
+    <view class="cell cell--large">
+      <label class="cell-label" for="name">昵称：</label>
+      <input class="cell-content" value="{{user.name}}" bindinput="onNameInput" id="name" type="nickname" maxlength="8" placeholder-class="cell-placeholder" placeholder="请输入昵称" />
+    </view>
+
+    <view class="cell cell--large">
+      <label class="cell-label" for="desc">简介：</label>
+      <input class="cell-content" value="{{user.desc}}" bindinput="onDescInput" id="desc" type="text" maxlength="20" placeholder-class="cell-placeholder" placeholder="请输入简介" />
+    </view>
+
+    <view class="cell cell--large">
+      <label class="cell-label">性别：</label>
+      <radio-group class="cell-content" value="{{user.sex}}" bindchange="onSexChange">
+        <label class="radio">
+          <radio value="1" checked="{{user.sex === '1'}}" />男
+        </label>
+        <label class="radio">
+          <radio value="0" checked="{{user.sex === '0'}}" />女
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="cell cell--large">
+      <label class="cell-label" for="salary">工资：</label>
+      <input class="cell-content" value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="10" placeholder-class="cell-placeholder" placeholder="请输入工资" />
+    </view>
+
+    <view class="cell cell--large">
+      <label class="cell-label" for="salary-day">发薪日：</label>
+      <picker class="cell-content" id="salary-day" bindchange="onSalaryDayChange" range="{{salaryDayList}}">
+        <view wx:if="{{user.salaryDay}}" class="picker-inner">
+          {{ util.formatSalaryDay(user.salaryDay) }}
+        </view>
+        <view wx:else class="cell-placeholder cell-picker-inner">
+          请选择
+        </view>
+      </picker>
+      <image class="cell-right-icon" src="/static/right.png" mode="aspectFit" />
+    </view>
+  </view>
+
+  <view class="block-button">
+     <van-button type="primary" bindtap="handleSave">保  存</van-button>
+  </view>
 </view>

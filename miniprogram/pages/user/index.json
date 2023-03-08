@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "打工人",
-  "usingComponents": {}
+  "usingComponents": {
+    "van-button": "../../weapp/button/index"
+  }
 }
