@@ -64,14 +64,5 @@
     "navigationBarTextStyle": "black"
   },
   "lazyCodeLoading": "requiredComponents",
-  "sitemapLocation": "sitemap.json",
-  "usingComponents": {
-    "van-field": "./weapp/field/index",
-    "van-cell-group": "./weapp/cell-group/index",
-    "van-cell": "./weapp/cell/index",
-    "van-popup": "./weapp/popup/index",
-    "van-picker": "./weapp/picker/index",
-    "van-calendar": "./weapp/calendar/index",
-    "van-button": "./weapp/button/index"
-  }
+  "sitemapLocation": "sitemap.json"
 }

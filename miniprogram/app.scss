@@ -54,6 +54,13 @@
       display: flex;
       align-items: center;
     }
+    .cell-right-text {
+      font-size: $font-size-desc;
+      color: $color-cell-text;
+      margin: 0 4px 0 2px;
+      width: $width-cell-text;
+      text-align: right;
+    }
     .cell-right-icon {
       margin-right: 8rpx;
       width: $height-cell-icon;

@@ -83,12 +83,18 @@ Page({
     const user = this.data.user;
 
     saveUserSync({
-      name: user.name,
-      desc: user.desc,
+      name: user.name ? user.name.trim() : '',
+      desc: user.desc ? user.desc.trim() : '',
       sex: user.sex,
       salary: user.salary ? Number(user.salary) : 0,
       salaryDay: user.salaryDay ? Number(user.salaryDay) + 1 : 0
     });
+
+    wx.nextTick(() => {
+      wx.navigateBack({
+        delta: 1
+      })
+    })
   },
   getUser() {
     const user = getUserSync();

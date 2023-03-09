@@ -1,17 +1,21 @@
 <view class="page">
   <view class="user-container">
     <view class="user-avatar">
-      <image class="avatar" src="/static/avatar.jpeg" mode="aspectFit"></image>
+      <image wx:if="{{user.sex === '0'}}" class="avatar" src="/static/avatar-0.jpeg" mode="aspectFit"></image>
+      <image wx:elif="{{user.sex === '1'}}" class="avatar avatar-border" src="/static/avatar-1.jpeg" mode="aspectFit"></image>
+      <view wx:else="{{user.sex === '1'}}" class="avatar avatar-empty">
+        <image class="avatar-icon" src="/static/people_fill.png" mode="aspectFit"></image>
+      </view>
     </view>
     <view class="user-info">
-      <view class="user-name">
-        张飞
-      </view>
-      <view class="user-desc">打工仔闪亮登场</view>
+      <view class="user-name">{{ user.name }}</view>
+      <view class="user-desc">{{user.desc}}</view>
+    </view>
+    <view class="user-right" bindtap="handleUser">
+      <image class="right" src="/static/right.png" mode="aspectFit" />
     </view>
   </view>
-
-  <view class="ability-container">
+  <view class="ability-container block">
     <view class="item" bindtap="handleEat">
       <image class="item-icon" src="/static/mine/play.png" mode="aspectFit"></image>
       <view class="item-text">吃点东西</view>
@@ -21,19 +25,24 @@
       <view class="item-text">做点什么</view>
     </view>
   </view>
-
-  <view class="block" bindtap="handleDiary">
-    <view class="cell cell-border">
-      <image class="cell-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
-      <view class="cell-title">打工日记</view>
-      <image class="cell-right" src="/static/right.png" mode="aspectFit"></image>
+  <view class="block">
+    <view class="cell" bindtap="handleDiary">
+      <image class="cell-left-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
+      <view class="cell-content">关于小程序</view>
+      <view class="cell-right-text">
+       版本 0.7.0
+      </view>
+      <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
-  </view>
-  <view class="block" bindtap="handleAbout">
-    <view class="cell">
-      <image class="cell-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
-      <view class="cell-title">关于小程序</view>
-      <image class="cell-right" src="/static/right.png" mode="aspectFit"></image>
+    <view class="cell" bindtap="handleAbout">
+      <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
+      <view class="cell-content">帮助</view>
+      <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
+    </view>
+    <view class="cell" wx:if="{{cacheSize}}" bindtap="handleCache">
+      <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
+      <view class="cell-content">存储空间：{{ cacheSize }}</view>
+      <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
   </view>
 </view>

@@ -1,4 +1,3 @@
-import mouth from '../data/month';
 
 function formatNumber(n: number) {
   const s = n.toString();
@@ -88,4 +87,11 @@ export function getRandomByWeight<T extends { weight: number }>(list: T[]): T {
     console.warn('getRandomByWeight e = ', e);
     return list[0];
   }
+}
+
+export function formatSize(kb: number): string {
+  if (kb > 1000) {
+    return `${(kb/1024).toFixed(2)} MB`
+  }
+  return `${kb} KB`
 }

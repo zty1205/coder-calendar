@@ -43,3 +43,16 @@ export function comingSoon() {
     });
   });
 }
+
+export function wxConfirm(content: string): Promise<Boolean> {
+  return new Promise((resolve) => {
+    wx.showModal({
+      title: '确认',
+      content: content,
+      cancelText: "取消",
+      confirmText: '我知道了',
+      success: () => resolve(true),
+      fail: () => resolve(false)
+    });
+  });
+}

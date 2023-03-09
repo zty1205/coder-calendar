@@ -16,15 +16,20 @@ $margin-top-block: 16rpx;
 
 $border-radius-8: 16rpx;
 
+$font-size-desc: 14px;
+$font-size-main-16: 16px;
+
 // cell
 $height-cell--large: 160rpx;
 $height-cell: 120rpx;
 $height-cell-icon--large: 48rpx;
 $height-cell-icon: 40rpx;
 $width-cell-label: 160rpx;
-$font-size-cell: 16px;
+$width-cell-text: 140rpx;
+$font-size-cell: $font-size-main-16;
 $margin-cell: 20rpx;
 $border-cell: 1px solid $color-border-main;
 $color-cell-label: #777;
 $color-cell-content: #333;
+$color-cell-text: #999;
 $color-cell-placeholder: #999;
