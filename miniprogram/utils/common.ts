@@ -49,9 +49,15 @@ export function wxConfirm(content: string): Promise<Boolean> {
     wx.showModal({
       title: '确认',
       content: content,
-      cancelText: "取消",
+      cancelText: '取消',
       confirmText: '我知道了',
-      success: () => resolve(true),
+      success: (res) => {
+        if (res.confirm) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      },
       fail: () => resolve(false)
     });
   });

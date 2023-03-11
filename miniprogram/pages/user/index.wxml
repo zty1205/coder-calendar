@@ -1,6 +1,6 @@
 <wxs src="./index.wxs" module="util" />
 <view class="page">
-  <view class="user-avatar" bindtap="handleSave">
+  <view class="user-avatar">
     <image style="{{ !user.sex || user.sex === '1' ? avatarShow : avatarHidden }}" class="avatar" src="/static/avatar-1.jpeg" mode="aspectFit">男</image>
     <image style="{{ !user.sex || user.sex === '0' ? avatarShow : avatarHidden }}" class="avatar" src="/static/avatar-0.jpeg" mode="aspectFit">女</image>
   </view>

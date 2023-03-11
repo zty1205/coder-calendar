@@ -28,20 +28,21 @@
   <view class="block">
     <view class="cell" bindtap="handleDiary">
       <image class="cell-left-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
-      <view class="cell-content">关于小程序</view>
+      <view class="cell-content">关于程序</view>
       <view class="cell-right-text">
        版本 0.7.0
       </view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
-    <view class="cell" bindtap="handleAbout">
+    <view class="cell" bindtap="handleHelper">
       <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
-      <view class="cell-content">帮助</view>
+      <view class="cell-content">帮助文档</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
     <view class="cell" wx:if="{{cacheSize}}" bindtap="handleCache">
       <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
-      <view class="cell-content">存储空间：{{ cacheSize }}</view>
+      <view class="cell-content">存储空间</view>
+      <view class="cell-right-text">{{ cacheSize }}</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
   </view>

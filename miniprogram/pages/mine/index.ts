@@ -24,7 +24,7 @@ Page({
     const user = getUserSync();
     this.setData({
       user: {
-        name: user.name || `打工人${Math.floor(Math.random() * 10000)}号`,
+        name: user.name || `打工人996号`,
         desc: user.desc || '地表最强打工人',
         sex: user.sex
       }
@@ -32,10 +32,8 @@ Page({
   },
   getCacheSize() {
     const info = wx.getStorageInfoSync();
-
     const size = info.currentSize;
 
-    console.log('size = ', size, info.keys);
     this.setData({
       cacheSize: size && info.keys.length ? formatSize(size) : ''
     });
@@ -53,9 +51,9 @@ Page({
       url: '/pages_about/version/index'
     });
   },
-  handleAbout() {
+  handleHelper() {
     wx.navigateTo({
-      url: '/pages_about/about/index'
+      url: '/pages_about/helper/index'
     });
   },
   handleUser() {
