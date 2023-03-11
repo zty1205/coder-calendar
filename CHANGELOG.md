@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.7.1](https://github.com/zty1205/coder-calendar/compare/v0.7.0...v0.7.1) (2023-03-11)
+
+
+### Features
+
+* 更新帮助文档页面 ([9d8a9a9](https://github.com/zty1205/coder-calendar/commit/9d8a9a975714fd472143f0bfb1fdbd43bbb803fe))
+
 ## [0.7.0](https://github.com/zty1205/coder-calendar/compare/v0.6.0...v0.7.0) (2023-03-09)
 
 
