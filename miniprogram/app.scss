@@ -1,4 +1,4 @@
-@import './var.scss';
+@import './style/var.scss';
 
 .to-set {
   color: rgb(136, 136, 221);
@@ -106,4 +106,43 @@
     overflow: hidden;
     font-size: 16px;
   }
+}
+
+.card {
+  border-radius: $border-radius-8;
+  border: 1px solid $color-border-main;
+  margin: $margin-card;
+  .title {
+    font-size: $font-size-title;
+    margin-bottom: 14px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  .subtitle {
+    margin: $margin-card-subtitle;
+    color: $color-card-subtitle;
+    text-align: right;
+    font-size: $font-size-subtitle;
+  }
+  .item,
+  .item-right {
+    margin: $margin-card-item;
+    font-size: $font-size-desc;
+  }
+  .item-right {
+    text-align: right;
+  }
+  .item-formula {
+    margin: $margin-card-item-formula;
+    font-size: 15px;
+    color: $color-card-item-formula;
+  }
+  .text-important {
+    color: black;
+    font-weight: 600;
+  }
+}
+
+.card-no-border {
+  border: none !important;
 }

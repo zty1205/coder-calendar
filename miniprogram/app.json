@@ -8,7 +8,7 @@
     {
       "root": "pages_about/",
       "pages": [
-        "about/index",
+        "helper/index",
         "version/index"
       ],
       "name": "pages_about"

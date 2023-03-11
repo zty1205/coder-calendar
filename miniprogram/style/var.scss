@@ -1,8 +1,11 @@
+$color-red-main: #ee0a24;
+$color-red-main-alpha: #ee0a24aa;
 $color-main-blue: #6494ed;
-$color-lieu-red: #ee0a24;
+$color-lieu-red: $color-red-main;
 $color-hoilday-red: #ee0a241a;
 $color-border-main-blue: rgba(100, 148, 237, 0.7);
 $color-border-main: #f5f5f5;
+
 
 $font-family-main: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
   'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
@@ -18,6 +21,8 @@ $border-radius-8: 16rpx;
 
 $font-size-desc: 14px;
 $font-size-main-16: 16px;
+$font-size-title: 20px;
+$font-size-subtitle: 15x;
 
 // cell
 $height-cell--large: 160rpx;
@@ -33,3 +38,11 @@ $color-cell-label: #777;
 $color-cell-content: #333;
 $color-cell-text: #999;
 $color-cell-placeholder: #999;
+
+// card
+$margin-card: 20rpx;
+$margin-card-subtitle:  8px 10px  14px 10px;
+$margin-card-item:  8px 10px;
+$margin-card-item-formula:  12px 10px;
+$color-card-subtitle: #777;
+$color-card-item-formula: $color-red-main-alpha;

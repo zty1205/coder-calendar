@@ -1,0 +1,33 @@
+<view class="container">
+  <view class="card">
+    <view class="title">首页</view>
+    <view class="subtitle">打工赚钱数日子</view>
+    <view class="item">1. 点击顶部日历横幅左侧：切换日期</view>
+    <view class="item">2. 点击顶部日历横幅右侧：万年历</view>
+    <view class="item">3. 点击横幅下的任一卡片都可进入相应页面</view>
+    <view class="item item-formula">4. 工钱计算：月工资 / 本月时间 * 今日（本月）过去的时间，所得结果取取两位小数</view>
+    <view class="item item-formula">5. 工钱计算：下一个工资日 - 页面选择的日期，所得结果取整。</view>
+    <view class="item  item-formula">6. 节假日计算：按今年国家的法定节假日当天 - 页面选择的日期，所得结果取整。</view>
+    <view class="item  item-formula">7. 假补余额：按今年国家的法定节假日安排 - 页面选择的日期，所得结果取整。</view>
+  </view>
+  <view class="card">
+    <view class="title">干饭人</view>
+    <view class="subtitle">唯有干饭解千愁</view>
+    <view class="item">1. 点击上下移动的卡片即可抽取卡牌</view>
+    <view class="item">2. 星级攻守等不代表任何含义</view>
+    <view class="item">
+      3. 卡组中有且只有唯一的一张
+      <text class="text-important">神之卡</text>
+    </view>
+  </view>
+  <view class="card">
+    <view class="title">打工人</view>
+    <view class="subtitle">我的心弦我来弹</view>
+    <view class="item">1. 个人信息只做页面显示使用，作者不会保存用户的个人的信息</view>
+    <view class="item text-important">2. 在我的页面可点击存储空间进行删除</view>
+  </view>
+  <view class="card card-no-border">
+    <view class="item-right text-important">本小程序最终解释权归作者所有</view>
+    <view class="item-right">作者：张飞</view>
+  </view>
+</view>
