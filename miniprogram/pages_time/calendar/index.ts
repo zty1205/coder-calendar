@@ -22,13 +22,14 @@ Page({
       const key = `${month}/${date}`;
 
       // @ts-ignore
-      const currentDate = this.currentDate || Date.now()
+      const currentDate = this.currentDate || Date.now();
 
       const hoildayMap = getHoildayMap();
       if (hoildayMap.has(key)) {
         day.className = 'calendar--hoilday';
         day.type = 'middle';
-        const hoilday = hoildayMap.get(key) as TimeItem;
+        // @ts-ignore
+        const hoilday: TimeItem = hoildayMap.get(key);
         day.bottomInfo = hoilday.t;
         const time = new Date(`${hoilday.y}/${hoilday.m}/${hoilday.d}`).getTime();
         if (time > currentDate) {
@@ -44,7 +45,7 @@ Page({
         return day;
       }
 
-      if(day.date.getTime() === currentDate) {
+      if (day.date.getTime() === currentDate) {
         day.bottomInfo = '今日';
       }
 

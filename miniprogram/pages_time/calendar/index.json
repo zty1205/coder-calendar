@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "全年假补",
-  "usingComponents": {}
+  "usingComponents": {
+    "van-calendar": "../../weapp/calendar/index"
+  }
 }
