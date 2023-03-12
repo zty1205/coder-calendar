@@ -2,7 +2,8 @@ import hoildayList from '../../data/hoildayList';
 import lieuList from '../../data/lieuList';
 import timeList from '../../data/timeList';
 
-import { getSalaryDay, getSalary } from '../../utils/common';
+import { getSalaryDaySync, getSalarySync } from '../../data/user';
+import { comingSoon, resetComing } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
@@ -72,7 +73,7 @@ Page({
       content: '0',
       title: '今年还有多少节假日',
       term: '假期余额',
-      path: '/pages_time/calendar/index'
+      path: '/pages_time/statistics/index'
     },
     lieuBalance: {
       did: 'lieu-balance',
@@ -80,13 +81,14 @@ Page({
       content: '0',
       title: '今年还要补多少班',
       term: '补班余额',
-      path: '/pages_time/calendar/index'
+      path: '/pages_time/statistics/index'
     }
   },
   onLoad() {
     this.setCurDate();
   },
   onShow() {
+    resetComing()
     this.init();
   },
   onUnload() {
@@ -125,7 +127,7 @@ Page({
   },
   setMoney() {
     // 计算时薪 按24小时计算
-    const salary = getSalary();
+    const salary = getSalarySync();
     if (!salary) {
       this.setData({
         'dayMoney.show': false,
@@ -170,16 +172,7 @@ Page({
   setSalary() {
     const { y, m, d } = this.data.curDateInfo;
     const nowDate = new Date(`${y}/${m}/${d}`);
-    const salaryDay = getSalaryDay();
-
-    const salaryInfo = {
-      did: 'salary',
-      show: false,
-      content: '',
-      title: '',
-      path: '/pages/user/index',
-      term: ''
-    };
+    const salaryDay = getSalaryDaySync();
 
     if (salaryDay) {
       const afterMoneymonth = +m + (salaryDay < +d ? 1 : 0);
@@ -248,5 +241,12 @@ Page({
       this.init();
     });
   },
-  onShareAppMessage() {}
+  handlePermanent () {
+    comingSoon();
+  },
+  onShareAppMessage() {
+    return {
+      title: '打工人，打工魂'
+    };
+  }
 });

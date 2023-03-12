@@ -1,3 +1,5 @@
+@import "../../style/var.scss";
+
 .container {
   padding: 48rpx;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC',
@@ -25,8 +27,8 @@ $color-cell-number: #ff0000b8;
 
 .date-container {
   box-sizing: border-box;
-  border: 1px solid rgba(100, 148, 237, 0.712);
-  background: #6494ed;
+  border: 1px solid $color-border-main-blue;
+  background: $color-main-blue;
   border-radius: $border-radius-container;
   display: flex;
   width: 100%;

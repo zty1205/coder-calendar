@@ -1,27 +1,4 @@
-import { STORAGE_KEY } from './constant';
-
-export function getSalary(): number {
-  return wx.getStorageSync(STORAGE_KEY.SALARY);
-}
-
-export function setSalary(salary: number) {
-  wx.setStorageSync(STORAGE_KEY.SALARY, salary);
-}
-
-export function getSalaryDay(): number {
-  return wx.getStorageSync(STORAGE_KEY.SALARY_DAY);
-}
-
-export function setSalaryDay(day: number) {
-  wx.setStorageSync(STORAGE_KEY.SALARY_DAY, day);
-}
-
-export function getUserSalaryInfo() {
-  return {
-    salary: getSalary(),
-    salaryDay: getSalaryDay()
-  };
-}
+// 微信相关
 
 const ComingText = [
   '程序员正在飞速撸代码中！',
@@ -33,6 +10,11 @@ const ComingText = [
 ];
 let comingIndex = 0;
 export function comingSoon() {
+  if (comingIndex === ComingText.length) {
+    setTimeout(() => {
+      comingIndex
+    })
+  }
   return new Promise((resolve) => {
     wx.showModal({
       title: '提示',
@@ -42,6 +24,9 @@ export function comingSoon() {
       success: resolve
     });
   });
+}
+export function resetComing():void {
+  comingIndex = 0
 }
 
 export function wxConfirm(content: string): Promise<Boolean> {

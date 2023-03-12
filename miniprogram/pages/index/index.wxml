@@ -6,7 +6,7 @@
       <view class="date-number">{{curDateInfo.d}}</view>
       <view class="date-term">{{curDateInfo.t || curDateInfo.ld}}</view>
     </view>
-    <view class="date-right">
+    <view class="date-right" bindtap="handlePermanent">
       <view class="time-desc-item">
         太阳历：{{curDateInfo.y}}-{{curDateInfo.m}}-{{curDateInfo.d}}
       </view>

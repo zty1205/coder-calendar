@@ -23,7 +23,8 @@
     {
       "root": "pages_time/",
       "pages": [
-        "calendar/index"
+        "calendar/index",
+        "statistics/index"
       ],
       "name": "pages_time"
     }
@@ -32,8 +33,9 @@
     "pages/index/index": {
       "network": "all",
       "packages": [
+        "pages_time",
         "pages_ability",
-        "pages_time"
+        "pages_about"
       ]
     }
   },

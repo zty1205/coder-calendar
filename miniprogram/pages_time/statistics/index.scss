@@ -1,0 +1,17 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+
+  .bar-container {
+    position: absolute;
+    top: 16rpx;
+    bottom: 16rpx;
+    left: 48rpx;
+    right: 48rpx
+  }
+}
+
+ec-canvas {
+  width: 100%;
+  height: 100%;
+}
