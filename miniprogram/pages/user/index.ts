@@ -49,8 +49,6 @@ Page({
       avatarShow: this.data.avatarShow + 'transition: all .8s;',
       avatarHidden: this.data.avatarHidden + 'transition: all .8s;'
     });
-    const res = wx.getStorageInfoSync();
-    console.log('res = ', res);
   },
   onNameInput(data: WxDomEvent<{ value: string }>) {
     this.setData({
@@ -93,8 +91,8 @@ Page({
     wx.nextTick(() => {
       wx.navigateBack({
         delta: 1
-      })
-    })
+      });
+    });
   },
   getUser() {
     const user = getUserSync();

@@ -23,7 +23,7 @@
   <view class="card">
     <view class="title">打工人</view>
     <view class="subtitle">我的心弦我来弹</view>
-    <view class="item">1. 个人信息只做页面显示使用，作者不会保存用户的个人的信息</view>
+    <view class="item">1. 个人信息只做页面显示使用，不会保存用户的个人的信息</view>
     <view class="item text-important">2. 在我的页面可点击存储空间进行删除</view>
   </view>
   <view class="card card-no-border">

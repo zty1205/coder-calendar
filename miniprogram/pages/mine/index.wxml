@@ -1,5 +1,5 @@
 <view class="page">
-  <view class="user-container">
+  <view class="user-container" bindtap="handleUser">
     <view class="user-avatar">
       <image wx:if="{{user.sex === '0'}}" class="avatar" src="/static/avatar-0.jpeg" mode="aspectFit"></image>
       <image wx:elif="{{user.sex === '1'}}" class="avatar avatar-border" src="/static/avatar-1.jpeg" mode="aspectFit"></image>
@@ -11,7 +11,7 @@
       <view class="user-name">{{ user.name }}</view>
       <view class="user-desc">{{user.desc}}</view>
     </view>
-    <view class="user-right" bindtap="handleUser">
+    <view class="user-right">
       <image class="right" src="/static/right.png" mode="aspectFit" />
     </view>
   </view>

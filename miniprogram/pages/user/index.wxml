@@ -30,7 +30,7 @@
 
     <view class="cell cell--large">
       <label class="cell-label" for="salary">工资：</label>
-      <input class="cell-content" value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="10" placeholder-class="cell-placeholder" placeholder="请输入工资" />
+      <input class="cell-content" value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="6" placeholder-class="cell-placeholder" placeholder="请输入工资" />
     </view>
 
     <view class="cell cell--large">
