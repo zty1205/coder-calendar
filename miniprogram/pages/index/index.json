@@ -2,6 +2,7 @@
   "navigationBarTitleText": "打工魂",
   "usingComponents": {
     "date-item": "./components/date-item/index",
-    "van-calendar": "../../weapp/calendar/index"
+    "van-popup": "../../weapp/popup/index",
+    "van-picker": "../../weapp/picker/index"
   }
 }

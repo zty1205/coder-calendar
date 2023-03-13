@@ -1,4 +1,4 @@
-@import "../../style/var.scss";
+@import '../../style/var.scss';
 
 .container {
   padding: 48rpx;
@@ -133,4 +133,18 @@ $color-cell-number: #ff0000b8;
   width: 100%;
   flex-wrap: wrap;
   margin-top: 48rpx;
+  position: relative;
+  z-index: 9;
+}
+
+
+
+.van-popup, van-popup, van-picker, .van-picker {
+  z-index: 9999;
+  transform: translateZ(9999px);
+
+  .van-transition  {
+    z-index: 9999;
+    transform: translateZ(999px);
+  }
 }

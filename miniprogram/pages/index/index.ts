@@ -1,6 +1,7 @@
 import hoildayList from '../../data/hoildayList';
 import lieuList from '../../data/lieuList';
 import timeList from '../../data/timeList';
+import pickerData from '../../data/pickerMonth';
 
 import { getSalaryDaySync, getSalarySync } from '../../data/user';
 import { comingSoon, resetComing } from '../../utils/common';
@@ -11,7 +12,17 @@ let timer: NodeJS.Timer;
 
 Page({
   data: {
-    showCalendar: false,
+    pickerMonth: [
+      {
+        values: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        defaultIndex: 0
+      },
+      {
+        values: pickerData['1月'],
+        defaultIndex: 0
+      }
+    ],
+    showPicker: false,
     // 当前的日期 默认今天
     curDate: new Date(),
     // 今年的最大和最小
@@ -88,8 +99,11 @@ Page({
     this.setCurDate();
   },
   onShow() {
-    resetComing()
+    resetComing();
     this.init();
+  },
+  onReady() {
+    this.setPickerIndex();
   },
   onUnload() {
     this.clearTick();
@@ -224,24 +238,44 @@ Page({
   },
   handleClickDay() {
     this.setData({
-      showCalendar: true
+      showPicker: true
     });
   },
-  onCalendarClose() {
+  onPopupClose() {
     this.setData({
-      showCalendar: false
+      showPicker: false
     });
+    wx.nextTick(() => {
+      this.setPickerIndex()
+    })
   },
-  onCalendarConfirm(e: VantWeAppEvent<Date>) {
+  onPickerConfirm(e: WxDomEvent<{index: number[], value: string[]}>) {
+    const index = e.detail.index
+    if (!index || index.length !== 2) return
     this.setData({
-      curDate: e.detail
+      showPicker: false,
+      curDate: new Date(`${this.data.curDate.getFullYear()}/${index[0] + 1}/${index[1] + 1}`)
     });
-    this.onCalendarClose();
     wx.nextTick(() => {
       this.init();
     });
   },
-  handlePermanent () {
+  onPickerChange(event: WxDomEvent<{ picker: any; value: any[]; index: number }>) {
+    if (event.detail.index === 0) {
+      const { picker, value } = event.detail;
+      // @ts-ignore
+      picker.setColumnValues(1, pickerData[value[0]]);
+    }
+  },
+  onPickerCancel() {
+    this.onPopupClose()
+  },
+  setPickerIndex() {
+    const picker = this.selectComponent('#picker');
+    picker.setColumnIndex(0, this.data.curDate.getMonth());
+    picker.setColumnIndex(1, this.data.curDate.getDate() - 1);
+  },
+  handlePermanent() {
     comingSoon();
   },
   onShareAppMessage() {
