@@ -1,6 +1,6 @@
 import { getUserSync } from '../../data/user';
 import { removeCache } from '../../utils/cache';
-import { comingSoon, wxConfirm } from '../../utils/common';
+import { comingSoon, resetComing, wxConfirm } from '../../utils/common';
 import { formatSize } from '../../utils/util';
 
 // pages/mine/index.ts
@@ -14,6 +14,7 @@ Page({
     cacheSize: ''
   },
   onShow() {
+    resetComing();
     this.init();
   },
   init() {

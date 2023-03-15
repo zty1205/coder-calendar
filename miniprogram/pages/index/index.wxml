@@ -7,13 +7,12 @@
       <view class="date-number">{{curDateInfo.d}}</view>
       <view class="date-term">{{curDateInfo.t || curDateInfo.ld}}</view>
     </view>
-    <view class="date-right" bindtap="">
+    <view class="date-right" bindtap="handlePermanent">
       <view class="time-desc-item">太阳历：{{curDateInfo.y}}-{{curDateInfo.m}}-{{curDateInfo.d}}</view>
       <view class="time-desc-item">太阴历：{{curDateInfo.lm}}{{curDateInfo.ld}}</view>
       <view class="time-desc-item">七曜：星期{{curDateInfo.cd}}</view>
     </view>
   </view>
-
   <view class="expectation">
     <date-item did="{{ dayMoney.did }}" show="{{ dayMoney.show }}" content="{{ dayMoney.content }}" title="{{ dayMoney.title }}" term="{{ dayMoney.term }}" path="{{ dayMoney.path }}" index="{{0}}"></date-item>
     <date-item did="{{ monthMoney.did }}" show="{{ monthMoney.show }}" content="{{ monthMoney.content }}" title="{{ monthMoney.title }}" term="{{ monthMoney.term }}" path="{{ monthMoney.path }}" index="{{1}}"></date-item>
@@ -22,9 +21,8 @@
     <date-item did="{{ hoildayBalance.did }}" show="{{ hoildayBalance.show }}" content="{{ hoildayBalance.content }}" title="{{ hoildayBalance.title }}" term="{{ hoildayBalance.term }}" path="{{ hoildayBalance.path }}" index="{{4}}"></date-item>
     <date-item did="{{ lieuBalance.did }}" show="{{ lieuBalance.show }}" content="{{ lieuBalance.content }}" title="{{ lieuBalance.title }}" term="{{ lieuBalance.term }}" path="{{ lieuBalance.path }}" index="{{5}}"></date-item>
   </view>
-  <image class="worker-img" src="/static/worker-bg.png" mode="aspectFit" />
+  <image class="worker-img" src="https://s1.ax1x.com/2023/03/15/pp3tA1A.png" mode="aspectFit" />
 </view>
-
 <van-popup show="{{ showPicker }}" position="bottom" bind:close="onPopupClose">
   <van-picker id="picker" columns="{{ pickerMonth }}" bind:change="onPickerChange" bind:cancel="onPickerCancel" bind:confirm="onPickerConfirm" round="{{true}}" show-toolbar="{{true}}" title="切换日期" toolbar-position="top" />
 </van-popup>

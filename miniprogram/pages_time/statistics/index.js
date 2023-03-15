@@ -1,5 +1,5 @@
 
-import * as echarts from '../../ec-canvas/echarts.min';
+import * as echarts from '../ec-canvas/echarts.min';
 import { barOption } from './option'
 
 Page({
@@ -17,7 +17,6 @@ Page({
   init() {
     const ecComponent = this.selectComponent('#mychart-bar');
     ecComponent.init((canvas, width, height, dpr) => {
-      console.log('dpr = ', dpr)
       const chart = echarts.init(canvas, null, {
         width: width,
         height: height,

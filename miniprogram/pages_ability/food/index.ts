@@ -1,4 +1,4 @@
-import foodList from '../../data/food';
+import foodList from '../data/food';
 import { getRandomOneByList } from '../../utils/util';
 
 Page({

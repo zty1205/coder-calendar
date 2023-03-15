@@ -4,18 +4,9 @@ interface IAppOption {
   globalData: {};
 }
 
-type VantWeAppEvent<T> = {
-  type: string;
-  detail: T;
-};
-
 type WxDomEvent<T> = {
   type: string;
   detail: T;
-};
-
-type VantEventDetailObject<T = string | number> = {
-  value: T;
 };
 
 interface Food {

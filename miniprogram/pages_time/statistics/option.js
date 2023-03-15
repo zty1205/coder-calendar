@@ -1,4 +1,4 @@
-import { monthStatis } from '../../data/timeStatis'
+import { monthStatis } from '../data/timeStatis'
 
 export const barOption = {
   title: {

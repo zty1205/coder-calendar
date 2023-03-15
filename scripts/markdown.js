@@ -36,6 +36,7 @@ function removeUnuseHtml(html = '', mode) {
   const idx = html.indexOf('<h2>0.0.5');
   return html
     .slice(0, idx)
+    .replace('Changelog', '版本更新')
     .replace(/<a(.+)>(.+)<\/a>/g, `<${INLINE_TAG} class="version">$2</${INLINE_TAG}>`) // 去a标签
     .replace(/<p>.+<\/p>/, '') // 去掉standard-version
     .split('\n')

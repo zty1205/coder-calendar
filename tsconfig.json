@@ -19,6 +19,6 @@
     "lib": ["ES2020"],
     "typeRoots": ["./typings"]
   },
-  "include": ["./**/*.ts"],
+  "include": ["./**/*.ts", "a.js", "a.js"],
   "exclude": ["node_modules"]
 }
