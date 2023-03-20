@@ -1,0 +1,129 @@
+@import '../../style/var.scss';
+@import '../../style/mixin.scss';
+
+@mixin san-skew($deg) {
+  content: '';
+        width: 50px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: $color-main-blue;
+        z-index: -1;
+        transform: skew(#{$deg});
+}
+
+.page {
+  height: 100%;
+  width: 100%;
+
+  .block-half {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    margin: 4px auto;
+    box-sizing: border-box;
+    border: 1px solid $color-main-blue;
+    border-radius: $border-radius-8;
+    overflow: hidden;
+  }
+
+  .header-box {
+  
+    .year {
+      color: #fff;
+      position: relative;
+      background: $color-main-blue;
+      width: 50%;
+      text-align: center;
+      &::after {
+        @include san-skew(25deg);
+        right: -10px;
+      }
+    }
+    .month {
+      width: 50%;
+      text-align: center;
+      color: $color-main-blue;
+    }
+  }
+  .day-box {
+    color: $color-main-blue;
+    font-size: 96px;
+    text-align: center;
+    height: 300rpx;
+    line-height: 300rpx;
+  }
+
+  .lunar-box {
+    display: flex;
+    width: 90%;
+    .week {
+      width: 50%;
+      text-align: center;
+      color: $color-main-blue;
+    }
+    .lunar {
+      width: 50%;
+      color: #fff;
+      position: relative;
+      background: $color-main-blue;
+      width: 50%;
+      text-align: center;
+      &::after {
+        @include san-skew(-25deg);
+        left: -10px;
+      }
+    }
+  }
+
+.hen-box {
+  width: 80%;
+  text-align: center;
+  margin: 20px auto;
+  border: 1px solid $color-red-main;
+  color: $color-red-main;
+  background: $color-main-blue;
+}
+
+  .suit-avoid-box {
+    display: flex;
+    width: 90%;
+    margin: 60rpx auto 20rpx auto;
+
+    .suit {
+      background: $color-main-blue;
+    }
+    .center {
+      flex: 1;
+    }
+    .avoid {
+      background: $color-red-main-alpha;
+    }
+
+    .suit, .avoid {
+      border-radius: $border-radius-8; 
+      color: #fff;
+      width: 140rpx;
+      text-align: center;
+      padding: 10px 4px;
+      .item {
+        margin: 4px 0;
+      }
+    }
+  }
+
+  .bottom-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 20px auto 0 auto;
+    color: $color-main-blue;
+    @include ios-safe-padding-bottom(10px);
+    .item {
+      transform: skew(25deg);
+    }
+  }
+}

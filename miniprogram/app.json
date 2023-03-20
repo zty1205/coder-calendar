@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/user/index",
-    "pages/mine/index"
+    "pages/mine/index",
+    "pages/perpetual/index"
   ],
   "subPackages": [
     {

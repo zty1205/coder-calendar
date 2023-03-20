@@ -1,0 +1,33 @@
+<!--pages/perpetual/index.wxml-->
+<view class="page">
+  <view class="header-box block-half ">
+    <view class="year">2023年</view>
+    <view class="month">3月</view>
+  </view>
+  <view class="day-box">
+    20
+  </view>
+  <view class="lunar-box block-half ">
+    <view class="week">星期日</view>
+    <view class="lunar">腊月初十</view>
+  </view>
+  <view class="suit-avoid-box">
+    <view class="suit">
+      <view class="item" wx:for="{{st}}" wx:key="item">
+        {{ item }}</view>
+    </view>
+    <view class="center">
+    </view>
+    <view class="avoid">
+      <view class="item" wx:for="{{av}}" wx:key="item">
+        {{ item }}</view>
+    </view>
+  </view>
+
+  <view class="bottom-box">
+    <view class="hs-year item">壬寅年</view>
+    <view class="hs-month item">壬子月</view>
+    <view class="hs-day item">己未日</view>
+    <view class="hs-day item">生肖牛</view>
+  </view>
+</view>

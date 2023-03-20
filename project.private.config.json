@@ -36,6 +36,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/perpetual/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

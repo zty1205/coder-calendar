@@ -276,7 +276,9 @@ Page({
     picker.setColumnIndex(1, this.data.curDate.getDate() - 1);
   },
   handlePermanent() {
-    comingSoon();
+    wx.navigateTo({
+      url: '/pages/perpetual/index'
+    })
   },
   onShareAppMessage() {
     return {
