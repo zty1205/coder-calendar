@@ -49,6 +49,7 @@ $color-cell-number: #ff0000b8;
     margin: ($height-container - $height-left)/ 2 $margin-container-right-left;
     overflow: hidden;
     background: $background-color-cell;
+    cursor: pointer;
 
     .date-status {
       position: absolute;
@@ -117,6 +118,7 @@ $color-cell-number: #ff0000b8;
     justify-content: space-around;
     text-align: right;
     margin: ($height-container - $height-left)/ 2 $margin-container-right-left ($height-container - $height-left)/ 2 0;
+    cursor: pointer;
   }
 }
 

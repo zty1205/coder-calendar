@@ -92,12 +92,22 @@
     display: flex;
     width: 90%;
     margin: 60rpx auto 20rpx auto;
+    min-height: 600rpx;
 
     .suit {
       background: $color-main-blue;
     }
     .center {
       flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 36px;
+      color: $color-main-blue;
+      
+      .animal {
+        transform: rotate(180deg);
+      }
     }
     .avoid {
       background: $color-red-main-alpha;
@@ -106,7 +116,7 @@
     .suit, .avoid {
       border-radius: $border-radius-8; 
       color: #fff;
-      width: 140rpx;
+      min-width: 140rpx;
       text-align: center;
       padding: 10px 4px;
       .item {

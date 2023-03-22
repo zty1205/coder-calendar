@@ -4,7 +4,7 @@ import timeList from '../../data/timeList';
 import pickerData from '../../data/pickerMonth';
 
 import { getSalaryDaySync, getSalarySync } from '../../data/user';
-import { comingSoon, resetComing } from '../../utils/common';
+import { resetComing } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
@@ -277,7 +277,7 @@ Page({
   },
   handlePermanent() {
     wx.navigateTo({
-      url: '/pages/perpetual/index'
+      url: `/pages/perpetual/index?y=${this.data.curDateInfo.y}&m=${this.data.curDateInfo.m}&d=${this.data.curDateInfo.d}`
     })
   },
   onShareAppMessage() {
