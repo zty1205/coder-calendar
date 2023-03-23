@@ -55,6 +55,12 @@ Page({
   onLoad() {
     this.setCurDate();
   },
+  onShareAppMessage() {
+    return {
+      title: '全年假补',
+      path: '/pages_time/calendar/index'
+    }
+  },
   setCurDate() {
     const now = new Date();
     const { minDate, maxDate } = getYearRange(now);

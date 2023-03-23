@@ -30,7 +30,8 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      title: '全年假休柱形图'
+      title: '全年假补图',
+      path: '/pages_time/statistics/index'
     }
   }
 });

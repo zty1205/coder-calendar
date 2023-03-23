@@ -1,5 +1,5 @@
 {
-"navigationBarTitleText": "全年假补图表",
+"navigationBarTitleText": "全年假补图",
   "usingComponents": {
     "ec-canvas": "../ec-canvas/ec-canvas"
   },

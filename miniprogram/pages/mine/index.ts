@@ -17,6 +17,12 @@ Page({
     resetComing();
     this.init();
   },
+  onShareAppMessage() {
+    return {
+      title: '打工人，打工魂',
+      path: '/pages/index/index'
+    };
+  },
   init() {
     this.getUser();
     this.getCacheSize();

@@ -19,6 +19,12 @@ Page({
     }
   },
   onLoad() {},
+  onShareAppMessage() {
+    return {
+      title: '干饭人',
+      path: '/pages_ability/food/index'
+    }
+  },
   rolls() {
     this.setData({
       showRollAni: true

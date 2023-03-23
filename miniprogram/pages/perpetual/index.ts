@@ -37,6 +37,7 @@ Page<WxPageData, Record<string, any>>({
   },
   onShareAppMessage() {
     return {
+      title: '万年历',
       path: `/pages/perpetual/index?y=${this.data.y}&m=${this.data.m}&d=${this.data.d}`
     };
   },
