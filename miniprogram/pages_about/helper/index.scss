@@ -1,6 +1,6 @@
 @import "../../style/mixin.scss";
 .card-no-border {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 10px;
   @include ios-safe-padding-bottom(20px);
 }
