@@ -8,12 +8,16 @@
   <view class="user-info block">
     <view class="cell cell--large">
       <label class="cell-label" for="name">昵称：</label>
-      <input class="cell-content" value="{{user.name}}" bindinput="onNameInput" id="name" type="nickname" maxlength="8" placeholder-class="cell-placeholder" placeholder="请输入昵称" />
+      <view class="cell-content">
+        <input value="{{user.name}}" bindinput="onNameInput" id="name" type="nickname" maxlength="8" placeholder-class="cell-placeholder" placeholder="请输入昵称" />
+      </view>
     </view>
 
     <view class="cell cell--large">
       <label class="cell-label" for="desc">简介：</label>
-      <input class="cell-content" value="{{user.desc}}" bindinput="onDescInput" id="desc" type="text" maxlength="20" placeholder-class="cell-placeholder" placeholder="请输入简介" />
+      <view class="cell-content">
+        <textarea value="{{user.desc}}" bindblur="onDescInput" id="desc" maxlength="24" placeholder-class="cell-placeholder" placeholder="请输入简介" auto-height="true" />
+      </view>
     </view>
 
     <view class="cell cell--large">
@@ -30,7 +34,10 @@
 
     <view class="cell cell--large">
       <label class="cell-label" for="salary">工资：</label>
-      <input class="cell-content" value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="6" placeholder-class="cell-placeholder" placeholder="请输入工资" />
+      <view class="cell-content">
+        <input value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="6" placeholder-class="cell-placeholder" placeholder="请输入工资" />
+      </view>
+
     </view>
 
     <view class="cell cell--large">
@@ -48,6 +55,6 @@
   </view>
 
   <view class="block-button">
-     <van-button type="primary" bindtap="handleSave">保  存</van-button>
+    <van-button type="primary" bindtap="handleSave">保 存</van-button>
   </view>
 </view>

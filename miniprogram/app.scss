@@ -24,13 +24,14 @@
   .cell {
     height: $height-cell;
     display: flex;
-    margin: 0 $margin-cell;
     box-sizing: border-box;
     border-bottom: $border-cell;
     align-items: center;
     font-size: $font-size-cell;
     font-family: $font-family-main;
     background: #fff;
+    padding: $padding-cell;
+    width: 100%;
     .cell-label {
       margin-left: 16rpx;
       width: $width-cell-label;
@@ -39,6 +40,8 @@
       align-items: center;
       justify-content: flex-end;
       color: $color-cell-label;
+      flex-shrink: 1;
+      margin-right: 20rpx;
     }
     .cell-left-icon {
       width: $height-cell-icon;
@@ -47,12 +50,10 @@
     .cell-content {
       color: $color-cell-content;
       flex: 1;
-      margin-left: 10rpx;
-      margin-right: 20rpx;
-      height: 100%;
-      line-height: 100%;
-      display: flex;
-      align-items: center;
+
+      textarea {
+        width: initial;
+      }
     }
     .cell-right-text {
       font-size: $font-size-desc;

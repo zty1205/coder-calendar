@@ -7,7 +7,6 @@ $color-border-main-blue: rgba(100, 148, 237, 0.7);
 $color-border-main: #f5f5f5;
 $color-text-desc: #ccc;
 
-
 $font-family-main: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto,
   'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
 
@@ -33,7 +32,7 @@ $height-cell-icon: 40rpx;
 $width-cell-label: 160rpx;
 $width-cell-text: 140rpx;
 $font-size-cell: $font-size-main-16;
-$margin-cell: 20rpx;
+$padding-cell: 10px 16px;
 $border-cell: 1px solid $color-border-main;
 $color-cell-label: #777;
 $color-cell-content: #333;
@@ -42,8 +41,8 @@ $color-cell-placeholder: #999;
 
 // card
 $margin-card: 32rpx 24rpx;
-$margin-card-subtitle:  8px 10px  14px 10px;
-$margin-card-item:  8px 10px;
-$margin-card-item-formula:  12px 10px;
+$margin-card-subtitle: 8px 10px 14px 10px;
+$margin-card-item: 8px 10px;
+$margin-card-item-formula: 12px 10px;
 $color-card-subtitle: #777;
 $color-card-item-formula: $color-red-main-alpha;
