@@ -1,5 +1,15 @@
 <view class="container"><view class="h1">版本更新</view>
 
+<view class="h2"><text class="version">1.1.0</text> (2023-04-01)</view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">优化抽取算法</view>
+</view>
+<view class="h2"><text class="version">1.0.0</text> (2023-03-25)</view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">新版</view>
+</view>
 <view class="h3"><text class="version">0.9.3</text> (2023-03-25)</view>
 <view class="h3">Features</view>
 <view class="ul">
