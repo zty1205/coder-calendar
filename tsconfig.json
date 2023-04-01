@@ -17,6 +17,7 @@
     "strict": true,
     "strictPropertyInitialization": true,
     "lib": ["ES2020"],
+    "types": ["node"],
     "typeRoots": ["./typings"]
   },
   "include": ["./**/*.ts", "a.js", "a.js"],

@@ -23,7 +23,7 @@
   </view>
   <view wx:if="{{showCurrentFood}}" class="lottery-current {{showCurrentOp ? 'overlay' : ''}}">
     <image wx:if="{{showCurrentOp}}" class="lottery-current-people" src="https://p1.ssl.qhimg.com/dr/270_500_/t0155c53dbb7beb2bf3.png?size=561x592" mode="aspectFit" />
-    <food-card class="lottery-current-food" bindanimationend="handleFoodAniEnd" name="{{curFood.name}}" level="{{curFood.level}}" priority="{{curFood.priority}}" img="{{curFood.img}}" desc="{{curFood.desc}}" category="{{curFood.category}}" hPrice="{{curFood.hPrice}}" lPrice="{{curFood.lPrice}}"></food-card>
+    <food-card class="lottery-current-food" bindanimationend="handleFoodAniEnd" name="{{curFood.name}}" level="{{curFood.level}}" weight="{{curFood.weight}}" img="{{curFood.img}}" desc="{{curFood.desc}}" category="{{curFood.category}}" hPrice="{{curFood.hPrice}}" lPrice="{{curFood.lPrice}}"></food-card>
     <view class="lottery-current-op" wx:if="{{showCurrentOp}}">
       <image bindtap="handleConfirm" class="lottery-current-op-btn" src="/static/round_check_fill.png" mode="aspectFit" />
       <image bindtap="handleRetry" class="lottery-current-op-btn" src="/static/refresh.png" mode="aspectFit" />

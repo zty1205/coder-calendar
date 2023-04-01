@@ -2,7 +2,7 @@ Component({
   properties: {
     name: String,
     level: Number,
-    priority: Number,
+    weight: Number,
     img: String,
     desc: String,
     category: Number,

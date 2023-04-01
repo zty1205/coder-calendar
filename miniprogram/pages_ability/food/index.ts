@@ -1,5 +1,5 @@
 import foodList from '../data/food';
-import { getRandomOneByList } from '../../utils/util';
+import { getRandomByPriority } from '../../utils/util';
 
 Page({
   data: {
@@ -10,7 +10,7 @@ Page({
     curFood: {
       name: '',
       level: 0,
-      priority: 0,
+      weight: 0,
       img: '',
       desc: '',
       category: 0,
@@ -23,13 +23,13 @@ Page({
     return {
       title: '干饭人',
       path: '/pages_ability/food/index'
-    }
+    };
   },
   rolls() {
     this.setData({
       showRollAni: true
     });
-    const food = getRandomOneByList(this.data.foodList); // this.data.foodList[2]
+    const food = getRandomByPriority<Food>(this.data.foodList);
     this.setData({
       curFood: food
     });

@@ -1,4 +1,3 @@
-
 function formatNumber(n: number) {
   const s = n.toString();
   return s[1] ? s : '0' + s;
@@ -70,7 +69,7 @@ export function midFind(array: number[] = [], num: number, start: number, end: n
   return end;
 }
 
-export function getRandomByWeight<T extends { weight: number }>(list: T[]): T {
+export function getRandomByPriority<T extends { weight: number }>(list: T[]): T {
   const weights: number[] = [0];
   let weightTotal = 0;
   for (let item of list) {
@@ -91,7 +90,7 @@ export function getRandomByWeight<T extends { weight: number }>(list: T[]): T {
 
 export function formatSize(kb: number): string {
   if (kb > 1000) {
-    return `${(kb/1024).toFixed(2)} MB`
+    return `${(kb / 1024).toFixed(2)} MB`;
   }
-  return `${kb} KB`
+  return `${kb} KB`;
 }
