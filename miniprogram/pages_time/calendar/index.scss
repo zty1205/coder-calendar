@@ -1,5 +1,9 @@
 @import '../../style/var.scss';
 
+.page {
+  height: 100vh;
+}
+
 .calendar--lieu {
   background: $color-lieu-red;
   color: #fff;
