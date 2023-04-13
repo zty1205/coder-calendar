@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/zty1205/coder-calendar/compare/v1.1.0...v1.2.0) (2023-04-13)
+
+
+### Features
+
+* 全年假补日历页面交互优化 ([06ee46e](https://github.com/zty1205/coder-calendar/commit/06ee46e4c9eda17e162b55763e0e52980ee93f65))
+* 新增预告功能 ([fa0bbab](https://github.com/zty1205/coder-calendar/commit/fa0bbabafb911f3b0540c52deb8f352e35f3ce63))
+* 预加载优化 ([97abdf7](https://github.com/zty1205/coder-calendar/commit/97abdf729dd66c017fa0f5c45113a39c7cc64f2f))
+
 ## [1.1.0](https://github.com/zty1205/coder-calendar/compare/v1.0.0...v1.1.0) (2023-04-01)
 
 
