@@ -34,7 +34,12 @@
     "pages/index/index": {
       "network": "all",
       "packages": [
-        "pages_time",
+        "pages_time"
+      ]
+    },
+    "pages/mine/index": {
+      "network": "all",
+      "packages": [
         "pages_ability",
         "pages_about"
       ]
