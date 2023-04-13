@@ -3,6 +3,7 @@
   "usingComponents": {
     "date-item": "./components/date-item/index",
     "van-popup": "../../weapp/popup/index",
-    "van-picker": "../../weapp/picker/index"
+    "van-picker": "../../weapp/picker/index",
+    "van-notice-bar": "../../weapp/notice-bar/index"
   }
 }

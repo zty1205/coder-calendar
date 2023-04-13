@@ -1,5 +1,14 @@
 @import '../../style/var.scss';
 
+van-notice-bar {
+  position: fixed;
+  top: 1;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  transform: translateZ(999px);
+}
+
 .container {
   padding: 48rpx;
   font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC',

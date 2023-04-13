@@ -1,5 +1,6 @@
 <page-meta page-style="{{ showPicker ? 'overflow: hidden;' : '' }}" />
 <wxs src="./index.wxs" module="util"></wxs>
+<van-notice-bar wx:if="{{showNotice}}"  left-icon="volume-o" mode="closeable" scrollable text="{{noticeText}}" />
 <view class="container">
   <view class="date-container">
     <view class="date-left date-left-{{curDateInfo.s}}" bindtap="handleClickDay">

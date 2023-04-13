@@ -8,10 +8,22 @@ import { resetComing } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
-let timer: NodeJS.Timer;
+let timer: number;
+
+// 超过次数，超过时间，用户点击关闭都不在出现
+const NOTICE_CONFIG = {
+  num: 0,
+  text: '我的页面 - 做点什么 即将上线，敬请期待！',
+  time: '2023/04/16 00:00:00',
+  limit: 3,
+  overTime: false,
+  closed: false
+}
 
 Page({
   data: {
+    showNotice: false,
+    noticeText: NOTICE_CONFIG.text,
     pickerMonth: [
       {
         values: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
@@ -101,6 +113,7 @@ Page({
   onShow() {
     resetComing();
     this.init();
+    this.judgeNotice()
   },
   onReady() {
     this.setPickerIndex();
@@ -278,6 +291,31 @@ Page({
   handlePermanent() {
     wx.navigateTo({
       url: `/pages/perpetual/index?y=${this.data.curDateInfo.y}&m=${this.data.curDateInfo.m}&d=${this.data.curDateInfo.d}`
+    })
+  },
+  closeNotice() {
+    NOTICE_CONFIG.closed = true
+    if (this.data.showNotice === true) {
+      this.setData({
+        showNotice: false
+      })
+    }
+  },
+  judgeNotice() {
+    console.log('NOTICE_CONFIG = ', NOTICE_CONFIG)
+    if (NOTICE_CONFIG.closed || NOTICE_CONFIG.overTime || NOTICE_CONFIG.num >= NOTICE_CONFIG.limit) {
+      this.closeNotice()
+      return
+    }
+    const overTime = new Date(NOTICE_CONFIG.time).getTime() < Date.now()
+    NOTICE_CONFIG.overTime = overTime
+    if (overTime) {
+      this.closeNotice()
+      return
+    }
+    NOTICE_CONFIG.num+=1
+    this.setData({
+      showNotice: true
     })
   },
   onShareAppMessage() {
