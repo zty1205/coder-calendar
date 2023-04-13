@@ -1,5 +1,12 @@
 <view class="container"><view class="h1">版本更新</view>
 
+<view class="h2"><text class="version">1.2.0</text> (2023-04-13)</view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">全年假补日历页面交互优化</view>
+<view class="li">新增预告功能</view>
+<view class="li">预加载优化</view>
+</view>
 <view class="h2"><text class="version">1.1.0</text> (2023-04-01)</view>
 <view class="h3">Features</view>
 <view class="ul">
