@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.3.1](https://github.com/zty1205/coder-calendar/compare/v1.3.0...v1.3.1) (2023-04-16)
+
+
+### Bug Fixes
+
+* 弹窗穿透问题 ([ca60ae7](https://github.com/zty1205/coder-calendar/commit/ca60ae7f0b33607f58b3021af058e8d00ab98ebe))
+
 ## [1.3.0](https://github.com/zty1205/coder-calendar/compare/v1.2.0...v1.3.0) (2023-04-16)
 
 
