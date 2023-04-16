@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "搬砖人",
+  "usingComponents": {
+    "van-popup": "../../weapp/popup/index",
+    "van-icon": "../../weapp/icon/index",
+    "van-slider": "../../weapp/slider/index"
+  }
+}

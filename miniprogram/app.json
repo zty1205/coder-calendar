@@ -17,7 +17,8 @@
     {
       "root": "pages_ability/",
       "pages": [
-        "food/index"
+        "food/index",
+        "something/index"
       ],
       "name": "pages_ability"
     },

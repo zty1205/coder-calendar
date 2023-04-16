@@ -56,8 +56,14 @@ export function getRandomOneByList(arr: Array<any>) {
   return arr[idx];
 }
 
-export function getRandomNumber(max: number): number {
+export function getRandomNumber(max: number, min?: number): number {
+  if (min !== undefined) {
+    return Math.ceil(Math.random() * (min - max + 1) + max - 1);
+  }
   return Math.floor(Math.random() * max);
+}
+export function getRandomDiscount(): number {
+ return Math.floor(Math.random() * 10) / 10
 }
 
 export function midFind(array: number[] = [], num: number, start: number, end: number) {

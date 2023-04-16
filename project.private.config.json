@@ -43,6 +43,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "做什么",
+          "pathName": "pages_ability/something/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

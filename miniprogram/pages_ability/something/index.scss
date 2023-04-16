@@ -1,0 +1,245 @@
+@import '../../style/var.scss';
+
+// 蜂巢排列 5-4-5-4
+$Honeycomb-Width: 100rpx;
+$Honeycomb-Height: $Honeycomb-Width / 1.7320508 * 2;
+$Honeycomb-Space: 10rpx;
+$Honeycomb-Polygon: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+@keyframes sca {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+.honeycomb-container {
+  background: linear-gradient(to bottom, $color-main-blue, $color-border-main-blue);
+  padding: 10px 0;
+
+  .op-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    position: relative;
+
+    .op-icon {
+      margin: 20rpx 18rpx 12rpx 4rpx;
+      transition: filter 0.3s;
+    }
+
+    .op-ani {
+      animation: sca 1s ease-in-out 0s infinite alternate none;
+    }
+
+    .op-disabled {
+      filter: brightness(0.9);
+    }
+  }
+}
+
+.honeycomb {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: ($Honeycomb-Width + $Honeycomb-Space * 2) * 5;
+  margin: 20rpx auto;
+  padding: 0;
+  perspective: 200px;
+}
+.honeycomb-cell {
+  flex: 0 1 $Honeycomb-Width;
+  width: $Honeycomb-Width;
+  height: $Honeycomb-Height;
+  margin-left: $Honeycomb-Space;
+  margin-right: $Honeycomb-Space;
+  position: relative;
+  background-image: radial-gradient(#fff 50%, $color-border-main-blue);
+  clip-path: $Honeycomb-Polygon;
+  text-align: center;
+  z-index: 1;
+  display: flex;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    width: 80%;
+    height: 80%;
+    content: '';
+    clip-path: $Honeycomb-Polygon;
+    background: $color-main-blue;
+    background-image: radial-gradient(#fff 25%, $color-main-blue);
+  }
+}
+
+.honeycomb-cell-chosen {
+  transform: scale(1.3);
+  background-image: radial-gradient(#fff 60%, $color-red-main 100%);
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-200rpx) translateZ(50rpx) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(600rpx) translateZ(0) scale(2);
+    opacity: 0;
+  }
+}
+
+.honeycomb-cell-finished {
+  animation: moveLeft 2s ease 0s 1 normal forwards;
+  z-index: 10;
+}
+
+.honeycomb-cell:nth-child(9n + 6) {
+  margin-left: $Honeycomb-Space * 2 + $Honeycomb-Width / 2;
+}
+
+.honeycomb-cell:nth-child(9n + 6),
+.honeycomb-cell:nth-child(9n + 7),
+.honeycomb-cell:nth-child(9n + 8),
+.honeycomb-cell:nth-child(9n + 9),
+.honeycomb-cell:nth-child(9n + 10),
+.honeycomb-cell:nth-child(9n + 11),
+.honeycomb-cell:nth-child(9n + 12),
+.honeycomb-cell:nth-child(9n + 13),
+.honeycomb-cell:nth-child(9n + 14) {
+  margin-top: -1 * $Honeycomb-Space;
+}
+
+$ResultHoneycomb-Height: 360rpx;
+$ResultHoneycomb-Width: 280rpx;
+
+.result-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40rpx 0;
+  margin: 20rpx 0 0 0;
+  animation: 0.8s;
+  .result-item {
+    width: $ResultHoneycomb-Width;
+    height: $ResultHoneycomb-Height;
+    margin: 0 10px;
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    position: relative;
+    border: none;
+
+    &:hover {
+      .img {
+        transform: scale(1.2);
+        filter: brightness(1.15);
+      }
+
+      .desc {
+        color: transparent;
+      }
+    }
+
+    .img {
+      width: $ResultHoneycomb-Height;
+      height: $ResultHoneycomb-Height;
+      object-fit: cover;
+      filter: brightness(0.4);
+      transition: 0.7s;
+    }
+
+    .desc {
+      position: absolute;
+      color: #fff;
+      width: 80%;
+      left: 50%;
+      top: 60%;
+      transform: translateX(-50%) translateY(-50%);
+      text-align: center;
+      transition: 0.7s;
+      font-size: 14px;
+    }
+  }
+}
+
+.result-container-3 {
+  .result-item:nth-child(3) {
+    margin: 0;
+    transform: translateY(-24rpx);
+  }
+}
+
+.result-container-4 {
+  .result-item {
+    margin: 0 10px 20px 10px;
+  }
+}
+
+.pop {
+  .pop-header {
+    display: flex;
+    height: 100rpx;
+    align-items: center;
+    margin: 0 32rpx;
+
+    .cancel,
+    .confirm {
+      width: 200rpx;
+      font-size: 16px;
+      height: 100rpx;
+      line-height: 100rpx;
+      cursor: pointer;
+    }
+
+    .title {
+      flex: 1;
+      text-align: center;
+      font-size: 20px;
+      height: 100rpx;
+      line-height: 100rpx;
+    }
+
+    .cancel {
+      text-align: left;
+      color: $color-red-main;
+    }
+
+    .confirm {
+      text-align: right;
+      color: $color-main-blue;
+    }
+  }
+
+  .pop-content {
+    width: 100%;
+    margin: 64rpx 0;
+
+    .row {
+      margin: 0 0 16rpx 50rpx;
+      width: 600rpx;
+      height: 60rpx;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .row-text {
+      font-size: 16px;
+      color: #333;
+
+      .num {
+        margin: 0 8rpx 0 4rpx;
+        // 使用透明度的蓝色
+        color: $color-main-blue;
+      }
+    }
+  }
+}

@@ -23,6 +23,7 @@
     <view class="item" bindtap="handleDo">
       <image class="item-icon" src="/static/mine/do.png" mode="aspectFit"></image>
       <view class="item-text">做点什么</view>
+      <view class="item-new">新</view>
     </view>
   </view>
   <view class="block">

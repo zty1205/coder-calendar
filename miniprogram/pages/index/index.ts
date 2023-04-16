@@ -13,8 +13,8 @@ let timer: number;
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
   num: 0,
-  text: '我的页面 - 做点什么 即将上线，敬请期待！',
-  time: '2023/04/16 00:00:00',
+  text: '我的页面 - 做点什么 已上线，欢迎体验！',
+  time: '2023/04/18 00:00:00',
   limit: 3,
   overTime: false,
   closed: false

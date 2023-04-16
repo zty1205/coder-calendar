@@ -78,6 +78,7 @@
     flex-direction: column;
     align-items: center;
     flex-basis: 25%;
+    position: relative;
 
     .item-icon {
       width: 80rpx;
@@ -87,6 +88,19 @@
     .item-text {
       font-size: 12px;
       margin-top: 4px;
+    }
+    .item-new {
+      color: #fff;
+      font-size: 10px;
+      width: 36rpx;
+      height: 36rpx;
+      line-height: 36rpx;
+      border-radius: 100%;
+      background-color: #ee0a24;
+      position: absolute;
+      text-align: center;
+      right: 36rpx;
+      bottom: 32rpx;
     }
   }
 }

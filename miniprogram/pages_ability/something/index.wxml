@@ -1,0 +1,48 @@
+<view class="page">
+  <view class="honeycomb-container">
+    <view class="honeycomb">
+      <view wx:for="{{list}}" class="honeycomb-cell {{ item.finished ? 'honeycomb-cell-finished' : item.chosen ? 'honeycomb-cell-chosen' : ''}}" wx:key="id" bindanimationend="handleAniEnd"></view>
+    </view>
+
+    <view class="op-container">
+      <van-icon class="op-icon  {{ showPlayAni ? 'op-ani' : ''}}" name="play-circle" size="28px" color="#fff" bindtap="handleStart" />
+      <van-icon class="op-icon {{ showThumbAni ? 'op-ani' : '' }} {{ status === 'process' ? 'op-disabled' : ''}}" name="thumb-circle" size="28px" color="#fff" bindtap="handleReplenish" />
+      <van-icon class="op-icon  {{ status === 'process' ? 'op-disabled' : ''}}" name="setting" size="28px" color="#fff" bindtap="handeShowPop" />
+    </view>
+   
+  </view>
+  <view>
+    <view class="result-container result-container-{{result.length || worker}}">
+      <view class="result-item" wx:for="{{result}}" wx:key="desc">
+        <image class="img" src="{{item.img}}" mode="aspectFit" />
+        <text class="desc">{{item.desc}}</text>
+      </view>
+    </view>
+    <van-popup show="{{ showPop }}" round position="bottom" bind:close="onClose">
+      <view class="pop">
+        <view class="pop-header">
+          <view class="cancel" bindtap="handlePopCancel">
+            取消
+          </view>
+          <view class="title"></view>
+          <view class="confirm" bindtap="handlePopConfirm">
+            确定
+          </view>
+        </view>
+        <view class="pop-content">
+          <view class="row row-text">搬砖时速：<text class="num">{{speedVar}}</text>毫秒/块</view>
+          <view class="row">
+            <van-slider style="width: 100%;" step="{{100}}" active-color="#ee0a24" value="{{speedVar}}" min="{{100}}" max="{{800}}" bind:drag="onDragSpeed">
+            </van-slider>
+          </view>
+          <view class="row row-text">雇佣工人：<text class="num">{{workerVar}}</text>位</view>
+          <view class="row">
+            <van-slider style="width: 100%;" step="{{1}}" active-color="#ee0a24" value="{{workerVar}}" min="{{1}}" max="{{3}}" bind:drag="onDragWorker">
+            </van-slider>
+          </view>
+        </view>
+      </view>
+
+    </van-popup>
+  </view>
+</view>

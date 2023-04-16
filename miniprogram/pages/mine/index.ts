@@ -1,6 +1,6 @@
 import { getUserSync } from '../../data/user';
 import { removeCache } from '../../utils/cache';
-import { comingSoon, resetComing, wxConfirm } from '../../utils/common';
+import { resetComing, wxConfirm } from '../../utils/common';
 import { formatSize } from '../../utils/util';
 
 // pages/mine/index.ts
@@ -51,7 +51,9 @@ Page({
     });
   },
   handleDo() {
-    comingSoon();
+    wx.navigateTo({
+      url: '/pages_ability/something/index'
+    });
   },
   handleDiary() {
     wx.navigateTo({
