@@ -1,3 +1,4 @@
+<page-meta page-style="{{ showPop ? 'overflow: hidden;' : '' }}" />
 <view class="page">
   <view class="honeycomb-container">
     <view class="honeycomb">

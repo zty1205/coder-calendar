@@ -8,7 +8,7 @@ import { resetComing } from '../../utils/common';
 import { DAY_SECONDS } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
-let timer: number;
+let timer: NodeJS.Timeout;
 
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
@@ -302,7 +302,6 @@ Page({
     }
   },
   judgeNotice() {
-    console.log('NOTICE_CONFIG = ', NOTICE_CONFIG)
     if (NOTICE_CONFIG.closed || NOTICE_CONFIG.overTime || NOTICE_CONFIG.num >= NOTICE_CONFIG.limit) {
       this.closeNotice()
       return
