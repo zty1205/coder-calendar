@@ -38,7 +38,7 @@
           </view>
           <view class="row row-text">雇佣工人：<text class="num">{{workerVar}}</text>位</view>
           <view class="row">
-            <van-slider style="width: 100%;" step="{{1}}" active-color="#ee0a24" value="{{workerVar}}" min="{{1}}" max="{{3}}" bind:drag="onDragWorker">
+            <van-slider style="width: 100%;" step="{{1}}" active-color="#ee0a24" value="{{workerVar}}" min="{{1}}" max="{{4}}" bind:drag="onDragWorker">
             </van-slider>
           </view>
         </view>
