@@ -73,7 +73,7 @@ export default [
   },
   {
     img: 'https://img0.baidu.com/it/u=3378232023,988257860&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
-    desc: '刷刷刷',
+    desc: '刷刷刷'
   },
   {
     img: 'https://img1.baidu.com/it/u=1492661550,23928123&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
@@ -95,4 +95,24 @@ export default [
     img: 'https://img2.baidu.com/it/u=3272294622,1913159366&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
     desc: '计划明天的事'
   },
+  {
+    img: 'https://img2.baidu.com/it/u=377715695,744772453&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '约几个朋友，KGe之王'
+  },
+  {
+    img: 'https://img1.baidu.com/it/u=2964834386,3076457906&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '望街上人流如潮，提包裹千仓万箱'
+  },
+  {
+    img: 'https://img0.baidu.com/it/u=4041541783,3886593894&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=400',
+    desc: '手工，一针一线的编织'
+  },
+  {
+    img: 'https://img2.baidu.com/it/u=356086855,3447015451&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '涮火锅'
+  },
+  {
+    img: 'https://img0.baidu.com/it/u=3591662320,1982904347&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '回味小时候的味道'
+  }
 ];

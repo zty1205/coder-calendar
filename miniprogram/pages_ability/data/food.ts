@@ -406,5 +406,35 @@ export default [
     category: FOOD_CATEGORY.TUBERS,
     hPrice: '40',
     lPrice: '20'
+  },
+  {
+    name: '胡辣汤',
+    level: 4,
+    weight: 8,
+    img: 'https://img1.baidu.com/it/u=1980924160,3967991096&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '胡辣，虽然美味，不宜多吃，易上火',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '40',
+    lPrice: '20'
+  },
+  {
+    name: '鸭血粉丝汤',
+    level: 4,
+    weight: 8,
+    img: 'https://img0.baidu.com/it/u=4229521469,1260178615&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '鸭血的滑嫩、鸭胗的柔韧、鸭肠的爽滑、鸭肝的绵软、鸭汤的清鲜,再配上Q弹有嚼劲的粉丝,吃一口永远忘不了',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '40',
+    lPrice: '20'
+  },
+  {
+    name: '螺s粉',
+    level: 6,
+    weight: 8,
+    img: 'https://img2.baidu.com/it/u=1702948608,3256685016&fm=253&fmt=auto&app=120&f=JPEG?w=760&h=760',
+    desc: '鲜、酸、爽、烫、辣',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '60',
+    lPrice: '30'
   }
 ];
