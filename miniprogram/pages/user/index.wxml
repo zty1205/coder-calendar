@@ -6,21 +6,21 @@
   </view>
 
   <view class="user-info block">
-    <view class="cell cell--large">
+    <view class="cell ">
       <label class="cell-label" for="name">昵称：</label>
       <view class="cell-content">
         <input value="{{user.name}}" bindinput="onNameInput" id="name" type="nickname" maxlength="8" placeholder-class="cell-placeholder" placeholder="请输入昵称" />
       </view>
     </view>
 
-    <view class="cell cell--large">
+    <view class="cell ">
       <label class="cell-label" for="desc">简介：</label>
       <view class="cell-content">
         <textarea value="{{user.desc}}" bindblur="onDescInput" id="desc" maxlength="24" placeholder-class="cell-placeholder" placeholder="请输入简介" auto-height="true" />
       </view>
     </view>
 
-    <view class="cell cell--large">
+    <view class="cell ">
       <label class="cell-label">性别：</label>
       <radio-group class="cell-content" value="{{user.sex}}" bindchange="onSexChange">
         <label class="radio">
@@ -32,15 +32,29 @@
       </radio-group>
     </view>
 
-    <view class="cell cell--large">
+    <view class="cell ">
       <label class="cell-label" for="salary">工资：</label>
       <view class="cell-content">
         <input value="{{user.salary}}" bindinput="onSalaryInput" id="salary" type="number" maxlength="6" placeholder-class="cell-placeholder" placeholder="请输入工资" />
       </view>
-
     </view>
 
-    <view class="cell cell--large">
+    <view class="cell ">
+      <label class="cell-label">工作制：</label>
+      <radio-group class="cell-content" value="{{user.mode}}" bindchange="onModeChange">
+        <label class="radio">
+          <radio value="1" checked="{{user.mode === '1'}}" />9(N)5
+        </label>
+        <label class="radio">
+          <radio value="2" checked="{{user.mode === '2'}}" />996
+        </label>
+        <label class="radio">
+          <radio value="3" checked="{{user.mode === '3'}}" />007
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="cell ">
       <label class="cell-label" for="salary-day">发薪日：</label>
       <picker class="cell-content" id="salary-day" bindchange="onSalaryDayChange" range="{{salaryDayList}}">
         <view wx:if="{{user.salaryDay}}" class="picker-inner">

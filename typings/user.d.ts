@@ -4,4 +4,5 @@ interface User {
   sex: string;
   salary: number;
   salaryDay: number;
+  mode: string;
 }
