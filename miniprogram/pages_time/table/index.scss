@@ -1,0 +1,9 @@
+@import '../../style/mixin.scss';
+
+time-item {
+  width: 100%;
+}
+
+.block {
+  @include ios-safe-padding-bottom(20px);
+}

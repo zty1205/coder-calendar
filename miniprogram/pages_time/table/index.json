@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "time-item": "../components/time-item/index"
+  }
+}

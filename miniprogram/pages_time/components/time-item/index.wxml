@@ -1,0 +1,10 @@
+<view class="component-time-item {{ s === '2' ? 'right' : 'left' }}">
+  <view class="time">{{ y }} 年 {{ m}} 月 {{ d }} 日</view>
+  <view class="desc">
+    <view class="status {{s === '2' ? 'status-lieu' : 'status-hd'}}">
+      {{ s === '2' ? '补班': '节假'}}
+    </view>
+    <view class="week">星期{{cd}}</view>
+    <view class="hd" wx:if="{{t||hd}}">{{t||hd}}</view>
+  </view>
+</view>

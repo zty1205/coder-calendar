@@ -1,0 +1,14 @@
+<view class="block">
+  <view class="cell cell--large">
+    <label class="cell-label" for="sw">假补同显</label>
+    <view class="cell-content">
+      <switch id="sw" checked="{{bothShow}}" bindchange="handleBothShowChange" />
+    </view>
+    <view class="cell-right-text clickable" bindtap="handleChart">
+      查看图表
+    </view>
+  </view>
+  <view wx:for="{{list}}" wx:key="item" class="cell cell--large">
+    <time-item y="{{item.y}}" m="{{item.m}}" d="{{item.d}}" cd="{{item.cd}}" t="{{item.t}}" hd="{{item.hd}}" s="{{item.s}}"></time-item>
+  </view>
+</view>

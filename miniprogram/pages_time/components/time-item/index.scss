@@ -1,0 +1,51 @@
+@import "../../../style//var.scss";
+
+.component-time-item {
+  width: 100%;
+  .time {
+    display: flex;
+    font-size: $font-size-title;
+    color: $color-cell-content;
+  }
+  .desc {
+    display: flex;
+    font-size: $font-size-subtitle;
+    color: $color-cell-text;
+
+    .status {
+      margin-right: 12rpx;
+      
+    }
+    .status-lieu {
+      color: $color-lieu-red;
+    }
+    .status-hd {
+      color: $color-main-blue;
+    }
+    .week {
+      margin-right: 16rpx;
+    }
+  }
+}
+
+.right {
+  .time {
+    justify-content: flex-end;
+  }
+  .desc {
+    justify-content: flex-end;
+
+    .status {
+      margin-right: 0;
+    
+    }
+    .week {
+      margin-right: 0;
+      margin-left: 16rpx;
+    }
+    .hd {
+      margin-right: 0;
+      margin-left: 16rpx;
+    }
+  }
+}
