@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/zty1205/coder-calendar/compare/v1.3.1...v1.4.0) (2023-05-03)
+
+
+### Features
+
+* 996模式适配 ([2dad510](https://github.com/zty1205/coder-calendar/commit/2dad5109abba2d987d33ce75b22c00309537d71c))
+* 新增吃，玩数据 ([6187956](https://github.com/zty1205/coder-calendar/commit/6187956572a91375094565d1fa4955ae0d1bdd01))
+* 新增假补列表页 ([dfb7904](https://github.com/zty1205/coder-calendar/commit/dfb7904028b5a6e75995349b1d94de7cf42f4918))
+* 新增用户工作制 ([ffdec78](https://github.com/zty1205/coder-calendar/commit/ffdec78c63d0d2b3a61763a15a66fb80b249ab1b))
+* 最大工人数提升到4 ([9b1d87e](https://github.com/zty1205/coder-calendar/commit/9b1d87e92ecb2228e82797efd1117eebcbc57d18))
+
 ### [1.3.1](https://github.com/zty1205/coder-calendar/compare/v1.3.0...v1.3.1) (2023-04-16)
 
 
