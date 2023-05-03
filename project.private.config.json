@@ -50,6 +50,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages_time/table/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "图表页面",
+          "pathName": "pages_time/statistics/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

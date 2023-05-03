@@ -1,18 +1,20 @@
 import { getUserSync, saveUserSync } from '../../data/user';
 import { wxMessageModel } from '../../utils/common';
+import { WORK_MODE } from '../../utils/constant';
 import { nextTick } from '../../weapp/common/utils';
 
 Page({
   data: {
     avatarShow: 'width:200rpx;height:200rpx;margin:0 40rpx;',
     avatarHidden: 'width:0;height:0;margin:0;',
+    WORK_MODE,
     user: {
       name: '', // 昵称
       desc: '', // desc 描述
       sex: '', // 性别 0女1男
       salary: '', // salary 工资
       salaryDay: '', // 发薪日
-      mode: '1', // 工作制
+      mode: WORK_MODE.NORMAL, // 工作制
     },
     salaryDayList: [
       '1',
@@ -87,14 +89,14 @@ Page({
       'user.mode': data.detail.value
     });
     // 007
-    if (value === '3') {
+    if (value === WORK_MODE['007']) {
       wxMessageModel('打工人永不为奴', '为了自由');
       wx.nextTick(() => {
         this.setData({
-          'user.mode': '1'
+          'user.mode': WORK_MODE.NORMAL
         });
       })
-    } else if (value === '2') {
+    } else if (value === WORK_MODE['996']) {
       wx.showToast({
         icon: 'none',
         title: '注意身体，加强锻炼！'
@@ -105,7 +107,7 @@ Page({
   changeNavigationBarColor() {
     wx.setNavigationBarColor({
       frontColor: '#000000',
-      backgroundColor: this.data.user.mode === '2' ? '#cccccc' : '#ffffff'
+      backgroundColor: this.data.user.mode === WORK_MODE['996'] ? '#f5f5f5' : '#ffffff'
     })
   },
   handleSave() {
@@ -117,7 +119,7 @@ Page({
       sex: user.sex,
       salary: user.salary ? Number(user.salary) : 0,
       salaryDay: user.salaryDay ? Number(user.salaryDay) + 1 : 0,
-      mode: user.mode || '1'
+      mode: user.mode || WORK_MODE.NORMAL
     });
 
     wx.nextTick(() => {
@@ -135,7 +137,7 @@ Page({
         sex: user.sex,
         salary: user.salary ? String(user.salary) : '',
         salaryDay: user.salaryDay ? String(Number(user.salaryDay) - 1) : '',
-        mode: user.mode || '1'
+        mode: user.mode || WORK_MODE.NORMAL
       }
     });
     nextTick(() => {

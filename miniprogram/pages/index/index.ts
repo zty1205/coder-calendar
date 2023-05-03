@@ -13,8 +13,8 @@ let timer: NodeJS.Timeout;
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
   num: 0,
-  text: '我的页面 - 做点什么 已上线，欢迎体验！',
-  time: '2023/04/18 00:00:00',
+  text: `打工人996 - 模式来袭！`,
+  time: '2023/05/10 00:00:00',
   limit: 3,
   overTime: false,
   closed: false
@@ -96,7 +96,7 @@ Page({
       content: '0',
       title: '今年还有多少节假日',
       term: '假期余额',
-      path: '/pages_time/statistics/index'
+      path: '/pages_time/table/index?type=1'
     },
     lieuBalance: {
       did: 'lieu-balance',
@@ -104,7 +104,7 @@ Page({
       content: '0',
       title: '今年还要补多少班',
       term: '补班余额',
-      path: '/pages_time/statistics/index'
+      path: '/pages_time/table/index?type=2'
     }
   },
   onLoad() {
@@ -120,6 +120,12 @@ Page({
   },
   onUnload() {
     this.clearTick();
+  },
+  handleTapNoticeBar() {
+    console.log('aaaa')
+    wx.navigateTo({
+      url: '/pages_about/version/index'
+    })
   },
   setCurDate() {
     const now = new Date();

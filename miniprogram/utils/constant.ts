@@ -3,3 +3,9 @@ export const STORAGE_KEY = {
 };
 
 export const DAY_SECONDS = 86400;
+
+export const WORK_MODE = {
+  NORMAL: '5',
+  '996': '6',
+  "007": '7'
+}

@@ -1,4 +1,5 @@
 interface TimeStatistItem {
+  // 月份
   m: number;
   // total 总天数
   t: number;
@@ -10,6 +11,11 @@ interface TimeStatistItem {
   h: number;
   // lieu 补班天数
   l: number;
+
+  // 996 工作日
+  w_996: number
+  // 996 休息日
+  r_996: number
 }
 
 interface TimeItem {
