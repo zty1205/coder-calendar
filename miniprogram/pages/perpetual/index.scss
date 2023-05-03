@@ -131,7 +131,7 @@
     justify-content: space-evenly;
     margin: 20px auto 0 auto;
     color: $color-main-blue;
-    @include ios-safe-padding-bottom(10px);
+    @include ios-safe-padding-bottom(20px);
     .item {
       transform: skew(25deg);
     }

@@ -1,4 +1,4 @@
-import { STORAGE_KEY } from "../utils/constant";
+import { STORAGE_KEY, WORK_MODE } from "../utils/constant";
 export function saveUserSync(user: User): void {
   wx.setStorageSync(STORAGE_KEY.USER, user)
 }
@@ -19,7 +19,7 @@ export async function getUserMode() {
       const data = res.data as User
       resolve(data.mode)
     }).catch(() => {
-      resolve('1')
+      resolve(WORK_MODE.NORMAL)
     })
   })
 }

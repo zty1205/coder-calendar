@@ -1,6 +1,7 @@
 import { getUserSync } from '../../data/user';
 import { removeCache } from '../../utils/cache';
 import { resetComing, wxConfirm } from '../../utils/common';
+import { WORK_MODE } from '../../utils/constant';
 import { formatSize } from '../../utils/util';
 
 // pages/mine/index.ts
@@ -35,6 +36,10 @@ Page({
         desc: user.desc || '地表最强打工人',
         sex: user.sex
       }
+    });
+    wx.setNavigationBarColor({
+      frontColor: '#000000',
+      backgroundColor: user.mode === WORK_MODE['996'] ? '#f5f5f5' : '#ffffff'
     });
   },
   getCacheSize() {

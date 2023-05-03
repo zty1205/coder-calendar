@@ -43,13 +43,13 @@
       <label class="cell-label">工作制：</label>
       <radio-group class="cell-content" value="{{user.mode}}" bindchange="onModeChange">
         <label class="radio">
-          <radio value="1" checked="{{user.mode === '1'}}" />9(N)5
+          <radio value="{{ WORK_MODE.NORMAL }}" checked="{{user.mode === WORK_MODE.NORMAL}}" />9(N)5
         </label>
         <label class="radio">
-          <radio value="2" checked="{{user.mode === '2'}}" />996
+          <radio value="{{ WORK_MODE['996'] }}" checked="{{user.mode === WORK_MODE['996']}}" />996
         </label>
         <label class="radio">
-          <radio value="3" checked="{{user.mode === '3'}}" />007
+          <radio value="{{ WORK_MODE['007'] }}" checked="{{user.mode === WORK_MODE['007'] }}" />007
         </label>
       </radio-group>
     </view>

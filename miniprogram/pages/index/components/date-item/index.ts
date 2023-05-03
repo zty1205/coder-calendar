@@ -10,12 +10,7 @@ Component({
   },
   methods: {
     handleSet() {
-      console.log('on set ', this.data)
-      if (this.data.path) {
-        wx.navigateTo({
-          url: this.data.path
-        })
-      }
+      this.triggerEvent('click', this.data);
     }
-  },
+  }
 });

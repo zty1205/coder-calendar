@@ -47,3 +47,21 @@ export function wxConfirm(content: string): Promise<Boolean> {
     });
   });
 }
+
+export function wxMessageModel(content: string, confirmText = '我知道了'): Promise<Boolean> {
+  return new Promise((resolve) => {
+    wx.showModal({
+      content: content,
+      showCancel: false,
+      confirmText: confirmText,
+      success: (res) => {
+        if (res.confirm) {
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      },
+      fail: () => resolve(false)
+    });
+  });
+}

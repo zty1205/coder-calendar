@@ -1,6 +1,6 @@
 <page-meta page-style="{{ showPicker ? 'overflow: hidden;' : '' }}" />
 <wxs src="./index.wxs" module="util"></wxs>
-<van-notice-bar wx:if="{{showNotice}}"  left-icon="volume-o" mode="closeable" scrollable text="{{noticeText}}" />
+<van-notice-bar wx:if="{{showNotice}}"  left-icon="volume-o" mode="closeable" scrollable text="{{noticeText}}" bindtap="handleTapNoticeBar" />
 <view class="container">
   <view class="date-container">
     <view class="date-left date-left-{{curDateInfo.s}}" bindtap="handleClickDay">
@@ -15,12 +15,12 @@
     </view>
   </view>
   <view class="expectation">
-    <date-item did="{{ dayMoney.did }}" show="{{ dayMoney.show }}" content="{{ dayMoney.content }}" title="{{ dayMoney.title }}" term="{{ dayMoney.term }}" path="{{ dayMoney.path }}" index="{{0}}"></date-item>
-    <date-item did="{{ monthMoney.did }}" show="{{ monthMoney.show }}" content="{{ monthMoney.content }}" title="{{ monthMoney.title }}" term="{{ monthMoney.term }}" path="{{ monthMoney.path }}" index="{{1}}"></date-item>
-    <date-item did="{{ salary.did }}" show="{{ salary.show }}" content="{{ salary.content }}" title="{{ salary.title }}" term="{{ salary.term }}" path="{{ salary.path }}" index="{{2}}"></date-item>
-    <date-item did="{{ hoilday.did }}" show="{{ hoilday.show }}" content="{{ hoilday.content }}" title="{{ hoilday.title }}" term="{{ hoilday.term }}" path="{{ hoilday.path }}" index="{{3}}"></date-item>
-    <date-item did="{{ hoildayBalance.did }}" show="{{ hoildayBalance.show }}" content="{{ hoildayBalance.content }}" title="{{ hoildayBalance.title }}" term="{{ hoildayBalance.term }}" path="{{ hoildayBalance.path }}" index="{{4}}"></date-item>
-    <date-item did="{{ lieuBalance.did }}" show="{{ lieuBalance.show }}" content="{{ lieuBalance.content }}" title="{{ lieuBalance.title }}" term="{{ lieuBalance.term }}" path="{{ lieuBalance.path }}" index="{{5}}"></date-item>
+    <date-item did="{{ dayMoney.did }}" show="{{ dayMoney.show }}" content="{{ dayMoney.content }}" title="{{ dayMoney.title }}" term="{{ dayMoney.term }}" path="{{ dayMoney.path }}" index="{{0}}" bind:click="handleClickItem"></date-item>
+    <date-item did="{{ monthMoney.did }}" show="{{ monthMoney.show }}" content="{{ monthMoney.content }}" title="{{ monthMoney.title }}" term="{{ monthMoney.term }}" path="{{ monthMoney.path }}" index="{{1}}"  bind:click="handleClickItem"></date-item>
+    <date-item did="{{ salary.did }}" show="{{ salary.show }}" content="{{ salary.content }}" title="{{ salary.title }}" term="{{ salary.term }}" path="{{ salary.path }}" index="{{2}}"  bind:click="handleClickItem"></date-item>
+    <date-item did="{{ hoilday.did }}" show="{{ hoilday.show }}" content="{{ hoilday.content }}" title="{{ hoilday.title }}" term="{{ hoilday.term }}" path="{{ hoilday.path }}" index="{{3}}"  bind:click="handleClickItem"></date-item>
+    <date-item did="{{ lieuBalance.did }}" show="{{ lieuBalance.show }}" content="{{ lieuBalance.content }}" title="{{ lieuBalance.title }}" term="{{ lieuBalance.term }}" path="{{ lieuBalance.path }}" index="{{4}}"  bind:click="handleClickItem"></date-item>
+    <date-item did="{{ hoildayBalance.did }}" show="{{ hoildayBalance.show }}" content="{{ hoildayBalance.content }}" title="{{ hoildayBalance.title }}" term="{{ hoildayBalance.term }}" path="{{ hoildayBalance.path }}" index="{{5}}"  bind:click="handleClickItem"></date-item>
   </view>
   <image class="worker-img" src="https://s1.ax1x.com/2023/03/15/pp3tA1A.png" mode="aspectFit" />
 </view>

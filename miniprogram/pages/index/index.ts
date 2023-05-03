@@ -5,7 +5,7 @@ import pickerData from '../../data/pickerMonth';
 
 import { getSalaryDaySync, getSalarySync } from '../../data/user';
 import { resetComing } from '../../utils/common';
-import { DAY_SECONDS } from '../../utils/constant';
+import { DAY_SECONDS, TimeTableType } from '../../utils/constant';
 import { getCountDays, getCountStamp, stampToDay, getYearRange, formatMonthday } from '../../utils/util';
 
 let timer: NodeJS.Timeout;
@@ -13,12 +13,12 @@ let timer: NodeJS.Timeout;
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
   num: 0,
-  text: '我的页面 - 做点什么 已上线，欢迎体验！',
-  time: '2023/04/18 00:00:00',
+  text: `打工人996 - 模式来袭！`,
+  time: '2023/05/7 00:00:00',
   limit: 3,
   overTime: false,
   closed: false
-}
+};
 
 Page({
   data: {
@@ -96,7 +96,7 @@ Page({
       content: '0',
       title: '今年还有多少节假日',
       term: '假期余额',
-      path: '/pages_time/statistics/index'
+      path: `/pages_time/table/index?type=${TimeTableType.HOLIDAY}`
     },
     lieuBalance: {
       did: 'lieu-balance',
@@ -104,7 +104,7 @@ Page({
       content: '0',
       title: '今年还要补多少班',
       term: '补班余额',
-      path: '/pages_time/statistics/index'
+      path: `/pages_time/table/index?type=${TimeTableType.LIEU}`
     }
   },
   onLoad() {
@@ -113,13 +113,18 @@ Page({
   onShow() {
     resetComing();
     this.init();
-    this.judgeNotice()
+    this.judgeNotice();
   },
   onReady() {
     this.setPickerIndex();
   },
   onUnload() {
     this.clearTick();
+  },
+  handleTapNoticeBar() {
+    wx.navigateTo({
+      url: '/pages_about/version/index'
+    });
   },
   setCurDate() {
     const now = new Date();
@@ -259,12 +264,12 @@ Page({
       showPicker: false
     });
     wx.nextTick(() => {
-      this.setPickerIndex()
-    })
+      this.setPickerIndex();
+    });
   },
-  onPickerConfirm(e: WxDomEvent<{index: number[], value: string[]}>) {
-    const index = e.detail.index
-    if (!index || index.length !== 2) return
+  onPickerConfirm(e: WxDomEvent<{ index: number[]; value: string[] }>) {
+    const index = e.detail.index;
+    if (!index || index.length !== 2) return;
     this.setData({
       showPicker: false,
       curDate: new Date(`${this.data.curDate.getFullYear()}/${index[0] + 1}/${index[1] + 1}`)
@@ -281,7 +286,7 @@ Page({
     }
   },
   onPickerCancel() {
-    this.onPopupClose()
+    this.onPopupClose();
   },
   setPickerIndex() {
     const picker = this.selectComponent('#picker');
@@ -291,31 +296,40 @@ Page({
   handlePermanent() {
     wx.navigateTo({
       url: `/pages/perpetual/index?y=${this.data.curDateInfo.y}&m=${this.data.curDateInfo.m}&d=${this.data.curDateInfo.d}`
-    })
+    });
   },
   closeNotice() {
-    NOTICE_CONFIG.closed = true
+    NOTICE_CONFIG.closed = true;
     if (this.data.showNotice === true) {
       this.setData({
         showNotice: false
-      })
+      });
     }
   },
   judgeNotice() {
     if (NOTICE_CONFIG.closed || NOTICE_CONFIG.overTime || NOTICE_CONFIG.num >= NOTICE_CONFIG.limit) {
-      this.closeNotice()
-      return
+      this.closeNotice();
+      return;
     }
-    const overTime = new Date(NOTICE_CONFIG.time).getTime() < Date.now()
-    NOTICE_CONFIG.overTime = overTime
+    const overTime = new Date(NOTICE_CONFIG.time).getTime() < Date.now();
+    NOTICE_CONFIG.overTime = overTime;
     if (overTime) {
-      this.closeNotice()
-      return
+      this.closeNotice();
+      return;
     }
-    NOTICE_CONFIG.num+=1
+    NOTICE_CONFIG.num += 1;
     this.setData({
       showNotice: true
-    })
+    });
+  },
+  handleClickItem(e: WxDomEvent<{ path: string }>) {
+    const path = e.detail.path;
+    if (path) {
+      const url = path + (path.includes('?') ? `&` : `?`) + `curDateStamp=${this.data.curDate.getTime()}`;
+      wx.navigateTo({
+        url: url
+      });
+    }
   },
   onShareAppMessage() {
     return {
