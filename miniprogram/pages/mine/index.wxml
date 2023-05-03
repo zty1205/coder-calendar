@@ -29,7 +29,7 @@
     <view class="cell" bindtap="handleDiary">
       <image class="cell-left-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
       <view class="cell-content">关于程序</view>
-      <view class="cell-right-text">版本 1.3.1</view>
+      <view class="cell-right-text">版本 1.4.0</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
     <view class="cell" bindtap="handleHelper">
