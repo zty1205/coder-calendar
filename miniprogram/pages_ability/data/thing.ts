@@ -114,5 +114,13 @@ export default [
   {
     img: 'https://img0.baidu.com/it/u=3591662320,1982904347&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
     desc: '回味小时候的味道'
+  },
+  {
+    img: 'https://img2.baidu.com/it/u=3912340541,2998453866&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '抓住生活中稍纵即逝的平凡事物'
+  },
+  {
+    img: 'https://img1.baidu.com/it/u=3141938084,1434624597&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '“猴子的艺术”'
   }
 ];

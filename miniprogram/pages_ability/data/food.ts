@@ -238,6 +238,16 @@ export default [
     lPrice: '20'
   },
   {
+    name: '干拌麻辣烫',
+    level: 4,
+    weight: 8,
+    img: 'https://img2.baidu.com/it/u=2095400197,4058338773&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '“拌”先淋上秘制的“灵魂汤汁”再用筷子趁热搅拌盘边堆着的辣椒面、蒜泥堆和油光亮泽的麻辣烫',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '40',
+    lPrice: '20'
+  },
+  {
     name: '麻辣香锅',
     level: 4,
     weight: 8,
@@ -436,5 +446,45 @@ export default [
     category: FOOD_CATEGORY.CEREALS,
     hPrice: '60',
     lPrice: '30'
+  },
+  {
+    name: '北京烤鸭',
+    level: 6,
+    weight: 8,
+    img: 'https://img1.baidu.com/it/u=2802778230,2059682382&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '优质肉食鸭，果木炭火烤制，色泽红润，肉质肥而不腻，外脆里嫩',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '60',
+    lPrice: '30'
+  },
+  {
+    name: '肠粉',
+    level: 6,
+    weight: 8,
+    img: 'https://img0.baidu.com/it/u=329394501,2774420901&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '清淡，入口即化，富有弹性，美味鲜香',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '60',
+    lPrice: '30'
+  },
+  {
+    name: '烧腊',
+    level: 6,
+    weight: 8,
+    img: 'https://img2.baidu.com/it/u=1429411311,1855563284&fm=253&fmt=auto&app=138&f=JPEG?w=300&h=300',
+    desc: '色泽金黄，咸香味浓',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '60',
+    lPrice: '30'
+  },
+  {
+    name: '蛋包饭',
+    level: 5,
+    weight: 8,
+    img: 'https://img2.baidu.com/it/u=3693113459,3799549962&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+    desc: '鸡蛋煎成厚薄均匀的蛋皮，再放上炒好的炒饭、番茄酱、色拉油',
+    category: FOOD_CATEGORY.CEREALS,
+    hPrice: '50',
+    lPrice: '25'
   }
 ];
