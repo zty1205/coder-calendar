@@ -17,28 +17,32 @@
   </view>
   <view class="ability-container block">
     <view class="item" bindtap="handleEat">
-      <image class="item-icon" src="/static/mine/play.png" mode="aspectFit"></image>
+      <image class="item-icon" src="/static/mine/eat.png" mode="aspectFit"></image>
       <view class="item-text">吃点东西</view>
     </view>
     <view class="item" bindtap="handleDo">
       <image class="item-icon" src="/static/mine/do.png" mode="aspectFit"></image>
       <view class="item-text">做点什么</view>
     </view>
+    <view class="item" bindtap="handlePlay">
+      <image class="item-icon" src="/static/mine/play.png" mode="aspectFit"></image>
+      <view class="item-text">玩点什么</view>
+    </view>
   </view>
   <view class="block">
     <view class="cell" bindtap="handleDiary">
-      <image class="cell-left-icon" src="/static/mine/diary.png" mode="aspectFit"></image>
+      <image class="cell-left-icon" src="/static/mine/about.png" mode="aspectFit"></image>
       <view class="cell-content">关于程序</view>
       <view class="cell-right-text">版本 1.4.0</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
     <view class="cell" bindtap="handleHelper">
-      <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
+      <image class="cell-left-icon" src="/static/mine/helper.png" mode="aspectFit"></image>
       <view class="cell-content">帮助文档</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>
     </view>
     <view class="cell" wx:if="{{cacheSize}}" bindtap="handleCache">
-      <image class="cell-left-icon" src="/static/mine/laptop.png" mode="aspectFit"></image>
+      <image class="cell-left-icon" src="/static/mine/storage.png" mode="aspectFit"></image>
       <view class="cell-content">存储空间</view>
       <view class="cell-right-text">{{ cacheSize }}</view>
       <image class="cell-right-icon" src="/static/right.png" mode="aspectFit"></image>

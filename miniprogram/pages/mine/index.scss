@@ -20,7 +20,7 @@
       height: $height-avatar;
       border-radius: 100%;
     }
-  
+
     .avatar-empty {
       box-sizing: border-box;
       border: 1px solid $color-border-main;
@@ -108,5 +108,9 @@
 .block {
   .cell {
     cursor: pointer;
+  }
+
+  .cell-content {
+    color: #555;
   }
 }
