@@ -1,9 +1,13 @@
-import foodList from '../data/food';
+import getFoodList from '../data/food';
 import { getRandomByPriority } from '../../utils/util';
 
-Page({
+interface PageData {
+  foodList: Food[]
+}
+
+Page<PageData, any>({
   data: {
-    foodList: foodList,
+    foodList: [],
     showRollAni: false,
     showCurrentFood: false,
     showCurrentOp: false,
@@ -18,7 +22,11 @@ Page({
       lPrice: '0'
     }
   },
-  onLoad() {},
+  onLoad() {
+    this.setData({
+      foodList: getFoodList()
+    })
+  },
   onShareAppMessage() {
     return {
       title: '干饭人',
