@@ -22,6 +22,7 @@
     <date-item did="{{ lieuBalance.did }}" show="{{ lieuBalance.show }}" content="{{ lieuBalance.content }}" title="{{ lieuBalance.title }}" term="{{ lieuBalance.term }}" path="{{ lieuBalance.path }}" index="{{4}}"  bind:click="handleClickItem"></date-item>
     <date-item did="{{ hoildayBalance.did }}" show="{{ hoildayBalance.show }}" content="{{ hoildayBalance.content }}" title="{{ hoildayBalance.title }}" term="{{ hoildayBalance.term }}" path="{{ hoildayBalance.path }}" index="{{5}}"  bind:click="handleClickItem"></date-item>
   </view>
+  <ad class="ad--banner" unit-id="adunit-db16e54a8880d4da"></ad>
   <image class="worker-img" src="https://s1.ax1x.com/2023/03/15/pp3tA1A.png" mode="aspectFit" />
 </view>
 <van-popup show="{{ showPicker }}" position="bottom" bind:close="onPopupClose">
