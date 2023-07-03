@@ -61,7 +61,9 @@ Page({
     });
   },
   handlePlay() {
-    comingSoon()
+    wx.navigateTo({
+      url: '/pages/game/index'
+    });
   },
   handleDiary() {
     wx.navigateTo({

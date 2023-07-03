@@ -3,7 +3,8 @@ $color-red-main-alpha: #ee0a24aa;
 $color-main-blue: #6494ed;
 $color-lieu-red: $color-red-main;
 $color-hoilday-red: #ee0a241a;
-$color-border-main-blue: rgba(100, 148, 237, 0.7);
+$color-main-blue-alpha: rgba(100, 148, 237, 0.7);
+$color-border-main-blue: $color-main-blue-alpha;
 $color-border-main: #f5f5f5;
 $color-text-desc: #ccc;
 
@@ -24,6 +25,7 @@ $font-size-main-16: 16px;
 $font-size-title: 20px;
 $font-size-subtitle: 15px;
 $font-size-mini: 12px;
+$font-size-title-large: 24px;
 
 // cell
 $height-cell--large: 160rpx;

@@ -1,0 +1,37 @@
+<view>
+  <view class="pokes">
+    <poker class='poke-item' wx:for="{{pokes}}" number="{{item.num}}" type="{{item.type}}" wx:key="index"></poker>
+  </view>
+  <view class="rate">
+    <view class="rate-item">
+      <view class="rate-item-label">最佳</view>
+      <view class="rate-item-content history">{{historyRate}}</view>
+    </view>
+    <view class="rate-item">
+      <view class="rate-item-label">本次</view>
+      <view class="rate-item-content current">{{ successCount }} / {{ totalCount }}</view>
+    </view>
+  </view>
+  <view>
+    <view class="keyboard-content">
+      {{ calcText }}
+    </view>
+    <view class="keyboard">
+      <button wx:for="{{pokes}}" wx:key="index" class="keyboard-item" bindtap="handleTapKeyboard" data-op="{{item.num}}">{{ item.num }}</button>
+      <button class="keyboard-item keyboard-item-op-delete" bindtap="handleTapKeyboard" data-op="delete">Del</button>
+
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op="+">+</button>
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op="-">-</button>
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op="*">*</button>
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op="/">/</button>
+      <button class="keyboard-item keyboard-item-op-abandon" bindtap="handleTapKeyboard" data-op="abandon">放弃</button>
+
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op="(">(</button>
+      <button class="keyboard-item" bindtap="handleTapKeyboard" data-op=")">)</button>
+      <button class="keyboard-item keyboard-item-op-save" bindtap="handleTapKeyboard" data-op="save">保存</button>
+
+      <button class="keyboard-item keyboard-item-op-retry" bindtap="handleTapKeyboard" data-op="retry">重试</button>
+      <button class="keyboard-item keyboard-item-op-confirm" bindtap="handleTapKeyboard" data-op="confirm">确认</button>
+    </view>
+  </view>
+</view>

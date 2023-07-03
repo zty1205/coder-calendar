@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/user/index",
     "pages/mine/index",
-    "pages/perpetual/index"
+    "pages/perpetual/index",
+    "pages/game/index"
   ],
   "subPackages": [
     {
@@ -18,7 +19,8 @@
       "root": "pages_ability/",
       "pages": [
         "food/index",
-        "something/index"
+        "something/index",
+        "twenty-four/index"
       ],
       "name": "pages_ability"
     },

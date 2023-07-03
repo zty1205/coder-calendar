@@ -1,5 +1,6 @@
 export const STORAGE_KEY = {
-  USER: '__Z_CC_USER__'
+  USER: '__Z_CC_USER__',
+  POKES_RATE: '__Z_CC_POKES_RATE__'
 };
 
 export const DAY_SECONDS = 86400;

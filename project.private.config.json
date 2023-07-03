@@ -50,6 +50,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "poker",
+          "pathName": "pages_ability/twenty-four/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

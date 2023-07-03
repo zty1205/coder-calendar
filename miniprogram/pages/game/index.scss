@@ -1,0 +1,47 @@
+@import "../../style//var.scss";
+
+$size: 360rpx * 0.8;
+
+.games {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 32rpx 0;
+
+  .game-item {
+    width: $size;
+    height: $size;
+    margin-bottom: 48rpx;
+    cursor: pointer;
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .game-item-empty {
+    box-sizing: border-box;
+    background-color: $color-border-main;
+    border-radius: 32rpx;
+    color: $color-cell-label;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .game-empty-text {
+      width: 80rpx;
+      height: 60rpx;
+      text-align: center;
+      font-size: $font-size-title-large;
+    }
+
+    .game-empty-text-right {
+      padding: 0 40rpx 0 8rpx;
+    }
+    .game-empty-text-left {
+      padding: 0 8rpx 0 40rpx;
+    }
+  }
+}

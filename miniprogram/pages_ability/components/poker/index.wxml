@@ -1,0 +1,17 @@
+<view class="poker">
+  <view class="icon-container-top">
+    <image wx:if="{{ type === 1 }}" class="poker-icon" src="/static/twenty-four/red_heart.png" mode="aspectFit" />
+    <image wx:if="{{ type === 2 }}" class="poker-icon" src="/static/twenty-four/black_clubs .png" mode="aspectFit" />
+    <image wx:if="{{ type === 3 }}" class="poker-icon" src="/static/twenty-four/red_diamond.png" mode="aspectFit" />
+    <image wx:if="{{ type === 4 }}" class="poker-icon" src="/static/twenty-four/black_peach.png" mode="aspectFit" />
+  </view>
+  <view class="number-container" style="color: {{ type===1 || type === 3 ? '#d81f07' : '#000' }};">
+    {{number}}
+  </view>
+  <view class="icon-container-bottom">
+    <image wx:if="{{ type === 1 }}" class="poker-icon" src="/static/twenty-four/red_heart.png" mode="aspectFit" />
+    <image wx:if="{{ type === 2 }}" class="poker-icon" src="/static/twenty-four/black_clubs .png" mode="aspectFit" />
+    <image wx:if="{{ type === 3 }}" class="poker-icon" src="/static/twenty-four/red_diamond.png" mode="aspectFit" />
+    <image wx:if="{{ type === 4 }}" class="poker-icon" src="/static/twenty-four/black_peach.png" mode="aspectFit" />
+  </view>
+</view>

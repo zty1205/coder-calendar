@@ -1,0 +1,95 @@
+@import "../../style/var.scss";
+
+.pokes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 36rpx;
+}
+
+.rate {
+  display: flex;
+  margin-top: 10px;
+  .rate-item {
+    width: 50%;
+    padding: 16px;
+
+    .rate-item-label {
+      font-weight: 600;
+      font-size: $font-size-title;
+      margin-bottom: 4px;
+      color: $color-cell-label;
+    }
+    .history {
+     color: $color-main-blue-alpha;
+    }
+    .current {
+      color: $color-red-main-alpha; 
+     }
+  }
+}
+
+.keyboard-content {
+  margin: 20rpx 32rpx;
+  padding: 24rpx 16rpx;
+  font-size: 20px;
+  height: 32px;
+  line-height: 32px;
+  background-color: #f9f9f9;
+  border-radius: 16rpx;
+  overflow: hidden;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 10rpx 32rpx;
+  padding: 24rpx 16rpx;
+  background-color: #f5f5f5;
+  border-radius: 16rpx;
+
+  .keyboard-item {
+    width: 120rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    margin-bottom: 16rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48rpx;
+    border-radius: 16rpx;
+    background-color: #fff;
+    cursor: pointer;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    &::after {
+      border: none;
+    }
+  }
+
+  .keyboard-item-op-retry,
+  .keyboard-item-op-abandon,
+  .keyboard-item-op-delete,
+  .keyboard-item-op-save,
+  .keyboard-item-op-confirm {
+    font-size: 40rpx;
+    color: #fff;
+  }
+
+  .keyboard-item-op-abandon,
+  .keyboard-item-op-delete {
+    background-color: $color-red-main;
+    color: #fff;
+  }
+
+  .keyboard-item-op-retry,
+  .keyboard-item-op-save,
+  .keyboard-item-op-confirm {
+    background-color: $color-main-blue;
+    color: #fff;
+  }
+}

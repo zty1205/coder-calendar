@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "poker": "../components/poker/index"
+  },
+  "navigationBarTitleText": "算二十四"
+}
