@@ -1,6 +1,14 @@
 <view class="container">
  <view class="h1">版本更新</view>
  <view class="h2">
+  <text class="version">1.7.0</text>
+  (2023-07-03)
+ </view>
+ <view class="h3">Features</view>
+ <view class="ul">
+  <view class="li">玩-算24</view>
+ </view>
+ <view class="h2">
   <text class="version">1.6.0</text>
   (2023-06-11)
  </view>
