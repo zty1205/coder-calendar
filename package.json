@@ -12,6 +12,7 @@
     "release-major": "standard-version --release-as major",
     "release-minor": "standard-version --release-as minor",
     "beta": "standard-version -p beta",
+    "md": "node ./scripts/markdown.js",
     "version": "node ./scripts/markdown.js && node ./scripts/version.js"
   },
   "keywords": [],

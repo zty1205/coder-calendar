@@ -39,11 +39,13 @@ function removeUnuseHtml(html = '', mode) {
     .replace('Changelog', '版本更新')
     .replace(/<a(.+)>(.+)<\/a>/g, `<${INLINE_TAG} class="version">$2</${INLINE_TAG}>`) // 去a标签
     .replace(/<p>.+<\/p>/, '') // 去掉standard-version
+    .replace(/\(\d{4}\-\d{2}\-\d{2}\)/g, '') // 去除日期
     .split('\n')
     .map((str) => {
       // 去掉hash值
+      console.log('str = ', str);
       if (/<li>.+[\u4E00-\u9FA5]+/.test(str)) {
-        return `<li>${str.replace(/[^\u4e00-\u9fa5]/g, '')}</li>`;
+        return `${str.replace(new RegExp(`\\(<${INLINE_TAG} class="version">(\.+)</${INLINE_TAG}>\\)`), '')}`;
       }
       return str;
     })
