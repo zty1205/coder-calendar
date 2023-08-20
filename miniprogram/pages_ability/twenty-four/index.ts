@@ -25,7 +25,8 @@ Page({
         num: 0,
         type: 1
       }
-    ]
+    ],
+    showRule: false
   },
   onLoad() {
     this.initPoke();
@@ -182,5 +183,15 @@ Page({
         calcText: this.data.calcText + op
       });
     }
+  },
+  handleShowRule() {
+    this.setData({
+      showRule: true
+    })
+  },
+  handleCloseShowRule() {
+    this.setData({
+      showRule: false
+    })
   }
 });

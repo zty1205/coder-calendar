@@ -153,3 +153,12 @@
 .clickable {
   cursor: pointer;
 }
+
+
+.pop-dialog-content {
+  min-width: 50vw;
+  min-height: 400rpx;
+  padding: 40rpx 48rpx;
+  border-radius: 16rpx;
+  font-size: $font-size-normal;
+}

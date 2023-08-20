@@ -34,4 +34,38 @@
       <button class="keyboard-item keyboard-item-op-confirm" bindtap="handleTapKeyboard" data-op="confirm">确认</button>
     </view>
   </view>
+  <view class='rule' bindtap="handleShowRule">玩法规则</view>
+  <van-popup show="{{ showRule }}" bind:close="handleCloseShowRule">
+    <view class="pop-dialog-content rule-content">
+      <view class="rule-title">
+        玩法规则
+      </view>
+      <view class="rule-desc">
+        算24，是4个数通过四则运算、括号得到24的一种数学游戏，优点为考验人的智力和数学敏感性。
+      </view>
+      <view class="rule-sub-title">
+        操作按钮
+      </view>
+      <view class="rule-box">
+        <view class='rule-item'>
+          放弃按钮：放弃此次计算，总次数+1。
+        </view>
+        <view class='rule-item'>
+          保存按钮：若当前成绩超过最好成绩，则更新最好成绩。
+        </view>
+        <view class='rule-item'>
+          重试按钮：放弃此次计算，但不计入总次数。
+        </view>
+        <view class='rule-item'>
+          确认按钮：计算当前表达式的结果。
+        </view>
+      </view>
+      <view class="rule-sub-title">
+        最好成绩
+      </view>
+      <view class='rule-import'>
+          最好成绩：成功次数 / 总次数的最大值，若两次成绩相等，则取总次数大的成绩。
+        </view>
+    </view>
+  </van-popup>
 </view>

@@ -57,6 +57,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "算24",
+          "pathName": "pages_ability/twenty-four/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "poker": "../components/poker/index"
+    "poker": "../components/poker/index",
+    "van-popup": "../../weapp/popup/index"
   },
   "navigationBarTitleText": "算二十四"
 }
