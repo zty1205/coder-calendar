@@ -1,5 +1,10 @@
 <view class="container"><view class="h1">版本更新</view>
 
+<view class="h2"><text class="version">1.8.0</text> </view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">弹窗24规则弹窗 </view>
+</view>
 <view class="h2"><text class="version">1.7.0</text> </view>
 <view class="h3">Features</view>
 <view class="ul">
