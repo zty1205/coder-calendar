@@ -43,7 +43,6 @@ function removeUnuseHtml(html = '', mode) {
     .split('\n')
     .map((str) => {
       // 去掉hash值
-      console.log('str = ', str);
       if (/<li>.+[\u4E00-\u9FA5]+/.test(str)) {
         return `${str.replace(new RegExp(`\\(<${INLINE_TAG} class="version">(\.+)</${INLINE_TAG}>\\)`), '')}`;
       }
