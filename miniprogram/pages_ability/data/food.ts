@@ -471,6 +471,86 @@ export default function getFoodList(): Food[] {
       category: FOOD_CATEGORY.CEREALS,
       hPrice: '50',
       lPrice: '25'
+    },
+    {
+      name: '韩国烤肉',
+      level: 8,
+      weight: 8,
+      img: 'https://img1.baidu.com/it/u=2849054287,1659932794&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '尤以烤牛里脊和烤牛排最有名，因为其肉质最鲜美爽嫩。',
+      category: FOOD_CATEGORY.FRY,
+      hPrice: '100',
+      lPrice: '50'
+    },
+    {
+      name: '泰式炒饭',
+      level: 8,
+      weight: 8,
+      img: 'https://img0.baidu.com/it/u=3121008202,2323550924&fm=253&fmt=auto&app=138&f=JPEG?w=475&h=475',
+      desc: '泰式炒饭使用鸡丁和虾仁加上米饭一起做成的炒饭。',
+      category: FOOD_CATEGORY.CEREALS,
+      hPrice: '100',
+      lPrice: '50'
+    },
+    {
+      name: '印度咖喱',
+      level: 8,
+      weight: 8,
+      img: 'https://img2.baidu.com/it/u=1186635043,826057904&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '地道的印度咖喱是以丁香、小茴香子、胡荽子、芥末子、黄姜粉和辣椒等香料调配而成的。',
+      category: FOOD_CATEGORY.CEREALS,
+      hPrice: '100',
+      lPrice: '50'
+    },
+    {
+      name: '越南春卷',
+      level: 8,
+      weight: 8,
+      img: 'https://img2.baidu.com/it/u=1401169520,2976051308&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '饼皮并不用薄面皮而是用稻米磨浆制成的米皮包裹，馅料以虾肉、猪肉和当地蔬菜为主',
+      category: FOOD_CATEGORY.CEREALS,
+      hPrice: '100',
+      lPrice: '50'
+    },
+    {
+      name: '墨西哥塔可',
+      level: 8,
+      weight: 8,
+      img: 'https://img0.baidu.com/it/u=1567220361,3145789764&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '用玉米粉制作墨西哥薄饼，卷成U字型后，烤制。 将已熟的肉馅、蔬菜、芝士酱等馅料配搭一起食用',
+      category: FOOD_CATEGORY.FRY,
+      hPrice: '100',
+      lPrice: '50'
+    },
+    {
+      name: '酸辣粉',
+      level: 6,
+      weight: 8,
+      img: 'https://img2.baidu.com/it/u=928788847,609211192&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '麻、辣、鲜、香、酸且油而不腻。',
+      category: FOOD_CATEGORY.FRY,
+      hPrice: '50',
+      lPrice: '30'
+    },
+    {
+      name: '三明治',
+      level: 6,
+      weight: 8,
+      img: 'https://img0.baidu.com/it/u=4128116375,155723392&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '三明治是一种典型的西方食品，以两片面包夹几片肉和奶酪、炼乳等各种调料制作而成',
+      category: FOOD_CATEGORY.FRY,
+      hPrice: '50',
+      lPrice: '30'
+    },
+    {
+      name: '炸酱面',
+      level: 6,
+      weight: 8,
+      img: 'https://img1.baidu.com/it/u=3563081129,149004062&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
+      desc: '主要材料为面条，酱油，豆芽，黄瓜等，口味咸、酸辣，清新爽口，有劲道。',
+      category: FOOD_CATEGORY.FRY,
+      hPrice: '50',
+      lPrice: '30'
     }
   ];
 }
