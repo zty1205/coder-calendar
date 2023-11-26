@@ -1,53 +1,30 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/user/index",
-    "pages/mine/index",
-    "pages/perpetual/index",
-    "pages/game/index"
-  ],
+  "pages": ["pages/index/index", "pages/user/index", "pages/mine/index", "pages/perpetual/index", "pages/game/index"],
   "subPackages": [
     {
       "root": "pages_about/",
-      "pages": [
-        "helper/index",
-        "version/index"
-      ],
+      "pages": ["helper/index", "version/index"],
       "name": "pages_about"
     },
     {
       "root": "pages_ability/",
-      "pages": [
-        "food/index",
-        "something/index",
-        "twenty-four/index"
-      ],
+      "pages": ["food/index", "something/index", "twenty-four/index", "boom/index"],
       "name": "pages_ability"
     },
     {
       "root": "pages_time/",
-      "pages": [
-        "calendar/index",
-        "statistics/index",
-        "table/index"
-      ],
+      "pages": ["calendar/index", "statistics/index", "table/index"],
       "name": "pages_time"
     }
   ],
   "preloadRule": {
     "pages/index/index": {
       "network": "all",
-      "packages": [
-        "pages_time",
-        "pages_about"
-      ]
+      "packages": ["pages_time", "pages_about"]
     },
     "pages/mine/index": {
       "network": "all",
-      "packages": [
-        "pages_ability",
-        "pages_about"
-      ]
+      "packages": ["pages_ability", "pages_about"]
     }
   },
   "tabBar": {

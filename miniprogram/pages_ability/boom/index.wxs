@@ -1,0 +1,14 @@
+function formmatNumber(num = 0) {
+  var str = num.toString()
+  var len = str.length;
+  if (len === 1) {
+    return '00' + str
+  } else if (len === 2) {
+    return '0' + str
+  }
+  return str
+};
+
+module.exports = {
+  formmatNumber: formmatNumber
+}

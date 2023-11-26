@@ -13,8 +13,8 @@ let timer: NodeJS.Timeout;
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
   num: 0,
-  text: `打工人996 - 模式来袭！`,
-  time: '2023/05/7 00:00:00',
+  text: `扫雷游戏来袭，点击前往~`,
+  time: '2023/12/1 00:00:00',
   limit: 3,
   overTime: false,
   closed: false
@@ -123,7 +123,7 @@ Page({
   },
   handleTapNoticeBar() {
     wx.navigateTo({
-      url: '/pages_about/version/index'
+      url: '/pages_ability/boom/index'
     });
   },
   setCurDate() {

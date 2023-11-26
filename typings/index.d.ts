@@ -4,11 +4,13 @@ interface IAppOption {
   globalData: {};
 }
 
-type WxDomEvent<T, D> = {
+type WxDomEvent<T = any, D = any> = {
   type: string;
   detail: T;
-  target: {
-    dataset: D,
-    id: string
-  }
+  currentTarget: {
+    dataset: D;
+    id: string;
+    offsetLeft: number;
+    offsetTop: number;
+  };
 };

@@ -64,6 +64,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages_ability/boom/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

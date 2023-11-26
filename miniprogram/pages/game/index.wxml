@@ -2,6 +2,15 @@
   <view class='game-item' bindtap="handleTF">
     <image src="/static/game/24.jpg" mode="aspectFit" />
   </view>
+  <view class='game-item' bindtap="handleBoom">
+    <image src="/static/game/boom.jpg" mode="aspectFit" />
+  </view>
+  <view class='game-item game-item-empty' bindtap="handleSoon">
+    <view class="game-empty-text game-empty-text-left">敬</view>
+    <view class="game-empty-text game-empty-text-right">请</view>
+    <view class="game-empty-text game-empty-text-left">期</view>
+    <view class="game-empty-text game-empty-text-right">待</view>
+  </view>
   <view class='game-item game-item-empty' bindtap="handleSoon">
     <view class="game-empty-text game-empty-text-left">敬</view>
     <view class="game-empty-text game-empty-text-right">请</view>

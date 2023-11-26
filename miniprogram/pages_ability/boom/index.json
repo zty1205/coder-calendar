@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "扫雷",
+  "usingComponents": {
+    "van-button": "../../weapp/button/index",
+    "van-popup": "../../weapp/popup/index"
+  }
+}

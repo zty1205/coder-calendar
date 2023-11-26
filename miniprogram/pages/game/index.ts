@@ -12,6 +12,11 @@ Page({
       url: '/pages_ability/twenty-four/index'
     });
   },
+  handleBoom() {
+    wx.navigateTo({
+      url: '/pages_ability/boom/index'
+    });
+  },
   handleSoon() {
     comingSoon();
   }
