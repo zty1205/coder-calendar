@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/zty1205/coder-calendar/compare/v1.9.0...v1.10.0) (2023-11-26)
+
+
+### Features
+
+* 扫雷小游戏 ([f85462b](https://github.com/zty1205/coder-calendar/commit/f85462bce51baa70466bf68da5f7efbb171b30b0))
+
+
+### Bug Fixes
+
+* 修复cell样式问题 ([41010e9](https://github.com/zty1205/coder-calendar/commit/41010e9e9a0337e4496e52adeda3c2c0f66f43db))
+
 ## [1.9.0](https://github.com/zty1205/coder-calendar/compare/v1.8.0...v1.9.0) (2023-09-17)
 
 
