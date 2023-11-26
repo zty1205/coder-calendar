@@ -1,5 +1,14 @@
 <view class="container"><view class="h1">版本更新</view>
 
+<view class="h2"><text class="version">1.10.0</text> </view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">扫雷小游戏 </view>
+</view>
+<view class="h3">Bug Fixes</view>
+<view class="ul">
+<view class="li">修复cell样式问题 </view>
+</view>
 <view class="h2"><text class="version">1.9.0</text> </view>
 <view class="h3">Features</view>
 <view class="ul">
