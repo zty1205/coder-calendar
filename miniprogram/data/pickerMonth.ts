@@ -1,4 +1,4 @@
-export default {
+const monthPicker = {
   '1月': [
     '1日',
     '2日',
@@ -60,7 +60,8 @@ export default {
     '25日',
     '26日',
     '27日',
-    '28日'
+    '28日',
+    '29日'
   ],
   '3月': [
     '1日',
@@ -389,3 +390,5 @@ export default {
     '31日'
   ]
 };
+
+export default monthPicker;

@@ -13,8 +13,8 @@ let timer: NodeJS.Timeout;
 // 超过次数，超过时间，用户点击关闭都不在出现
 const NOTICE_CONFIG = {
   num: 0,
-  text: `扫雷游戏来袭，点击前往~`,
-  time: '2023/12/1 00:00:00',
+  text: `如发现日期不对，请删除小程序后重新进入`,
+  time: '2024/1/3 00:00:00',
   limit: 3,
   overTime: false,
   closed: false
@@ -123,7 +123,7 @@ Page({
   },
   handleTapNoticeBar() {
     wx.navigateTo({
-      url: '/pages_ability/boom/index'
+      url: '/pages_about/version/index'
     });
   },
   setCurDate() {
