@@ -8,7 +8,7 @@
     },
     {
       "root": "pages_ability/",
-      "pages": ["food/index", "something/index", "twenty-four/index", "boom/index"],
+      "pages": ["food/index", "something/index", "twenty-four/index"],
       "name": "pages_ability"
     },
     {
