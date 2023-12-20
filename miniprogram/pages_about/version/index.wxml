@@ -1,5 +1,15 @@
 <view class="container"><view class="h1">版本更新</view>
 
+<view class="h3"><text class="version">1.11.1</text> </view>
+<view class="h3">Bug Fixes</view>
+<view class="ul">
+<view class="li">移除审核失败-扫雷代码 </view>
+</view>
+<view class="h2"><text class="version">1.11.0</text> </view>
+<view class="h3">Features</view>
+<view class="ul">
+<view class="li">支持2024年 </view>
+</view>
 <view class="h2"><text class="version">1.10.0</text> </view>
 <view class="h3">Features</view>
 <view class="ul">
